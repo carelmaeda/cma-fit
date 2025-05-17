@@ -89,7 +89,6 @@ html:focus-within {
 html,
 body {
   height: 100%;
-  font-family: system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
@@ -131,10 +130,4 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/*General Semantic*/
-
-.bg-accent {
-  background: var(--color-accent-dark) !important;
 }
