@@ -277,20 +277,53 @@ nav {
   }
 }
 
-/*CAROUSEL*/
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
 
-/* Carousel section */
 .carousel-wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
-  /*text*/
   font-size: 0.75rem;
   text-transform: uppercase;
   padding: 1rem;
   color: $gray-300;
-  background-color: var(--color-surface);
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-word {
+  white-space: nowrap;
+  margin-right: 2rem;
+  position: relative;
+
+  &:not(:last-child)::after {
+    content: "•";
+    position: absolute;
+    right: -1rem;
+  }
 }
 
 /* PROGRAM */
