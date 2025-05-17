@@ -4,8 +4,7 @@ import { Facebook, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer-section text-white">
-      <div className="container py-5">
+    <footer className="footer-section container-fluid">
         <div className="row text-center text-md-start">
           <div className="col-md-4 mb-4">
             <h4 className="footer-brand">Justin Lyons</h4>
@@ -40,7 +39,6 @@ const Footer: React.FC = () => {
         <div className="text-center pt-4 border-top mt-4">
           <small>© {new Date().getFullYear()} Justin Lyons. All rights reserved.</small>
         </div>
-      </div>
     </footer>
   );
 };

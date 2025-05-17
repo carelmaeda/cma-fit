@@ -38,19 +38,12 @@ const programData = [
 
 const Program: React.FC = () => {
   return (
-    <section className="program-section container py-5">
-      <h2 className="text-center mb-5">Program Breakdown</h2>
+    <section className="program-section container-fluid">
+      <h2 className="text-center">Program Breakdown</h2>
       <div className="row">
         {programData.map((phase, index) => (
-          <div className="col-md-6 col-lg-3 mb-4" key={index}>
-            <div className="card h-100 program-card shadow-sm">
-              <Image
-                src={phase.image}
-                alt={phase.title}
-                width={400}
-                height={250}
-                className="card-img-top object-fit-cover"
-              />
+          <div className="col-md-6 col-lg-3" key={index}>
+            <div className="card h-100 program-card">
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{phase.title}</h5>
                 <p className="text-muted">{phase.duration}</p>

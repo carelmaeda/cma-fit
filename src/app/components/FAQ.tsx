@@ -25,9 +25,8 @@ const faqs = [
 
 const FAQ: React.FC = () => {
   return (
-    <section className="faq-section py-5">
-      <div className="container">
-        <h2 className="text-center mb-5">Frequently Asked Questions</h2>
+    <section className="faq-section container">
+        <h2 className="text-center">Frequently Asked Questions</h2>
         <div className="accordion" id="faqAccordion">
           {faqs.map((faq, index) => (
             <div className="accordion-item" key={index}>
@@ -54,7 +53,6 @@ const FAQ: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 };

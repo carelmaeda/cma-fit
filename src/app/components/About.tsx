@@ -3,17 +3,15 @@ import Image from 'next/image';
 
 const About: React.FC = () => {
   return (
-    <section className="about-section py-5">
-      <div className="container">
-        <h2 className="text-center mb-5">Meet Your Trainer</h2>
-        <div className="row align-items-center">
-          <div className="col-md-6 mb-4 mb-md-0 text-center">
+    <section className="about-section container-fluid">
+        <h2>Meet Your Trainer</h2>
+        <div className="row">
+          <div className="col-md-6">
             <Image
-              src="/images/trainer.jpg"
-              alt="Your Trainer"
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Justin Lyons Profile Pic"
               width={400}
               height={400}
-              className="rounded-circle object-fit-cover"
             />
           </div>
           <div className="col-md-6">
@@ -28,7 +26,6 @@ of the way, from establishing a solid foundation to achieving peak
 performance.</p>
           </div>
         </div>
-      </div>
     </section>
   );
 };
