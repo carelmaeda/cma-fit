@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       </div>
 
       <div className='hero-btns'>
-      <a href="#program" className="btn-icon"><MoveDown /></a>
+      <a href="#the program" className="btn-icon"><MoveDown /></a>
       <a href="#pricing" className="btn-primary">Get Started</a>
       </div>
       <video autoPlay loop muted playsInline className="hero-video">
