@@ -50,7 +50,7 @@ const Program: React.FC = () => {
   <div className="program-grid">
     {programData.map((phase, index) => (
       <div className="program-card" key={index}>
-        <Image width={600} height={600} src={phase.image} alt={phase.title} className="card-img-top" />
+        <Image width={600} height={600} src={phase.image} alt={phase.title} />
         <div className="card-body">
           <h5>{phase.title}</h5>
           <p className='badge badge-primary'><Clock />{phase.duration}</p>

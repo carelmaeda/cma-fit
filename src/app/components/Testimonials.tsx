@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: 'Emily Chen',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    quote: 'Having a personal trainer who genuinely cares made all the difference. Highly recommend CMA Fit!',
+    quote: 'Having a personal trainer who genuinely cares made all the difference. Highly recommend Justin Lyons!',
   },
   {
     name: 'Carlos Rivera',
@@ -26,7 +26,7 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section className="testimonials-section container-fluid">
+    <section className="testimonials-section">
       <h2 className="text-center">What Clients Are Saying</h2>
       <div className="row">
         {testimonials.map((testimonial, index) => (

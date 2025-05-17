@@ -284,14 +284,13 @@ nav {
   display: flex;
   flex-direction: column;
   background: $gray-500;
+  img {
+    max-height: 200px;
+    object-fit: cover;
+  }
 
   &:hover {
     transform: translateY(-2px);
-  }
-
-  .card-img-top {
-    object-fit: cover;
-    width: 100%;
   }
 
   .card-body {
@@ -308,8 +307,8 @@ nav {
 
 /* Responsive tweaks */
 @media (min-width: 768px) {
-  .program-card .card-img-top {
-    height: 180px;
+  .program-card img {
+    max-height: 180px;
   }
 }
 
@@ -317,37 +316,33 @@ nav {
 
 /* Testimonials section */
 .testimonials-section {
-  background: $gray-500;
+  color: $white;
+  justify-items: center;
+  gap: 2rem;
+  background: $gray-300;
 }
 
 .testimonial-card {
-  border-radius: 0.75rem;
   transition: transform 0.3s ease;
   background: $gray-800;
   color: $white;
-}
 
-.testimonial-card:hover {
-  transform: translateY(-5px);
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .testimonial-img-wrapper {
   width: 80px;
   height: 80px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid $accent;
 }
 
 .testimonial-quote {
   font-style: italic;
   color: $gray-500;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  min-height: 100px;
 }
 
-@media (max-width: 576px) {
+@media (min-width: 768px) {
   .testimonial-quote {
     font-size: 0.9rem;
   }
