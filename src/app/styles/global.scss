@@ -1,68 +1,5 @@
 @use "./variables" as *;
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import "bootstrap/scss/bootstrap";
-
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: sans-serif;
-}
-
-/*ASSETS*/
-
-/*TYPOGRAPHY*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $white;
-}
-
-/*BTN*/
-
-.btn-primary {
-  display: inline-block;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-
-  background-color: $accent;
-  border-color: $accent;
-  color: $black;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1rem;
-
-  &:hover {
-    background-color: $accent-dark;
-  }
-}
-
-.btn-icon {
-  font-weight: 700;
-  font-size: 1rem;
-  border: solid 1px $accent;
-  padding: 1rem;
-
-  border-radius: 99px;
-  color: $accent;
-
-  &:hover {
-    background-color: $accent;
-    color: $black;
-  }
-}
-
-/*LAYOUT*/
-
-section,
-footer {
-  display: grid;
-  padding: min(3rem, 5%);
-}
 
 /*NAVBAR*/
 
@@ -169,6 +106,7 @@ nav {
           display: flex;
           justify-content: space-between;
           &:hover {
+            color: $accent;
             .nav-icon {
               transition: all 0.3s ease;
               transform: rotate(90deg);
@@ -256,7 +194,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
 
@@ -271,7 +209,7 @@ nav {
         font-size: clamp(3rem, 13vw, 7rem);
       }
       p {
-        font-size: clamp(1rem, 3vw, 2.5rem);
+        font-size: clamp(1rem, 2vw, 2.5rem);
       }
     }
   }
@@ -280,7 +218,7 @@ nav {
 .carousel-container {
   width: 100%;
   overflow: hidden;
-  background-color: var(--color-surface);
+  background: $gray-800;
 }
 
 .carousel-wrapper {
@@ -328,78 +266,42 @@ nav {
 
 /* PROGRAM */
 
-/* Program section */
 .program-section {
-  background-color: var(--color-gray-800);
-  padding: 4rem 1rem;
+  color: $white;
+  justify-items: center;
+  gap: 2rem;
+  background: $gray-700;
 
   .program-grid {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
 .program-card {
-  border-radius: 0.75rem;
-  overflow: hidden;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-gray-700);
-  border: 1px solid var(--color-border);
+  background: $gray-500;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
   }
 
   .card-img-top {
-    height: 200px;
     object-fit: cover;
     width: 100%;
   }
 
   .card-body {
-    padding: 1rem;
-    flex: 1;
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
-    color: var(--color-text);
-
-    h5 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-    }
-
-    .duration {
-      color: var(--color-muted);
-      font-size: 0.9rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .description {
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      color: var(--color-muted);
-    }
-
-    ul {
-      padding-left: 1rem;
-      margin-bottom: 0.5rem;
-      color: var(--color-muted);
-      font-size: 0.9rem;
-    }
-
-    strong {
-      margin-top: 0.75rem;
-      display: block;
-      font-weight: 600;
-    }
-
-    .outcomes {
-      margin-top: auto;
-      font-size: 0.95rem;
-      color: var(--color-text);
+    gap: 1rem;
+    padding: 1rem;
+    p {
+      font-size: 0.8rem;
     }
   }
 }
@@ -415,14 +317,14 @@ nav {
 
 /* Testimonials section */
 .testimonials-section {
-  background-color: var(--color-surface);
+  background: $gray-500;
 }
 
 .testimonial-card {
   border-radius: 0.75rem;
   transition: transform 0.3s ease;
-  background-color: var(--color-gray-800);
-  color: var(--color-text);
+  background: $gray-800;
+  color: $white;
 }
 
 .testimonial-card:hover {
@@ -434,12 +336,12 @@ nav {
   height: 80px;
   overflow: hidden;
   border-radius: 50%;
-  border: 2px solid var(--color-accent);
+  border: 2px solid $accent;
 }
 
 .testimonial-quote {
   font-style: italic;
-  color: var(--color-muted);
+  color: $gray-500;
   font-size: 0.95rem;
   line-height: 1.5;
   min-height: 100px;
@@ -455,7 +357,7 @@ nav {
 
 /* About section */
 .about-section {
-  background-color: var(--color-gray-800);
+  background: $gray-500;
 }
 
 .about-section img {
@@ -469,7 +371,7 @@ nav {
 .about-section p {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--color-text);
+  color: $black;
 }
 
 /*FAQ*/
@@ -479,20 +381,20 @@ nav {
 .accordion-button {
   font-weight: 600;
   font-size: 1rem;
-  background-color: var(--color-gray-800);
-  color: var(--color-text);
+  background: $gray-800;
+  color: $black;
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: var(--color-gray-700);
+  background: $gray-700;
   color: $accent;
 }
 
 .accordion-body {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--color-muted);
-  background-color: var(--color-gray-800);
+  color: $gray-300;
+  background: $gray-900;
 }
 
 @media (max-width: 576px) {
@@ -509,14 +411,13 @@ nav {
 
 /* Footer section */
 .footer-section {
-  background-color: var(--color-gray-900);
-  color: var(--color-text);
+  background: $gray-900;
+  color: $white;
 }
 
 .footer-brand {
   font-size: 1.75rem;
   font-weight: bold;
-  color: $accent;
 }
 
 .footer-section h5 {
@@ -526,7 +427,7 @@ nav {
 }
 
 .footer-section a {
-  color: var(--color-muted);
+  color: $gray-200;
   text-decoration: none;
   display: block;
   margin-bottom: 0.5rem;
@@ -539,7 +440,7 @@ nav {
 
 .footer-social a {
   display: inline-block;
-  color: var(--color-muted);
+  color: $gray-200;
   margin-right: 15px;
   transition: color 0.3s ease;
 }
@@ -549,7 +450,7 @@ nav {
 }
 
 .footer-section .border-top {
-  border-color: var(--color-border) !important;
+  border-color: $gray-500;
 }
 
 @media (max-width: 576px) {

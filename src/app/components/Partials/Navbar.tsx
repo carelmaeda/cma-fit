@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <ul className={`nav-dropdown ${menuOpen ? 'open' : ''}`}>
-          {['About', 'Coaches', 'Contact', 'Career', 'Blog'].map((label) => (
+          {['The Program', 'Community', 'About', 'FAQ'].map((label) => (
             <li key={label}>
               <Link href={`#${label.toLowerCase()}`} onClick={closeMenu}>
                 {label} <MoveRight className='nav-icon'/>

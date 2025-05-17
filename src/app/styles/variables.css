@@ -106,4 +106,73 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+/*---------------------------*/
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: sans-serif;
+}
+
+/*ASSETS*/
+/*TYPOGRAPHY*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff;
+}
+
+/*BTN*/
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  background-color: #d4ff2a;
+  border-color: #d4ff2a;
+  color: #131313;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.btn-primary:hover {
+  background-color: #aacc1f;
+}
+
+.btn-icon {
+  font-weight: 700;
+  font-size: 1rem;
+  border: solid 1px #d4ff2a;
+  padding: 1rem;
+  border-radius: 99px;
+  color: #d4ff2a;
+}
+.btn-icon:hover {
+  background-color: #d4ff2a;
+  color: #131313;
+}
+
+/*BADGE*/
+.badge {
+  display: inline;
+  flex: 0 0 auto;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.badge-primary {
+  background-color: #d4ff2a;
+  border-color: #d4ff2a;
+  color: #131313;
+}
+
+/*LAYOUT*/
+section,
+footer {
+  display: grid;
+  padding: min(3rem, 5%);
 }/*# sourceMappingURL=variables.css.map */

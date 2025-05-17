@@ -14,10 +14,10 @@ export default function Home() {
       <main>
        <Hero />
        <Carousel />
-       <div id="program">
+       <div id="the program">
        <Program />
        </div>
-        <div id="testimonials">
+        <div id="community">
        <Testimonials />
        </div>
       <div id="about">

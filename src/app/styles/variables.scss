@@ -16,35 +16,7 @@ $accent-light: #e8ff6b;
 $accent-dark: #aacc1f;
 $accent-contrast: #1a1a1a;
 
-// CSS Custom Properties (root variables for app-wide usage)
-:root {
-  /* Grayscale */
-  --color-black: #131313;
-  --color-white: #ffffff;
-
-  --color-gray-900: #1a1a1a;
-  --color-gray-800: #222222;
-  --color-gray-700: #2c2c2c;
-  --color-gray-600: #3a3a3a;
-  --color-gray-500: #4c4c4c;
-  --color-gray-400: #5e5e5e;
-  --color-gray-300: #707070;
-  --color-gray-200: #8a8a8a;
-  --color-gray-100: #a5a5a5;
-
-  /* Accent Colors */
-  --color-accent: #d4ff2a;
-  --color-accent-light: #e8ff6b;
-  --color-accent-dark: #aacc1f;
-  --color-accent-contrast: #1a1a1a;
-
-  /* Semantic */
-  --color-bg: var(--color-black);
-  --color-surface: var(--color-gray-900);
-  --color-border: var(--color-gray-700);
-  --color-text: var(--color-white);
-  --color-muted: var(--color-gray-200);
-}
+@import "bootstrap/scss/bootstrap";
 
 /*SCSS RESET*/
 
@@ -130,4 +102,90 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/*---------------------------*/
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: sans-serif;
+}
+
+/*ASSETS*/
+
+/*TYPOGRAPHY*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $white;
+}
+
+/*BTN*/
+
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  background-color: $accent;
+  border-color: $accent;
+  color: $black;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: $accent-dark;
+  }
+}
+
+.btn-icon {
+  font-weight: 700;
+  font-size: 1rem;
+  border: solid 1px $accent;
+  padding: 1rem;
+
+  border-radius: 99px;
+  color: $accent;
+
+  &:hover {
+    background-color: $accent;
+    color: $black;
+  }
+}
+
+/*BADGE*/
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  svg {
+    width: 14px;
+    aspect-ratio: 1/1;
+  }
+}
+
+.badge-primary {
+  background-color: $accent;
+  border-color: $accent;
+  color: $black;
+}
+
+/*LAYOUT*/
+
+section,
+footer {
+  display: grid;
+  padding: min(3rem, 5%);
 }

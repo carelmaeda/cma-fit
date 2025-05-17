@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 import './styles/global.scss';
+import './styles/variables.scss';
+
 import Script from 'next/script';
 
 
