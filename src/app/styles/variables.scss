@@ -1,3 +1,5 @@
+@use "bootstrap/scss/bootstrap";
+
 $black: #131313;
 $white: #ffffff;
 
@@ -15,8 +17,6 @@ $accent: #d4ff2a;
 $accent-light: #e8ff6b;
 $accent-dark: #aacc1f;
 $accent-contrast: #1a1a1a;
-
-@import "bootstrap/scss/bootstrap";
 
 /*SCSS RESET*/
 
@@ -104,7 +104,7 @@ select {
   }
 }
 
-/*---------------------------*/
+/*---------------------------------------------------------------*/
 
 body {
   background-color: var(--color-bg);
@@ -113,6 +113,14 @@ body {
 }
 
 /*ASSETS*/
+
+/*BAKCGROUND*/
+
+.surface-glass {
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
 
 /*TYPOGRAPHY*/
 
@@ -182,9 +190,9 @@ h6 {
   color: $black;
 }
 
-/*LAYOUT*/
+/* LAYOUT */
 
-section,
+section:not(.hero),
 footer {
   display: grid;
   padding: min(3rem, 5%);

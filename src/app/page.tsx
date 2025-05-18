@@ -13,7 +13,6 @@ export default function Home() {
       <Navbar />
       <main>
        <Hero />
-       <Carousel />
        <div id="the program">
        <Program />
        </div>
