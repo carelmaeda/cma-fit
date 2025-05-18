@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { MoveDown } from "lucide-react";
-import Carousel from './Carousel';
+import Carousel from './Partials/Carousel';
+
 
 
 const Hero: React.FC = () => {
@@ -23,8 +24,8 @@ const Hero: React.FC = () => {
 
       <Carousel/>
 
-      <video autoPlay loop muted playsInline className="hero-video">
-        <source src="/videos/jl-video2.mp4" type="video/mp4" />
+      <video autoPlay loop muted playsInline>
+        <source src="/videos/jl-video-hero.mp4" type="video/mp4" />
             Your browser does not support the video tag.
       </video>
       <div className="hero-overlay"></div>

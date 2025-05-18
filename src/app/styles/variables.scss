@@ -1,4 +1,5 @@
-@use "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 $black: #131313;
 $white: #ffffff;
@@ -17,6 +18,14 @@ $accent: #d4ff2a;
 $accent-light: #e8ff6b;
 $accent-dark: #aacc1f;
 $accent-contrast: #1a1a1a;
+
+// Font Families
+$font-header: "Teko", sans-serif;
+$font-body: "Roboto", sans-serif;
+
+// Font Weights
+$fw-header: 700; // Teko looks best between 500–700
+$fw-body: 400;
 
 /*SCSS RESET*/
 
@@ -107,6 +116,7 @@ select {
 /*---------------------------------------------------------------*/
 
 body {
+  font-family: $font-body;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: sans-serif;
@@ -131,6 +141,14 @@ h4,
 h5,
 h6 {
   color: $white;
+}
+
+p {
+  letter-spacing: 0.5px;
+}
+
+.font-header {
+  font-family: $font-header;
 }
 
 /*BTN*/

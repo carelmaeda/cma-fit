@@ -81,7 +81,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
-/*---------------------------*/
+/*---------------------------------------------------------------*/
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -89,6 +89,14 @@ body {
 }
 
 /*ASSETS*/
+/*BAKCGROUND*/
+.surface-glass {
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
 /*TYPOGRAPHY*/
 h1,
 h2,
@@ -150,8 +158,8 @@ h6 {
   color: #131313;
 }
 
-/*LAYOUT*/
-section,
+/* LAYOUT */
+section:not(.hero),
 footer {
   display: grid;
   padding: min(3rem, 5%);
