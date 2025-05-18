@@ -1,6 +1,5 @@
 import Hero from "./components/Hero";
 import Navbar from "./components/Partials/Navbar";
-import Carousel from "./components/Partials/Carousel";
 import Program from "./components/Program";
 import Testimonials from "./components/Testimonials";
 import About from "./components/About";
