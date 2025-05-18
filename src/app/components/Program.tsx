@@ -56,29 +56,41 @@ const Program: React.FC = () => {
       <div className="card-wrapper" key={index}>
         <div className="card-img">
         <Image width={600} height={600} src={phase.image} alt={phase.title} />
-        <h5>{phase.step}</h5>
+        <h3>{phase.step}</h3>
         </div>
         <div className="card-body">
-        <h5>{phase.title}</h5>
-          <p className='badge badge-primary'><Clock />{phase.duration}</p>
-          <p>{phase.description}</p>
 
-          <strong>Goals:</strong>
+        <div className='card-title'>
+          <h3>{phase.title}</h3>    
+          <p className='badge badge-primary'><Clock />{phase.duration}</p>
+        </div>
+        
+        <p>{phase.description}</p>
+
+        <div>
+        <h4>Goals:</h4>
           <ul className='d-flex flex-wrap gap-1'>
             {phase.goals.map((goal, i) => (
               <li key={i} className='badge badge-primary'>{goal}</li>
             ))}
           </ul>
+        </div>
 
-          <strong>Key Focus:</strong>
+        <div>
+        <h4>Key Focus:</h4>
           <ul className='d-flex flex-wrap gap-1'>
             {phase.focus.map((item, i) => (
               <li key={i} className='badge badge-primary'>{item}</li>
             ))}
           </ul>
+        </div>
 
-          <strong>Outcomes:</strong>
-          <p>{phase.outcomes}</p>
+        <div>
+        <h4>Outcomes:</h4>
+        <p>{phase.outcomes}</p>
+        </div>
+
+
         </div>
       </div>
     ))}
