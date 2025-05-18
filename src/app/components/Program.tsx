@@ -1,102 +1,141 @@
-﻿import React from 'react';
+﻿'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Clock } from 'lucide-react';
 
+// Define type for program phase
+interface ProgramPhase {
+  step: string;
+  title: string;
+  image: string;
+  duration: string;
+  description: string;
+  goals: string[];
+  focus: string[];
+  outcomes: string;
+}
 
-const programData = [
+// Data
+const programData: ProgramPhase[] = [
   {
     step: '1',
     title: 'Foundation',
     image: '/images/jl-img1.webp',
     duration: '4 Weeks',
-    description: 'Begin your journey by building a strong and stable base. This phase focuses on mastering proper form, improving mobility, and developing basic strength and cardiovascular endurance. Establishing these fundamentals is key to preventing injury and setting the stage for long-term success.',
+    description:
+      'Begin your journey by building a strong and stable base. This phase focuses on mastering proper form, improving mobility, and developing basic strength and cardiovascular endurance.',
     goals: ['Build consistency', 'Improve mobility', 'Learn proper form'],
     focus: ['Fundamental movements', 'Core activation', 'Technique'],
-    outcomes: 'By the end of this phase, you will have built a solid base and confidence in key movements.',
+    outcomes: 'You will have built a solid base and confidence in key movements.',
   },
   {
     step: '2',
     title: 'Adaptation',
     image: '/images/jl-img2.webp',
     duration: '4 Weeks',
-    description: 'With a solid foundation in place, it’s time to challenge your body with increased intensity. In this phase, you’ll introduce more advanced movements, incorporate weight training, and gradually push your strength and stamina. Your body will start adapting to new levels of stress, paving the way for noticeable improvements in overall fitness.',
+    description:
+      'With a solid foundation in place, it’s time to challenge your body with increased intensity. You’ll introduce more advanced movements and weight training.',
     goals: ['Increase stamina', 'Enhance strength', 'Adapt to routine'],
     focus: ['Progressive overload', 'Volume training', 'Body awareness'],
-    outcomes: 'You will begin to feel stronger and more energetic, with visible improvements in endurance.',
+    outcomes: 'Visible improvements in endurance and strength.',
   },
   {
     step: '3',
     title: 'Break Through',
     image: '/images/jl-img3.webp',
     duration: '4 Weeks',
-    description: 'Now that your body is conditioned, it’s time to break through plateaus and elevate your performance. This phase is about pushing past limits with more demanding workouts, refining your technique, and aiming for specific performance goals. Expect to build resilience, strength, and a deeper sense of confidence.',
+    description:
+      'This phase is about pushing past limits with demanding workouts, refining technique, and aiming for specific performance goals.',
     goals: ['Break plateaus', 'Elevate performance', 'Boost metabolism'],
     focus: ['Intensity training', 'Interval work', 'Power output'],
-    outcomes: 'You will experience major breakthroughs in performance and mental resilience.',
+    outcomes: 'Major breakthroughs in performance and resilience.',
   },
   {
     step: '4',
     title: 'Peak Performance',
     image: '/images/jl-img4.webp',
     duration: 'Ongoing',
-    description: 'The final phase is where everything comes together. You’ll fine-tune your training to reach peak physical condition, focusing on precision, intensity, and sustainability. Whether you’re striving for elite performance or long-term fitness, this phase helps you maintain and maximize your results.',
+    description:
+      'You’ll fine-tune your training to reach peak physical condition, focusing on precision, intensity, and sustainability.',
     goals: ['Maximize output', 'Sharpen physique', 'Achieve peak form'],
     focus: ['High-intensity', 'Sport-specific drills', 'Recovery management'],
-    outcomes: 'You will reach your personal best in strength, endurance, and overall fitness.',
+    outcomes: 'Achieve your personal best in fitness.',
   },
 ];
 
-
+// Component
 const Program: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
   return (
-<section className='program-section'>
-  <h2>Program Breakdown</h2>
-  <div className="program-grid">
-    {programData.map((phase, index) => (
-      <div className="card-wrapper" key={index}>
-        <div className="card-img">
-        <Image width={600} height={600} src={phase.image} alt={phase.title} />
-        <h3>{phase.step}</h3>
-        </div>
-        <div className="card-body">
+    <section className="program-section">
+      <h2>Program Breakdown</h2>
 
-        <div className='card-title'>
-          <h3>{phase.title}</h3>    
-          <p className='badge badge-primary'><Clock />{phase.duration}</p>
-        </div>
-        
-        <p>{phase.description}</p>
+      <ul className="nav-pills">
+        {programData.map((phase, index) => (
+          <li className="nav-item" key={index}>
+            <button
+              className={`nav-link ${activeIndex === index ? 'active' : ''}`}
+              onClick={() => setActiveIndex(index)}
+            >
+              {phase.title}
+            </button>
+          </li>
+        ))}
+      </ul>
 
-        <div>
-        <h4>Goals:</h4>
-          <ul className='d-flex flex-wrap gap-1'>
-            {phase.goals.map((goal, i) => (
-              <li key={i} className='badge badge-primary'>{goal}</li>
-            ))}
-          </ul>
-        </div>
+      <div className="program-grid">
+        {programData.map((phase, index) =>
+          index === activeIndex ? (
+            <div className="card-wrapper" key={index}>
+              <div className="card-img">
+                <Image width={600} height={600} src={phase.image} alt={phase.title} />
+                <h3>{phase.step}</h3>
+              </div>
 
-        <div>
-        <h4>Key Focus:</h4>
-          <ul className='d-flex flex-wrap gap-1'>
-            {phase.focus.map((item, i) => (
-              <li key={i} className='badge badge-primary'>{item}</li>
-            ))}
-          </ul>
-        </div>
+              <div className="card-body">
+                <div className="card-title">
+                  <h3>{phase.title}</h3>
+                  <p className="badge badge-primary">
+                    <Clock /> {phase.duration}
+                  </p>
+                </div>
 
-        <div>
-        <h4>Outcomes:</h4>
-        <p>{phase.outcomes}</p>
-        </div>
+                <p>{phase.description}</p>
 
+                <div>
+                  <h4>Goals:</h4>
+                  <ul className="d-flex flex-wrap gap-1">
+                    {phase.goals.map((goal, i) => (
+                      <li key={i} className="badge badge-primary">
+                        {goal}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-        </div>
+                <div>
+                  <h4>Key Focus:</h4>
+                  <ul className="d-flex flex-wrap gap-1">
+                    {phase.focus.map((item, i) => (
+                      <li key={i} className="badge badge-primary">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4>Outcomes:</h4>
+                  <p>{phase.outcomes}</p>
+                </div>
+              </div>
+            </div>
+          ) : null
+        )}
       </div>
-    ))}
-  </div>
-</section>
-
+    </section>
   );
 };
 
