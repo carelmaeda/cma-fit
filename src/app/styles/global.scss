@@ -1,5 +1,4 @@
 @use "./variables" as *;
-@import url("https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&display=swap");
 
 /*NAVBAR*/
 
@@ -13,22 +12,21 @@ nav {
   z-index: 1000;
 
   .navbar {
-    display: grid;
+    background: $white;
     width: 100%;
-    align-items: center;
-    justify-content: space-around;
     padding: 1rem 2rem;
     margin: 1rem;
     border-radius: 2rem;
 
     .nav-header {
       display: flex;
+      width: 100%;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
 
       .logo {
-        color: $white;
+        color: $black;
         font-family: $font-header;
         font-weight: 700;
         font-size: 2rem;
@@ -99,7 +97,7 @@ nav {
       }
       li {
         a {
-          color: $white;
+          color: $black;
           text-decoration: none;
           display: flex;
           justify-content: space-between;
@@ -123,9 +121,6 @@ nav {
 @media (min-width: 768px) {
   .navbar {
     max-width: 400px;
-    .nav-header {
-      justify-content: space-between;
-    }
   }
 }
 
@@ -137,7 +132,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  color: white;
+  color: $black;
   overflow: hidden;
   position: relative;
 
@@ -152,7 +147,6 @@ nav {
     justify-content: center;
 
     h1 {
-      font-family: $font-header;
       line-height: 0.8;
       margin: 0;
       font-size: clamp(3rem, 10vw, 5rem);
@@ -195,7 +189,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(196, 196, 196, 0.4);
     z-index: -1;
   }
 }
@@ -217,6 +211,7 @@ nav {
 }
 
 .carousel-container {
+  background: $white;
   width: 100%;
   overflow: hidden;
 }
@@ -228,7 +223,7 @@ nav {
   font-size: 0.75rem;
   text-transform: uppercase;
   padding: 1rem;
-  color: $gray-200;
+  color: $gray-800;
 }
 
 .marquee {
@@ -256,17 +251,12 @@ nav {
   white-space: nowrap;
   margin-right: 2rem;
   position: relative;
-
-  &:not(:last-child)::after {
-    content: "•";
-    position: absolute;
-    right: -1rem;
-  }
 }
+
+/*PROGRAM*/
 
 .program-section {
   color: $white;
-  background: $gray-700;
   padding: 1rem;
 
   h2 {
