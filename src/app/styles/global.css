@@ -558,7 +558,7 @@ nav .navbar .nav-dropdown li .nav-icon {
   gap: 1rem;
   padding: 1rem;
   transition: transform 0.3s ease;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 .testimonial-section .testimonial-content .testimonial-card:hover {
