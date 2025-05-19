@@ -1,5 +1,4 @@
-@import "bootstrap/scss/bootstrap";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap");
 
 $black: #131313;
 $white: #ffffff;
@@ -14,9 +13,9 @@ $gray-300: #707070;
 $gray-200: #8a8a8a;
 $gray-100: #a5a5a5;
 
-$accent: #d4ff2a;
+$accent: #ff8d47;
 $accent-light: #e8ff6b;
-$accent-dark: #aacc1f;
+$accent-dark: rgb(167, 83, 18);
 $accent-contrast: #1a1a1a;
 
 // Font Families
@@ -26,6 +25,9 @@ $font-body: "Roboto", sans-serif;
 // Font Weights
 $fw-header: 700; // Teko looks best between 500–700
 $fw-body: 400;
+
+//Border Radius
+$border-radius-md: 1rem;
 
 /*SCSS RESET*/
 
@@ -117,9 +119,7 @@ select {
 
 body {
   font-family: $font-body;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: sans-serif;
+  background: $black;
 }
 
 /*TYPOGRAPHY*/
@@ -130,7 +130,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: $white;
   font-family: $font-header;
   text-transform: uppercase;
   line-height: 1.2;
@@ -151,6 +150,10 @@ small {
   font-family: $font-body;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 .font-header {
   font-family: $font-header;
 }
@@ -161,7 +164,7 @@ small {
 
 .surface-glass {
   backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(184, 184, 184, 0.2);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -175,7 +178,8 @@ small {
 
   background-color: $accent;
   border-color: $accent;
-  color: $black;
+  border-radius: 99px;
+  color: $white;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1rem;
@@ -188,15 +192,15 @@ small {
 .btn-icon {
   font-weight: 700;
   font-size: 1rem;
-  border: solid 1px $accent;
+  background: transparent;
+  border: solid 3px $accent;
   padding: 1rem;
 
   border-radius: 99px;
-  color: $accent;
+  color: $white;
 
   &:hover {
-    background-color: $accent;
-    color: $black;
+    background-color: $accent-dark;
   }
 }
 
@@ -207,7 +211,7 @@ small {
   align-items: center;
   gap: 0.25rem;
   border: none;
-  border-radius: 0;
+  border-radius: 99px;
   padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -221,6 +225,12 @@ small {
 .badge-primary {
   background-color: $accent;
   color: $black;
+}
+
+.badge-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 /* LAYOUT */

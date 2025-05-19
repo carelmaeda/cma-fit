@@ -1,5 +1,4 @@
 @use "./variables" as *;
-@import url("https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&display=swap");
 
 /*NAVBAR*/
 
@@ -13,22 +12,21 @@ nav {
   z-index: 1000;
 
   .navbar {
-    display: grid;
+    background: $white;
     width: 100%;
-    align-items: center;
-    justify-content: space-around;
     padding: 1rem 2rem;
     margin: 1rem;
     border-radius: 2rem;
 
     .nav-header {
       display: flex;
+      width: 100%;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
 
       .logo {
-        color: $white;
+        color: $black;
         font-family: $font-header;
         font-weight: 700;
         font-size: 2rem;
@@ -99,7 +97,7 @@ nav {
       }
       li {
         a {
-          color: $white;
+          color: $black;
           text-decoration: none;
           display: flex;
           justify-content: space-between;
@@ -123,9 +121,6 @@ nav {
 @media (min-width: 768px) {
   .navbar {
     max-width: 400px;
-    .nav-header {
-      justify-content: space-between;
-    }
   }
 }
 
@@ -137,7 +132,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  color: white;
+  color: $black;
   overflow: hidden;
   position: relative;
 
@@ -152,7 +147,6 @@ nav {
     justify-content: center;
 
     h1 {
-      font-family: $font-header;
       line-height: 0.8;
       margin: 0;
       font-size: clamp(3rem, 10vw, 5rem);
@@ -195,7 +189,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(196, 196, 196, 0.4);
     z-index: -1;
   }
 }
@@ -217,6 +211,7 @@ nav {
 }
 
 .carousel-container {
+  background: $white;
   width: 100%;
   overflow: hidden;
 }
@@ -228,7 +223,7 @@ nav {
   font-size: 0.75rem;
   text-transform: uppercase;
   padding: 1rem;
-  color: $gray-200;
+  color: $gray-800;
 }
 
 .marquee {
@@ -256,107 +251,95 @@ nav {
   white-space: nowrap;
   margin-right: 2rem;
   position: relative;
-
-  &:not(:last-child)::after {
-    content: "•";
-    position: absolute;
-    right: -1rem;
-  }
 }
 
-/* PROGRAM */
+/*PROGRAM*/
 
 .program-section {
   color: $white;
-  justify-items: center;
-  gap: 1rem;
-  background: $gray-700;
+  padding: 1rem;
 
-  .nav-pills {
-    width: 100%;
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .nav-wrapper {
     display: flex;
-    padding: 0;
-    list-style: none;
+    background: $white;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    border-radius: 99px;
 
-    .nav-item {
-      width: 100%;
+    .nav-tab {
+      flex: 1;
+      color: $black;
+      padding: 0.5rem 0;
+      border: none;
+      font-weight: bold;
+      font-size: 0.5rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
 
-      .nav-link {
-        width: 100%;
-        color: $black;
-        font-size: 0.7rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding: 0.25rem 0.5rem;
-        border: none;
-        border-radius: 0;
-        background-color: $accent;
-        white-space: nowrap;
-        cursor: pointer;
-        transition: background-color 0.3s;
-
-        &.active {
-          background-color: $accent-dark;
-        }
+      &.active {
+        color: $gray-500;
       }
     }
   }
 
-  .program-grid {
-    display: grid;
+  .program-content {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
 .card-wrapper {
+  background: $gray-500;
+  border-radius: 1rem;
+  overflow: hidden;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  background: $gray-500;
+
   .card-img {
     position: relative;
+
     h3 {
       position: absolute;
-      left: 1rem;
-      top: 1rem;
-      font-size: 10rem;
-      // -webkit-text-stroke: 2px $accent;
-      color: $white;
+      top: 0.5rem;
+      left: 0.5rem;
+      font-size: 6rem;
+      color: rgba(255, 255, 255, 0.2);
       font-weight: 800;
     }
+
     img {
-      max-height: 200px;
+      width: 100%;
+      height: auto;
       object-fit: cover;
+      max-height: 200px;
     }
-  }
-  &:hover {
-    transform: translateY(-2px);
   }
 
   .card-body {
+    padding: 1rem;
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+
     .card-title {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 1rem;
 
       h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-transform: uppercase;
-        font-weight: $fw-header;
+        font-weight: bold;
       }
-    }
-
-    h4 {
-      font-size: 1rem;
-    }
-    p {
-      font-size: 0.8rem;
     }
   }
 }

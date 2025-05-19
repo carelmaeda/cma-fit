@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap");
 /*SCSS RESET*/
 /* Box sizing reset */
 *,
@@ -83,18 +84,8 @@ select {
 }
 /*---------------------------------------------------------------*/
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: sans-serif;
-}
-
-/*ASSETS*/
-/*BAKCGROUND*/
-.surface-glass {
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto", sans-serif;
+  background: #131313;
 }
 
 /*TYPOGRAPHY*/
@@ -104,7 +95,41 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ffffff;
+  font-family: "Teko", sans-serif;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h3,
+h4 {
+  font-weight: 500;
+}
+
+p,
+small {
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+.font-header {
+  font-family: "Teko", sans-serif;
+}
+
+/*ASSETS*/
+/*BAKCGROUND*/
+.surface-glass {
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  background: rgba(184, 184, 184, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 /*BTN*/
@@ -113,28 +138,29 @@ h6 {
   padding: 1rem 2rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  background-color: #d4ff2a;
-  border-color: #d4ff2a;
-  color: #131313;
+  background-color: #ff8d47;
+  border-color: #ff8d47;
+  border-radius: 99px;
+  color: #ffffff;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1rem;
 }
 .btn-primary:hover {
-  background-color: #aacc1f;
+  background-color: rgb(167, 83, 18);
 }
 
 .btn-icon {
   font-weight: 700;
   font-size: 1rem;
-  border: solid 1px #d4ff2a;
+  background: transparent;
+  border: solid 3px #ff8d47;
   padding: 1rem;
   border-radius: 99px;
-  color: #d4ff2a;
+  color: #ffffff;
 }
 .btn-icon:hover {
-  background-color: #d4ff2a;
-  color: #131313;
+  background-color: rgb(167, 83, 18);
 }
 
 /*BADGE*/
@@ -142,10 +168,12 @@ h6 {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  border: none;
+  border-radius: 99px;
   padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
 }
 .badge svg {
   width: 14px;
@@ -153,9 +181,14 @@ h6 {
 }
 
 .badge-primary {
-  background-color: #d4ff2a;
-  border-color: #d4ff2a;
+  background-color: #ff8d47;
   color: #131313;
+}
+
+.badge-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 /* LAYOUT */

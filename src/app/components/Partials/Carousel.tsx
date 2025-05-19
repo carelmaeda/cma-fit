@@ -4,7 +4,7 @@ const Carousel: React.FC = () => {
   const words = ["Bodybuilding", "Coaching", "Community", "Personal Trainer", "Fitness Plan", "Workout Routine", "Nutrition", "Life Changing"];
   
   return (
-    <div className="carousel-container surface-glass">
+    <div className="carousel-container">
       <div className="carousel-wrapper">
         <div className="marquee">
           <div className="marquee-content">

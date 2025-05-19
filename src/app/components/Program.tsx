@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { Clock } from 'lucide-react';
 
-// Define type for program phase
 interface ProgramPhase {
   step: string;
   title: string;
@@ -16,7 +15,6 @@ interface ProgramPhase {
   outcomes: string;
 }
 
-// Data
 const programData: ProgramPhase[] = [
   {
     step: '1',
@@ -64,7 +62,6 @@ const programData: ProgramPhase[] = [
   },
 ];
 
-// Component
 const Program: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -72,25 +69,29 @@ const Program: React.FC = () => {
     <section className="program-section">
       <h2>Program Breakdown</h2>
 
-      <ul className="nav-pills">
+      <div className="nav-wrapper">
         {programData.map((phase, index) => (
-          <li className="nav-item" key={index}>
-            <button
-              className={`nav-link ${activeIndex === index ? 'active' : ''}`}
-              onClick={() => setActiveIndex(index)}
-            >
-              {phase.title}
-            </button>
-          </li>
+          <button
+            key={index}
+            className={`nav-tab ${activeIndex === index ? 'active' : ''}`}
+            onClick={() => setActiveIndex(index)}
+          >
+            {phase.title}
+          </button>
         ))}
-      </ul>
+      </div>
 
-      <div className="program-grid">
+      <div className="program-content">
         {programData.map((phase, index) =>
           index === activeIndex ? (
             <div className="card-wrapper" key={index}>
               <div className="card-img">
-                <Image width={600} height={600} src={phase.image} alt={phase.title} />
+                <Image
+                  width={600}
+                  height={600}
+                  src={phase.image}
+                  alt={phase.title}
+                />
                 <h3>{phase.step}</h3>
               </div>
 
@@ -98,7 +99,7 @@ const Program: React.FC = () => {
                 <div className="card-title">
                   <h3>{phase.title}</h3>
                   <p className="badge badge-primary">
-                    <Clock /> {phase.duration}
+                    <Clock size={16} /> {phase.duration}
                   </p>
                 </div>
 
@@ -106,7 +107,7 @@ const Program: React.FC = () => {
 
                 <div>
                   <h4>Goals:</h4>
-                  <ul className="d-flex flex-wrap gap-1">
+                  <ul className="badge-list">
                     {phase.goals.map((goal, i) => (
                       <li key={i} className="badge badge-primary">
                         {goal}
@@ -117,7 +118,7 @@ const Program: React.FC = () => {
 
                 <div>
                   <h4>Key Focus:</h4>
-                  <ul className="d-flex flex-wrap gap-1">
+                  <ul className="badge-list">
                     {phase.focus.map((item, i) => (
                       <li key={i} className="badge badge-primary">
                         {item}

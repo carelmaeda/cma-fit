@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav>
-      <div className="navbar surface-glass">
+      <div className="navbar">
         <div className="nav-header">
           <Link href="/" className="logo">JUSTIN LYONS</Link>
           <button
