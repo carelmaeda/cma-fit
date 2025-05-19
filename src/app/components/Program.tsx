@@ -80,7 +80,6 @@ const Program: React.FC = () => {
   return (
     <section className='program-section'>
       <h2>Program Breakdown</h2>
-      <div className="program-section">
       <div className="program-nav">
         {programData.map((phase, index) => (
           <button
@@ -92,75 +91,65 @@ const Program: React.FC = () => {
           </button>
         ))}
       </div>
-
-      <div className="program-content">
-
-      
-
-
-        <div className="card-wrapper">
-          <div className="card-img img-overlay">
-            <Image
-              width={600}
-              height={600}
-              src={programData[activeIndex].image}
-              alt={programData[activeIndex].title}
-            />
-            <h3>{programData[activeIndex].step}</h3>
-          </div>
-
-          <div className="card-body">
-            <div className="card-title">
-              <h3>{programData[activeIndex].title}</h3>
-              <p className="badge badge-primary">
-                <Clock size={16} /> {programData[activeIndex].duration}
-              </p>
-            </div>
-
-            <p>{programData[activeIndex].description}</p>
-
-            <div>
-              <h4>Goals:</h4>
-              <ul className="badge-list">
-                {programData[activeIndex].goals.map((goal, i) => (
-                  <li key={i} className="badge badge-primary">
-                    {goal}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4>Key Focus:</h4>
-              <ul className="badge-list">
-                {programData[activeIndex].focus.map((item, i) => (
-                  <li key={i} className="badge badge-primary">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4>Outcomes:</h4>
-              <p>{programData[activeIndex].outcomes}</p>
-            </div>
-          </div>
+      <div className="program-card">
+        <div className="card-img img-overlay">
+          <Image
+            width={600}
+            height={600}
+            src={programData[activeIndex].image}
+            alt={programData[activeIndex].title}
+          />
+          <h3>{programData[activeIndex].step}</h3>
         </div>
 
-      </div>
+        <div className="card-body">
+          <div className="card-title">
+            <h3>{programData[activeIndex].title}</h3>
+            <p className="badge badge-primary">
+              <Clock size={16} /> {programData[activeIndex].duration}
+            </p>
+          </div>
 
+          <p>{programData[activeIndex].description}</p>
+
+          <div>
+            <h4>Goals</h4>
+            <ul className="badge-list">
+              {programData[activeIndex].goals.map((goal, i) => (
+                <li key={i} className="badge badge-primary">
+                  {goal}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4>Key Focus</h4>
+            <ul className="badge-list">
+              {programData[activeIndex].focus.map((item, i) => (
+                <li key={i} className="badge badge-primary">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4>Outcomes</h4>
+            <p>{programData[activeIndex].outcomes}</p>
+          </div>
+        </div>
+      </div>
       <div className='btn-row'>
-            <button className="btn-icon-primary" onClick={handlePrev}>
+            <button className="btn btn-icon-primary" onClick={handlePrev}>
               <MoveLeft />
             </button>
 
-            <button className="btn-icon-primary" onClick={handleNext}>
+            <button className="btn btn-icon-primary" onClick={handleNext}>
               <MoveRight />
             </button>
         </div>
 
-        </div>
     </section>
   );
 };

@@ -191,7 +191,7 @@ h2 {
 }
 
 /* Base Button */
-button,
+
 .btn {
   cursor: pointer;
   display: inline-block;
@@ -221,10 +221,21 @@ button,
   padding: 1rem;
 }
 
-/* Icon Button Variant (outline) */
-.btn-icon-outline {
+.btn-outline {
   background: transparent;
   border: $border-accent;
+  padding: 1rem 2rem;
+}
+
+/* Icon Button Variant (filled) */
+.btn-tab-outline {
+  @extend .btn-primary;
+  padding: 1rem;
+}
+
+/* Icon Button Variant (outline) */
+.btn-icon-outline {
+  @extend .btn-outline;
   padding: 1rem;
 
   &:hover {

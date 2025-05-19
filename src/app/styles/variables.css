@@ -149,7 +149,6 @@ h2 {
 }
 
 /* Base Button */
-button,
 .btn {
   cursor: pointer;
   display: inline-block;
@@ -163,12 +162,12 @@ button,
 }
 
 /* Primary Button */
-.btn-primary, .btn-icon-primary {
+.btn-primary, .btn-tab-outline, .btn-icon-primary {
   background-color: #ff8d47;
   border: solid 0.2em #ff8d47;
   padding: 1rem 2rem;
 }
-.btn-primary:hover, .btn-icon-primary:hover {
+.btn-primary:hover, .btn-tab-outline:hover, .btn-icon-primary:hover {
   background-color: rgb(167, 83, 18);
 }
 
@@ -177,10 +176,19 @@ button,
   padding: 1rem;
 }
 
-/* Icon Button Variant (outline) */
-.btn-icon-outline {
+.btn-outline, .btn-icon-outline {
   background: transparent;
   border: solid 0.2em #ff8d47;
+  padding: 1rem 2rem;
+}
+
+/* Icon Button Variant (filled) */
+.btn-tab-outline {
+  padding: 1rem;
+}
+
+/* Icon Button Variant (outline) */
+.btn-icon-outline {
   padding: 1rem;
 }
 .btn-icon-outline:hover {
