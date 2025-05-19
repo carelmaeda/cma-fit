@@ -1,3 +1,4 @@
+/*-------------------------------------------------------------*/
 /*SCSS RESET*/
 /* Box sizing reset */
 *,
@@ -94,13 +95,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Teko", sans-serif;
   text-transform: uppercase;
   line-height: 1.2;
 }
 
 h1,
-h2 {
+h2,
+h3 {
+  font-family: "Teko", sans-serif;
   font-weight: 700;
 }
 
@@ -109,6 +111,7 @@ h4 {
   font-weight: 500;
 }
 
+h4,
 p,
 small {
   font-family: "Roboto", sans-serif;
@@ -212,7 +215,7 @@ button {
 section:not(.hero),
 footer {
   display: grid;
-  padding: 1rem 0.5rem;
+  padding: 1.5rem 0.5rem;
 }
 
 /*NAVBAR*/
@@ -401,8 +404,7 @@ nav .navbar .nav-dropdown li .nav-icon {
   width: 100%;
   overflow: hidden;
 }
-
-.carousel-wrapper {
+.carousel-container .carousel-wrapper {
   display: flex;
   align-items: center;
   width: 100%;
@@ -411,18 +413,21 @@ nav .navbar .nav-dropdown li .nav-icon {
   padding: 1rem;
   color: #222222;
 }
-
-.marquee {
+.carousel-container .carousel-wrapper .marquee {
   width: 100%;
   overflow: hidden;
   position: relative;
 }
-
-.marquee-content {
+.carousel-container .carousel-wrapper .marquee .marquee-content {
   display: flex;
   width: -moz-max-content;
   width: max-content;
   animation: scroll 30s linear infinite;
+}
+.carousel-container .carousel-wrapper .marquee .marquee-content .marquee-word {
+  white-space: nowrap;
+  margin-right: 2rem;
+  position: relative;
 }
 
 @keyframes scroll {
@@ -433,12 +438,6 @@ nav .navbar .nav-dropdown li .nav-icon {
     transform: translateX(-50%);
   }
 }
-.marquee-word {
-  white-space: nowrap;
-  margin-right: 2rem;
-  position: relative;
-}
-
 /*PROGRAM*/
 .program-section h2 {
   color: #ffffff;
@@ -482,6 +481,7 @@ nav .navbar .nav-dropdown li .nav-icon {
   color: #ffffff;
   width: 100%;
   background: #222222;
+  border: solid 4px #ffffff;
   border-radius: 1rem;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -531,30 +531,54 @@ nav .navbar .nav-dropdown li .nav-icon {
 }
 /*TESTIMONIALS*/
 /* Testimonials section */
-.testimonials-section {
+.testimonial-section {
   color: #ffffff;
-  justify-items: center;
-  gap: 2rem;
-  background: #707070;
+  background: #2c2c2c;
 }
-
-.testimonial-card {
-  transition: transform 0.3s ease;
+.testimonial-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.testimonial-section .testimonial-content {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.testimonial-section .testimonial-content .testimonial-card {
+  display: flex;
+  border: solid 4px #ffffff;
+  border-radius: 1rem;
   background: #222222;
-  color: #ffffff;
+  min-width: 200px;
+  max-width: 400px;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  font-size: 0.75rem;
+  font-weight: 300;
 }
-.testimonial-card:hover {
-  transform: translateY(-5px);
+.testimonial-section .testimonial-content .testimonial-card:hover {
+  border: solid 4px #ff8d47;
 }
-
-.testimonial-img-wrapper {
-  width: 80px;
-  height: 80px;
+.testimonial-section .testimonial-content .testimonial-card .testimonial-footer {
+  display: flex;
+  gap: 0.5rem;
 }
-
-.testimonial-quote {
-  font-style: italic;
-  color: #4c4c4c;
+.testimonial-section .testimonial-content .testimonial-card .testimonial-footer img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.testimonial-section .testimonial-content .testimonial-card .testimonial-footer .testimonial-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 @media (min-width: 768px) {

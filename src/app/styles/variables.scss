@@ -29,6 +29,12 @@ $fw-body: 400;
 //Border Radius
 $border-radius-md: 1rem;
 
+//Borders
+$border-white: solid 4px $white;
+$border-accent: solid 4px $accent;
+
+/*-------------------------------------------------------------*/
+
 /*SCSS RESET*/
 
 /* Box sizing reset */
@@ -130,13 +136,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-header;
   text-transform: uppercase;
   line-height: 1.2;
 }
 
 h1,
-h2 {
+h2,
+h3 {
+  font-family: $font-header;
   font-weight: 700;
 }
 
@@ -145,6 +152,7 @@ h4 {
   font-weight: 500;
 }
 
+h4,
 p,
 small {
   font-family: $font-body;
@@ -256,5 +264,5 @@ button {
 section:not(.hero),
 footer {
   display: grid;
-  padding: 1rem 0.5rem;
+  padding: 1.5rem 0.5rem;
 }
