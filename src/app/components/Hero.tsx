@@ -17,8 +17,8 @@ const Hero: React.FC = () => {
         </div>
 
       <div className='hero-btns'>
-      <a href="#the program" className="btn-icon"><MoveDown /></a>
-      <a href="#pricing" className="btn-primary">Get Started</a>
+      <a href="#the program" className="btn btn-icon-outline"><MoveDown /></a>
+      <a href="#pricing" className="btn btn-primary">Get Started</a>
       </div>
       </div>
 

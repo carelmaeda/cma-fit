@@ -78,10 +78,10 @@ const Program: React.FC = () => {
   };
 
   return (
-    <section className="program-section">
+    <section className='program-section'>
       <h2>Program Breakdown</h2>
-
-      <div className="nav-wrapper">
+      <div className="program-section">
+      <div className="program-nav">
         {programData.map((phase, index) => (
           <button
             key={index}
@@ -94,9 +94,9 @@ const Program: React.FC = () => {
       </div>
 
       <div className="program-content">
-        <button onClick={handlePrev}>
-          <MoveLeft />
-        </button>
+
+      
+
 
         <div className="card-wrapper">
           <div className="card-img img-overlay">
@@ -148,10 +148,19 @@ const Program: React.FC = () => {
           </div>
         </div>
 
-        <button onClick={handleNext}>
-          <MoveRight />
-        </button>
       </div>
+
+      <div className='btn-row'>
+            <button className="btn-icon-primary" onClick={handlePrev}>
+              <MoveLeft />
+            </button>
+
+            <button className="btn-icon-primary" onClick={handleNext}>
+              <MoveRight />
+            </button>
+        </div>
+
+        </div>
     </section>
   );
 };

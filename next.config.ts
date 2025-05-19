@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'scontent-yyz1-1.cdninstagram.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

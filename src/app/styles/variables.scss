@@ -30,8 +30,8 @@ $fw-body: 400;
 $border-radius-md: 1rem;
 
 //Borders
-$border-white: solid 4px $white;
-$border-accent: solid 4px $accent;
+$border-white: solid 0.2em $white;
+$border-accent: solid 0.2em $accent;
 
 /*-------------------------------------------------------------*/
 
@@ -190,40 +190,42 @@ h2 {
   pointer-events: none;
 }
 
-/*BTN*/
-
-button {
+/* Base Button */
+button,
+.btn {
   cursor: pointer;
-}
-
-.btn-primary {
   display: inline-block;
-  padding: 1rem 2rem;
   text-decoration: none;
-  transition: background-color 0.3s ease;
-
-  background-color: $accent;
-  border-color: $accent;
-  border-radius: 99px;
-  color: $white;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1rem;
+  border-radius: 99px;
+  transition: background-color 0.3s ease;
+  color: $white;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: $accent;
+  border: $border-accent;
+  padding: 1rem 2rem;
 
   &:hover {
     background-color: $accent-dark;
   }
 }
 
-.btn-icon {
-  font-weight: 700;
-  font-size: 1rem;
-  background: transparent;
-  border: solid 3px $accent;
+/* Icon Button Variant (filled) */
+.btn-icon-primary {
+  @extend .btn-primary;
   padding: 1rem;
+}
 
-  border-radius: 99px;
-  color: $white;
+/* Icon Button Variant (outline) */
+.btn-icon-outline {
+  background: transparent;
+  border: $border-accent;
+  padding: 1rem;
 
   &:hover {
     background-color: $accent-dark;
@@ -264,5 +266,5 @@ button {
 section:not(.hero),
 footer {
   display: grid;
-  padding: 1.5rem 0.5rem;
+  padding: 2rem 0.5rem;
 }

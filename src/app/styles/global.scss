@@ -257,7 +257,7 @@ nav {
     margin-bottom: 1rem;
   }
 
-  .nav-wrapper {
+  .program-nav {
     display: flex;
     justify-content: space-around;
     overflow-x: auto;
@@ -282,24 +282,15 @@ nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
-    button {
-      color: $white;
-      border: none;
-      background: $gray-800;
-      border-radius: 99px;
-      padding: 1.5rem 0.5rem;
-      svg {
-        width: 1rem;
-      }
-    }
+    border: $border-white;
+    border-radius: 1rem;
+    overflow: hidden;
 
     .card-wrapper {
       color: $white;
+
       width: 100%;
       background: $gray-800;
-      border: $border-white;
-      border-radius: 1rem;
       overflow: hidden;
       transition: transform 0.3s ease;
       display: flex;
@@ -340,6 +331,14 @@ nav {
         }
       }
     }
+  }
+
+  .btn-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
   }
 }
 
