@@ -289,10 +289,10 @@ nav {
 
     button {
       color: $white;
-      border: solid 1px $accent;
-      aspect-ratio: 1/1;
+      border: none;
+      background: $gray-800;
       border-radius: 99px;
-      padding: 1rem 0.5rem;
+      padding: 1.5rem 0.5rem;
       svg {
         width: 1rem;
       }
@@ -346,7 +346,7 @@ nav {
   }
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (min-width: 768px) {
   .card-img img {
     max-height: 180px;

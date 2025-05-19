@@ -212,6 +212,7 @@ button {
 section:not(.hero),
 footer {
   display: grid;
+  padding: 1rem 0.5rem;
 }
 
 /*NAVBAR*/
@@ -469,10 +470,10 @@ nav .navbar .nav-dropdown li .nav-icon {
 }
 .program-section .program-content button {
   color: #ffffff;
-  border: solid 1px #ff8d47;
-  aspect-ratio: 1/1;
+  border: none;
+  background: #222222;
   border-radius: 99px;
-  padding: 1rem 0.5rem;
+  padding: 1.5rem 0.5rem;
 }
 .program-section .program-content button svg {
   width: 1rem;
@@ -519,7 +520,7 @@ nav .navbar .nav-dropdown li .nav-icon {
   font-size: 2rem;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (min-width: 768px) {
   .card-img img {
     max-height: 180px;
