@@ -212,7 +212,6 @@ button {
 section:not(.hero),
 footer {
   display: grid;
-  padding: min(3rem, 5%);
 }
 
 /*NAVBAR*/
@@ -440,9 +439,6 @@ nav .navbar .nav-dropdown li .nav-icon {
 }
 
 /*PROGRAM*/
-.program-section {
-  padding: 1rem;
-}
 .program-section h2 {
   color: #ffffff;
   text-align: center;
@@ -457,6 +453,7 @@ nav .navbar .nav-dropdown li .nav-icon {
 .program-section .nav-wrapper .nav-tab {
   color: #a5a5a5;
   font-weight: 600;
+  font-size: 0.75rem;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
   cursor: pointer;
@@ -480,8 +477,7 @@ nav .navbar .nav-dropdown li .nav-icon {
 .program-section .program-content button svg {
   width: 1rem;
 }
-
-.card-wrapper {
+.program-section .program-content .card-wrapper {
   color: #ffffff;
   width: 100%;
   background: #222222;
@@ -491,35 +487,35 @@ nav .navbar .nav-dropdown li .nav-icon {
   display: flex;
   flex-direction: column;
 }
-.card-wrapper .card-img {
+.program-section .program-content .card-wrapper .card-img {
   position: relative;
 }
-.card-wrapper .card-img h3 {
+.program-section .program-content .card-wrapper .card-img h3 {
   position: absolute;
   z-index: 99;
   top: 0.5rem;
   left: 0.5rem;
   font-size: 10rem;
 }
-.card-wrapper .card-img img {
+.program-section .program-content .card-wrapper .card-img img {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   max-height: 200px;
 }
-.card-wrapper .card-body {
+.program-section .program-content .card-wrapper .card-body {
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.card-wrapper .card-body .card-title {
+.program-section .program-content .card-wrapper .card-body .card-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.card-wrapper .card-body .card-title h3 {
+.program-section .program-content .card-wrapper .card-body .card-title h3 {
   font-size: 2rem;
 }
 
