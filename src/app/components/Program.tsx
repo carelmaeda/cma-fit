@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Clock } from 'lucide-react';
+import { Clock, MoveLeft, MoveRight } from 'lucide-react';
 
 interface ProgramPhase {
   step: string;
@@ -51,7 +51,7 @@ const programData: ProgramPhase[] = [
   },
   {
     step: '4',
-    title: 'Peak Performance',
+    title: 'Peak',
     image: '/images/jl-img4.webp',
     duration: 'Ongoing',
     description:
@@ -64,6 +64,18 @@ const programData: ProgramPhase[] = [
 
 const Program: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const handlePrev = () => {
+    setActiveIndex((prev) =>
+      prev === 0 ? programData.length - 1 : prev - 1
+    );
+  };
+  
+  const handleNext = () => {
+    setActiveIndex((prev) =>
+      prev === programData.length - 1 ? 0 : prev + 1
+    );
+  };
 
   return (
     <section className="program-section">
@@ -82,59 +94,63 @@ const Program: React.FC = () => {
       </div>
 
       <div className="program-content">
-        {programData.map((phase, index) =>
-          index === activeIndex ? (
-            <div className="card-wrapper" key={index}>
-              <div className="card-img">
-                <Image
-                  width={600}
-                  height={600}
-                  src={phase.image}
-                  alt={phase.title}
-                />
-                <h3>{phase.step}</h3>
-              </div>
+        <button onClick={handlePrev}>
+          <MoveLeft />
+        </button>
 
-              <div className="card-body">
-                <div className="card-title">
-                  <h3>{phase.title}</h3>
-                  <p className="badge badge-primary">
-                    <Clock size={16} /> {phase.duration}
-                  </p>
-                </div>
+        <div className="card-wrapper">
+          <div className="card-img img-overlay">
+            <Image
+              width={600}
+              height={600}
+              src={programData[activeIndex].image}
+              alt={programData[activeIndex].title}
+            />
+            <h3>{programData[activeIndex].step}</h3>
+          </div>
 
-                <p>{phase.description}</p>
-
-                <div>
-                  <h4>Goals:</h4>
-                  <ul className="badge-list">
-                    {phase.goals.map((goal, i) => (
-                      <li key={i} className="badge badge-primary">
-                        {goal}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4>Key Focus:</h4>
-                  <ul className="badge-list">
-                    {phase.focus.map((item, i) => (
-                      <li key={i} className="badge badge-primary">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4>Outcomes:</h4>
-                  <p>{phase.outcomes}</p>
-                </div>
-              </div>
+          <div className="card-body">
+            <div className="card-title">
+              <h3>{programData[activeIndex].title}</h3>
+              <p className="badge badge-primary">
+                <Clock size={16} /> {programData[activeIndex].duration}
+              </p>
             </div>
-          ) : null
-        )}
+
+            <p>{programData[activeIndex].description}</p>
+
+            <div>
+              <h4>Goals:</h4>
+              <ul className="badge-list">
+                {programData[activeIndex].goals.map((goal, i) => (
+                  <li key={i} className="badge badge-primary">
+                    {goal}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4>Key Focus:</h4>
+              <ul className="badge-list">
+                {programData[activeIndex].focus.map((item, i) => (
+                  <li key={i} className="badge badge-primary">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4>Outcomes:</h4>
+              <p>{programData[activeIndex].outcomes}</p>
+            </div>
+          </div>
+        </div>
+
+        <button onClick={handleNext}>
+          <MoveRight />
+        </button>
       </div>
     </section>
   );
