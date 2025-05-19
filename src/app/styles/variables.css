@@ -115,6 +115,10 @@ small {
   font-family: "Roboto", sans-serif;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 .font-header {
   font-family: "Teko", sans-serif;
 }
@@ -165,7 +169,7 @@ small {
   align-items: center;
   gap: 0.25rem;
   border: none;
-  border-radius: 0;
+  border-radius: 99px;
   padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -179,6 +183,12 @@ small {
 .badge-primary {
   background-color: #ff8d47;
   color: #131313;
+}
+
+.badge-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 /* LAYOUT */

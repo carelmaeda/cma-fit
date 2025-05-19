@@ -115,6 +115,10 @@ small {
   font-family: "Roboto", sans-serif;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 .font-header {
   font-family: "Teko", sans-serif;
 }
@@ -165,7 +169,7 @@ small {
   align-items: center;
   gap: 0.25rem;
   border: none;
-  border-radius: 0;
+  border-radius: 99px;
   padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -179,6 +183,12 @@ small {
 .badge-primary {
   background-color: #ff8d47;
   color: #131313;
+}
+
+.badge-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 /* LAYOUT */
@@ -422,29 +432,27 @@ nav .navbar .nav-dropdown li .nav-icon {
   text-align: center;
   margin-bottom: 1rem;
 }
-.program-section .nav-scroll {
+.program-section .nav-wrapper {
   display: flex;
+  background: #ffffff;
   overflow-x: auto;
-  gap: 0.5rem;
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
+  border-radius: 99px;
 }
-.program-section .nav-scroll .nav-tab {
-  flex: 0 0 auto;
-  background: #ff8d47;
+.program-section .nav-wrapper .nav-tab {
+  flex: 1;
   color: #131313;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
   border: none;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   text-transform: uppercase;
-  border-radius: 999px;
   white-space: nowrap;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
-.program-section .nav-scroll .nav-tab.active {
-  background: rgb(167, 83, 18);
-  color: #ffffff;
+.program-section .nav-wrapper .nav-tab.active {
+  color: #4c4c4c;
 }
 .program-section .program-content {
   display: flex;
@@ -493,35 +501,6 @@ nav .navbar .nav-dropdown li .nav-icon {
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: bold;
-}
-.card-wrapper .card-body .card-title .badge {
-  background: #ff8d47;
-  color: #131313;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-.card-wrapper .card-body h4 {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-}
-.card-wrapper .card-body p {
-  font-size: 0.875rem;
-}
-.card-wrapper .card-body .badge-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.card-wrapper .card-body .badge-list .badge {
-  background: #ff8d47;
-  color: #131313;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  border-radius: 999px;
 }
 
 /* Responsive tweaks */

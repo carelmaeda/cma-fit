@@ -264,29 +264,27 @@ nav {
     margin-bottom: 1rem;
   }
 
-  .nav-scroll {
+  .nav-wrapper {
     display: flex;
+    background: $white;
     overflow-x: auto;
-    gap: 0.5rem;
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
+    border-radius: 99px;
 
     .nav-tab {
-      flex: 0 0 auto;
-      background: $accent;
+      flex: 1;
       color: $black;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0;
       border: none;
       font-weight: bold;
-      font-size: 0.8rem;
+      font-size: 0.5rem;
       text-transform: uppercase;
-      border-radius: 999px;
       white-space: nowrap;
       transition: background-color 0.3s ease;
+      cursor: pointer;
 
       &.active {
-        background: $accent-dark;
-        color: $white;
+        color: $gray-500;
       }
     }
   }
@@ -341,40 +339,6 @@ nav {
         font-size: 1.5rem;
         text-transform: uppercase;
         font-weight: bold;
-      }
-
-      .badge {
-        background: $accent;
-        color: $black;
-        padding: 0.25rem 0.5rem;
-        font-size: 0.75rem;
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-      }
-    }
-
-    h4 {
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    p {
-      font-size: 0.875rem;
-    }
-
-    .badge-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-
-      .badge {
-        background: $accent;
-        color: $black;
-        padding: 0.25rem 0.5rem;
-        font-size: 0.75rem;
-        border-radius: 999px;
       }
     }
   }

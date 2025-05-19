@@ -69,7 +69,7 @@ const Program: React.FC = () => {
     <section className="program-section">
       <h2>Program Breakdown</h2>
 
-      <div className="nav-scroll">
+      <div className="nav-wrapper">
         {programData.map((phase, index) => (
           <button
             key={index}
