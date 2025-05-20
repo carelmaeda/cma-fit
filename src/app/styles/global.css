@@ -608,7 +608,6 @@ nav .navbar .nav-dropdown li .nav-icon {
   color: #ffffff;
 }
 .about-section h2 {
-  color: #ffffff;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -633,27 +632,61 @@ nav .navbar .nav-dropdown li .nav-icon {
 }
 
 /*FAQ*/
-/* FAQ section */
-.accordion-button {
+.faq-section {
+  gap: 1rem;
+  color: #ffffff;
+}
+.faq-section h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.faq-accordion .faq-item {
+  border-bottom: solid 0.2em #ffffff;
+}
+.faq-accordion .faq-item .faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  font-size: 1rem;
-  background: #222222;
-  color: #131313;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+.faq-accordion .faq-item .faq-question:hover {
+  background: #ff8d47;
+}
+.faq-accordion .faq-item .faq-question.active {
+  color: #ffffff;
+}
+.faq-accordion .faq-item .faq-question .faq-toggle-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-left: 1rem;
+}
+.faq-accordion .faq-item .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 1rem;
+}
+.faq-accordion .faq-item .faq-answer p {
+  margin: 0.5rem 0;
+}
+.faq-accordion .faq-item .faq-answer.open {
+  max-height: 300px;
+  padding: 1rem;
 }
 
-.accordion-button:not(.collapsed) {
-  background: #2c2c2c;
-  color: #ff8d47;
-}
-
-.accordion-body {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #707070;
-  background: #1a1a1a;
-}
-
-@media (max-width: 576px) {
+@media (min-width: 768px) {
   .accordion-button {
     font-size: 0.95rem;
   }

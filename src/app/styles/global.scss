@@ -430,7 +430,6 @@ nav {
   color: $white;
 
   h2 {
-    color: $white;
     text-align: center;
     margin-bottom: 1rem;
   }
@@ -459,28 +458,73 @@ nav {
 
 /*FAQ*/
 
-/* FAQ section */
+.faq-section {
+  gap: 1rem;
+  color: $white;
 
-.accordion-button {
-  font-weight: 600;
-  font-size: 1rem;
-  background: $gray-800;
-  color: $black;
+  h2 {
+    color: $white;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }
 
-.accordion-button:not(.collapsed) {
-  background: $gray-700;
-  color: $accent;
+.faq-accordion {
+  .faq-item {
+    border-bottom: $border-white;
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+
+      &:hover {
+        background: $accent;
+      }
+
+      &.active {
+        color: $white;
+      }
+
+      .faq-toggle-icon {
+        font-size: 1.5rem;
+        line-height: 1;
+        margin-left: 1rem;
+      }
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition:
+        max-height 0.4s ease,
+        padding 0.3s ease;
+      padding: 0 1rem;
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      &.open {
+        max-height: 300px;
+        padding: 1rem;
+      }
+    }
+  }
 }
 
-.accordion-body {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: $gray-300;
-  background: $gray-900;
-}
-
-@media (max-width: 576px) {
+@media (min-width: 768px) {
   .accordion-button {
     font-size: 0.95rem;
   }
