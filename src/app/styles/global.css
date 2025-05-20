@@ -604,22 +604,31 @@ nav .navbar .nav-dropdown li .nav-icon {
 /*ABOUT*/
 /* About section */
 .about-section {
-  background: #4c4c4c;
+  gap: 1rem;
+  color: #ffffff;
 }
-
-.about-section img {
-  max-width: 100%;
-  height: auto;
+.about-section h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.about-section .about-card {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.about-section .about-card img {
+  height: 100px;
+  width: 100px;
+  aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #ff8d47;
+  border-radius: 99px;
+  border: solid 0.2em #ff8d47;
 }
-
-.about-section p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #131313;
+.about-section .about-card p {
+  max-width: 250px;
+  text-align: justify;
 }
 
 /*FAQ*/
