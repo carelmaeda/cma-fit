@@ -1,5 +1,5 @@
 ﻿'use client';
-import React, { useState } from 'react';
+import React from 'react';
 
 const faqs = [
   {
@@ -25,31 +25,20 @@ const faqs = [
 ];
 
 const FAQ: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const toggleIndex = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
     <section className="faq-section container">
       <h2 className="text-center">Frequently Asked Questions</h2>
       <div className="faq-accordion">
         {faqs.map((faq, index) => (
-          <div className="faq-item" key={index}>
-            <button
-              className={`faq-question ${activeIndex === index ? 'active' : ''}`}
-              onClick={() => toggleIndex(index)}
-            >
+          <details className="faq-item" key={index}>
+            <summary className="faq-question">
               {faq.question}
-              <span className="faq-toggle-icon">{activeIndex === index ? '−' : '+'}</span>
-            </button>
-            <div
-              className={`faq-answer ${activeIndex === index ? 'open' : ''}`}
-            >
+              <span className="faq-toggle-icon">+</span>
+            </summary>
+            <div className="faq-answer">
               <p>{faq.answer}</p>
             </div>
-          </div>
+          </details>
         ))}
       </div>
     </section>
