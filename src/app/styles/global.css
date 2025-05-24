@@ -456,18 +456,17 @@ nav .navbar .nav-dropdown li .nav-icon {
 }
 /*PROGRAM*/
 .program-section {
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .program-section h2 {
   color: #ffffff;
   text-align: center;
-  margin-bottom: 1rem;
 }
 .program-section .program-nav {
   display: flex;
   justify-content: space-around;
   overflow-x: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .program-section .program-nav .nav-tab {
   color: #a5a5a5;

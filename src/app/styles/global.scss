@@ -253,18 +253,17 @@ nav {
 /*PROGRAM*/
 
 .program-section {
-  gap: 1rem;
+  gap: 0.5rem;
   h2 {
     color: $white;
     text-align: center;
-    margin-bottom: 1rem;
   }
 
   .program-nav {
     display: flex;
     justify-content: space-around;
     overflow-x: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
     .nav-tab {
       color: $gray-100;
