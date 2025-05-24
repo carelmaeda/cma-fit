@@ -322,7 +322,7 @@ nav {
     .card-body {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 1rem;
       padding: 0 1rem 1rem 1rem;
 
       h4 {
@@ -460,12 +460,14 @@ nav {
     }
   }
 }
+
 /* FAQ */
 
 .faq-section {
   max-width: 600px;
   margin: auto;
   gap: 1rem;
+  background: $gray-700;
   color: $white;
 
   h2 {
@@ -473,67 +475,50 @@ nav {
     text-align: center;
     margin-bottom: 1rem;
   }
-}
 
-.faq-accordion {
-  .faq-item {
-    border-bottom: $border-white;
-    margin-bottom: 1rem;
+  .faq-accordion {
+    details {
+      border-bottom: $border-white;
+      padding-block: 0.5rem;
 
-    summary.faq-question {
-      cursor: pointer;
-      list-style: none;
-      font-size: 1.125rem;
-      font-weight: 600;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: none;
-      border: none;
-      outline: none;
-      color: $white;
-      transition: background 0.3s;
-
-      &::-webkit-details-marker {
-        display: none;
-      }
-
-      &:hover {
-        background: $accent;
-      }
-
-      .faq-toggle-icon {
-        font-size: 1.5rem;
-        margin-left: 1rem;
-        transition: transform 0.3s;
-      }
-    }
-
-    &[open] {
-      summary .faq-toggle-icon {
-        transform: rotate(45deg); // transforms "+" to "×"
-      }
-
-      .faq-answer {
+      summary {
+        cursor: pointer;
+        list-style: none;
         padding: 1rem;
-        max-height: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s;
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        &:hover {
+          background: $accent;
+        }
+
+        .faq-toggle-icon {
+          font-size: 1.5rem;
+          margin-left: 1rem;
+          transition: transform 0.3s;
+        }
       }
-    }
 
-    .faq-answer {
-      padding: 0 1rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: padding 0.3s ease;
+      &[open] {
+        summary .faq-toggle-icon {
+          transform: rotate(45deg); // transforms "+" to "×"
+        }
 
-      p {
-        margin: 0.5rem 0;
+        .faq-answer {
+          background: $white;
+          color: $black;
+          padding: 1rem;
+        }
       }
     }
   }
 }
-
 /*FOOTER*/
 
 /* Footer section */

@@ -26,12 +26,12 @@ const faqs = [
 
 const FAQ: React.FC = () => {
   return (
-    <section className="faq-section container">
-      <h2 className="text-center">Frequently Asked Questions</h2>
+    <section className="faq-section">
+      <h2>Frequently Asked Questions</h2>
       <div className="faq-accordion">
         {faqs.map((faq, index) => (
-          <details className="faq-item" key={index}>
-            <summary className="faq-question">
+          <details key={index}>
+            <summary>
               {faq.question}
               <span className="faq-toggle-icon">+</span>
             </summary>
