@@ -22,7 +22,7 @@ const programData: ProgramPhase[] = [
     image: '/images/jl-img1.webp',
     duration: '4 Weeks',
     description:
-      'Begin your journey by building a strong and stable base. This phase focuses on mastering proper form, improving mobility, and developing basic strength and cardiovascular endurance.',
+      'Start by building a solid foundation through proper form, better mobility, and basic strength and cardio development.',
     goals: ['Build consistency', 'Improve mobility', 'Learn proper form'],
     focus: ['Fundamental movements', 'Core activation', 'Technique'],
     outcomes: 'You will have built a solid base and confidence in key movements.',
@@ -80,7 +80,23 @@ const Program: React.FC = () => {
   return (
     <section className='program-section'>
       <h2>Program Breakdown</h2>
-      <div className="program-nav">
+
+      <div className="program-card">
+        <div className="card-img img-overlay">
+          <Image
+            width={600}
+            height={600}
+            src={programData[activeIndex].image}
+            alt={programData[activeIndex].title}
+          />
+          <h3>{programData[activeIndex].step}</h3>
+          <span className="badge badge-secondary">
+              <Clock size={16} /> {programData[activeIndex].duration}
+          </span>
+        </div>
+
+        <div className="card-body">
+        <div className="program-nav">
         {programData.map((phase, index) => (
           <button
             key={index}
@@ -91,24 +107,12 @@ const Program: React.FC = () => {
           </button>
         ))}
       </div>
-      <div className="program-card">
-        <div className="card-img img-overlay">
-          <Image
-            width={600}
-            height={600}
-            src={programData[activeIndex].image}
-            alt={programData[activeIndex].title}
-          />
-          <h3>{programData[activeIndex].step}</h3>
-        </div>
-
-        <div className="card-body">
-          <div className="card-title">
+          {/* <div className="card-title">
             <h3>{programData[activeIndex].title}</h3>
             <p className="badge badge-primary">
               <Clock size={16} /> {programData[activeIndex].duration}
             </p>
-          </div>
+          </div> */}
 
           <p>{programData[activeIndex].description}</p>
 

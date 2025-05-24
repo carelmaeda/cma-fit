@@ -163,8 +163,8 @@ h2 {
 
 /* Primary Button */
 .btn-primary, .btn-tab-outline, .btn-icon-primary {
-  background-color: #ff8d47;
-  border: solid 0.2em #ff8d47;
+  background-color: #ff6200;
+  border: solid 0.2em #ff6200;
   padding: 1rem 2rem;
 }
 .btn-primary:hover, .btn-tab-outline:hover, .btn-icon-primary:hover {
@@ -178,7 +178,7 @@ h2 {
 
 .btn-outline, .btn-icon-outline {
   background: transparent;
-  border: solid 0.2em #ff8d47;
+  border: solid 0.2em #ff6200;
   padding: 1rem 2rem;
 }
 
@@ -205,7 +205,7 @@ h2 {
   padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
 }
 .badge svg {
   width: 14px;
@@ -213,7 +213,12 @@ h2 {
 }
 
 .badge-primary {
-  background-color: #ff8d47;
+  background-color: #ff6200;
+  color: #ffffff;
+}
+
+.badge-secondary {
+  background-color: #ffffff;
   color: #1d1d1d;
 }
 
