@@ -19,7 +19,7 @@ const programData: ProgramPhase[] = [
   {
     step: '1',
     title: 'Foundation',
-    image: '/images/jl-img1.webp',
+    image: '/images/justin/jl-img1.webp',
     duration: '4 Weeks',
     description:
       'Start by building a solid foundation through proper form, better mobility, and basic strength and cardio development.',
@@ -30,7 +30,7 @@ const programData: ProgramPhase[] = [
   {
     step: '2',
     title: 'Adaptation',
-    image: '/images/jl-img2.webp',
+    image: '/images/justin/jl-img2.webp',
     duration: '4 Weeks',
     description:
       'With a solid foundation in place, it’s time to challenge your body with increased intensity. You’ll introduce more advanced movements and weight training.',
@@ -41,7 +41,7 @@ const programData: ProgramPhase[] = [
   {
     step: '3',
     title: 'Break Through',
-    image: '/images/jl-img3.webp',
+    image: '/images/justin/jl-img3.webp',
     duration: '4 Weeks',
     description:
       'This phase is about pushing past limits with demanding workouts, refining technique, and aiming for specific performance goals.',
@@ -52,7 +52,7 @@ const programData: ProgramPhase[] = [
   {
     step: '4',
     title: 'Peak',
-    image: '/images/jl-img4.webp',
+    image: '/images/justin/jl-img4.webp',
     duration: 'Ongoing',
     description:
       'You’ll fine-tune your training to reach peak physical condition, focusing on precision, intensity, and sustainability.',

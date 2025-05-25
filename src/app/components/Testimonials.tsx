@@ -10,9 +10,9 @@ const testimonials = [
   },
   {
     name: 'Carel Maeda',
-    image: 'https://scontent-yyz1-1.cdninstagram.com/v/t51.2885-19/399930888_1474791029984558_5228796299509557522_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2QHiLFcpfq0FT6DB7EVN0Vrzbo_RyfM7iPbOjsd8WESqYoe2BIvsbkK1vsohxgIIL94&_nc_ohc=BoxxJV8JAvMQ7kNvwFoiHwM&_nc_gid=Ec3zpHkDqz-A3yZdidWX9g&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AfJC2fA1AH212sPMG8sAuFdpmWLGb01YuL0BYScRdy67Zg&oe=68310FD0&_nc_sid=7d3ac5',
+    image: '/images/testimonials/carel.jpg',
     quote: 'This program completely changed my life. I feel stronger, healthier, and more confident than ever before!',
-    location: 'Trinity Bellwods',
+    location: 'Trinity Bellwoods',
   },
   {
     name: 'James Parker',
