@@ -90,6 +90,11 @@ nav {
       margin: 0;
       color: $white;
 
+      .nav-socials {
+        display: flex;
+        gap: 1rem;
+      }
+
       &.open {
         max-height: 500px;
         opacity: 1;
