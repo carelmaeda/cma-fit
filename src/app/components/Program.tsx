@@ -82,31 +82,33 @@ const Program: React.FC = () => {
       <h2>Program Breakdown</h2>
 
       <div className="program-card">
-        <div className="card-img img-overlay">
-          <Image
-            width={600}
-            height={600}
-            src={programData[activeIndex].image}
-            alt={programData[activeIndex].title}
-          />
-          <h3>{programData[activeIndex].step}</h3>
-          <span className="badge badge-secondary">
-              <Clock size={16} /> {programData[activeIndex].duration}
-          </span>
+        <div className="card-img" style={{ backgroundImage: `url(${programData[activeIndex].image})` }}>
+          <div className='card-img-top'>
+            <h3>{programData[activeIndex].step}</h3>
+            <span className="badge badge-secondary">
+                <Clock size={16} /> {programData[activeIndex].duration}
+            </span>
+          </div>
+
+          <div className="program-nav">
+            {programData.map((phase, index) => {
+              const isCompleted = index < activeIndex;
+              const isActive = index === activeIndex;
+              return (
+                <button
+                  key={index}
+                  className={`nav-tab ${isCompleted ? 'completed' : ''} ${isActive ? 'active' : ''}`}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  {phase.title}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <div className="card-body">
-        <div className="program-nav">
-        {programData.map((phase, index) => (
-          <button
-            key={index}
-            className={`nav-tab ${activeIndex === index ? 'active' : ''}`}
-            onClick={() => setActiveIndex(index)}
-          >
-            {phase.title}
-          </button>
-        ))}
-      </div>
+
           {/* <div className="card-title">
             <h3>{programData[activeIndex].title}</h3>
             <p className="badge badge-primary">
