@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { MoveRight, Instagram, Facebook, Youtube } from "lucide-react";
+import { MoveRight, Instagram } from "lucide-react";
 import Image from 'next/image';
 
 const Navbar: React.FC = () => {
