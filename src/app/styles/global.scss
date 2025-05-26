@@ -255,10 +255,11 @@ nav {
   }
 }
 
-/*PROGRAM*/
+/* PROGRAM */
 
 .program-section {
   gap: 0.5rem;
+
   h2 {
     color: $white;
     text-align: center;
@@ -300,9 +301,6 @@ nav {
 
       .program-nav {
         display: flex;
-        justify-content: space-between;
-        background: $gray-700;
-        border-radius: $border-radius-sm;
         overflow: hidden;
         width: 100%;
         margin-top: 0.5rem;
@@ -315,23 +313,46 @@ nav {
           font-weight: 600;
           color: $gray-100;
           background-color: $gray-500;
-          border-right: 1px solid $gray-600;
-          cursor: pointer;
           position: relative;
+          cursor: pointer;
           transition: all 0.3s ease;
           text-transform: uppercase;
+          z-index: 1;
+          clip-path: polygon(
+            0 0,
+            calc(100% - 10px) 0,
+            100% 50%,
+            calc(100% - 10px) 100%,
+            0 100%,
+            10px 50%
+          );
 
-          &:last-child {
-            border-right: none;
+          &:not(:last-child) {
+            margin-right: -6px;
           }
 
-          &.completed {
-            background-color: $white;
+          // STEP COLORS
+          &:nth-child(1).active,
+          &:nth-child(1).completed {
+            background-color: $accent-light;
             color: $black;
           }
 
-          &.active {
+          &:nth-child(2).active,
+          &:nth-child(2).completed {
             background-color: $accent;
+            color: $white;
+          }
+
+          &:nth-child(3).active,
+          &:nth-child(3).completed {
+            background-color: $accent-dark;
+            color: $white;
+          }
+
+          &:nth-child(4).active,
+          &:nth-child(4).completed {
+            background-color: $accent-contrast;
             color: $white;
           }
         }
@@ -358,18 +379,6 @@ nav {
           font-size: 2rem;
         }
       }
-
-      .badge-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-
-        .badge {
-          font-size: 0.75rem;
-          padding: 0.25rem 0.5rem;
-          text-transform: capitalize;
-        }
-      }
     }
   }
 
@@ -383,12 +392,28 @@ nav {
 
 /* Responsive */
 @media (min-width: 768px) {
-  .card-img img {
-    max-height: 180px;
-  }
+  .program-card {
+    flex-direction: row;
+    align-items: stretch;
 
-  button {
-    display: none;
+    .card-img {
+      width: 50%;
+      height: auto;
+    }
+
+    .card-body {
+      width: 50%;
+      padding: 2rem;
+      justify-content: center;
+
+      h4 {
+        font-size: 1rem;
+      }
+
+      .card-title h3 {
+        font-size: 2.5rem;
+      }
+    }
   }
 }
 
