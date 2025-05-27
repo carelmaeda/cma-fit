@@ -168,7 +168,7 @@ h2 {
   padding: 1rem 2rem;
 }
 .btn-primary:hover, .btn-tab-outline:hover, .btn-icon-primary:hover {
-  background-color: rgb(167, 83, 18);
+  background-color: #a75312;
 }
 
 /* Icon Button Variant (filled) */
@@ -192,7 +192,7 @@ h2 {
   padding: 1rem;
 }
 .btn-icon-outline:hover {
-  background-color: rgb(167, 83, 18);
+  background-color: #a75312;
 }
 
 /*BADGE*/

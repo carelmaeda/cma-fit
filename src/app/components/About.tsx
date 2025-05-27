@@ -4,10 +4,10 @@ import Image from 'next/image';
 const About: React.FC = () => {
   return (
     <section className="about-section">
-        <h2>Meet Your Trainer</h2>
+        <h2>About Me</h2>
         <div className='about-card'>
             <Image
-              src="/images/jl-img3.webp"
+              src="/images/justin/jl-img3.webp"
               alt="Justin Lyons Profile Pic"
               width={400}
               height={400}
