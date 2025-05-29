@@ -1,8 +1,7 @@
 @use "./variables" as *;
 
-/*NAVBAR*/
-
-nav {
+/* NAVBAR */
+.nav-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,6 +9,18 @@ nav {
   display: flex;
   justify-content: center;
   z-index: 1000;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
   .navbar {
     background: $white;
@@ -17,6 +28,8 @@ nav {
     padding: 0.75rem 1.5rem;
     margin: 0.75rem;
     border-radius: $border-radius-md;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: box-shadow 0.3s ease;
 
     .nav-header {
       display: flex;
@@ -35,6 +48,7 @@ nav {
       flex-direction: column;
       cursor: pointer;
       position: relative;
+      z-index: 1001; // Ensure it stays above other elements
 
       .bar {
         background: $accent;
