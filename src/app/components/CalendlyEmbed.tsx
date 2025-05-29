@@ -15,7 +15,7 @@ export default function CalendlyEmbed() {
       <div className="calendly-header">
         <h2>Book Your Free Consultation</h2>
         <p>
-          Choose a time that works for you and I'll take care of the rest.
+             Choose a time that works for you and I&apos;ll take care of the rest.
         </p>
       </div>
 
