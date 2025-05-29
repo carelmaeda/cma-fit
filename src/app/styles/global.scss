@@ -302,6 +302,7 @@ nav {
 /* PROGRAM */
 
 .program-section {
+  background: $black;
   $card-padding: 0 1rem;
   justify-content: center;
 
@@ -533,7 +534,7 @@ nav {
 /* About section */
 .about-section {
   gap: 1rem;
-  color: $white;
+  color: $black;
 
   h2 {
     text-align: center;
@@ -628,58 +629,26 @@ nav {
 /*CONTACT*/
 
 .contact-section {
-  padding: 4rem 2rem;
-  background-color: #f9f9f9;
+  margin: auto;
+  gap: 1rem;
+  justify-content: stretch;
 }
 
-.contact-container {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.contact-header h2 {
   text-align: center;
 }
 
-.contact-form {
+form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-
-.contact-field {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-label {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.contact-input,
-.contact-textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-.contact-button {
-  padding: 0.75rem;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .contact-status {
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: #444;
+  color: $accent-contrast;
 }
 
 /*FOOTER*/

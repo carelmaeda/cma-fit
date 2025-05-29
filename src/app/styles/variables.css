@@ -85,7 +85,7 @@ select {
 /*---------------------------------------------------------------*/
 body {
   font-family: "Roboto", sans-serif;
-  background: #1d1d1d;
+  background: #ffffff;
 }
 
 /*TYPOGRAPHY*/
@@ -226,6 +226,25 @@ h2 {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+/*INPUT LABEL FORMS TEXTAREA*/
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
 /* LAYOUT */

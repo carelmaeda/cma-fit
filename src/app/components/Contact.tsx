@@ -38,50 +38,48 @@ export default function Contact() {
 
   return (
     <section className="contact-section">
-      <div className="contact-container">
-        <h2 className="contact-title">Contact Us</h2>
+      <div className="contact-header">
+        <h2>Contact me</h2>
+     </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="contact-field">
-            <label htmlFor="name" className="contact-label">Name</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className="contact-input"
-              required
-            />
-          </div>
+    <form onSubmit={handleSubmit}>
+        <div className="input-group">
+        <label htmlFor="name">Name</label>
+        <input
+            type="text"
+            name="name"
+            id="name"
+            required
+        />
+        </div>
 
-          <div className="contact-field">
-            <label htmlFor="email" className="contact-label">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className="contact-input"
-              required
-            />
-          </div>
+        <div className="input-group">
+        <label htmlFor="email">Email</label>
+        <input
+            type="email"
+            name="email"
+            id="email"
+            required
+        />
+        </div>
 
-          <div className="contact-field">
-            <label htmlFor="message" className="contact-label">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              rows={5}
-              className="contact-textarea"
-              required
-            ></textarea>
-          </div>
+        <div className="input-group">
+        <label htmlFor="message">Message</label>
+        <textarea
+            name="message"
+            id="message"
+            rows={5}
+            className="contact-textarea"
+            required
+        ></textarea>
+        </div>
 
-          <button type="submit" className="contact-button" disabled={loading}>
-            {loading ? 'Sending...' : 'Send Message'}
-          </button>
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+        {loading ? 'Sending...' : 'Send Message'}
+        </button>
 
-          {status && <p className="contact-status">{status}</p>}
-        </form>
-      </div>
+        {status && <p className="contact-status">{status}</p>}
+    </form>
     </section>
   );
 }
