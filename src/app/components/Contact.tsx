@@ -27,7 +27,9 @@ export default function Contact() {
       const data = await res.json();
       setStatus(data.message || 'Something went wrong');
       form.reset();
-    } catch (err) {
+    } catch (err: unknown) {
+      // Log the error so it's "used"
+      console.error('Send message failed:', err);
       setStatus('Failed to send message');
     } finally {
       setLoading(false);
