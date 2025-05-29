@@ -24,101 +24,92 @@ nav {
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
-
-      .logo {
-        max-width: 100px;
-        object-fit: contain;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-      .menu-toggle {
-        height: 28px;
-        width: 28px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        cursor: pointer;
-        position: relative;
-
-        .bar {
-          background: $accent;
-          width: 24px;
-          height: 2px;
-          transition: all 0.3s ease;
-          position: absolute;
-
-          &:nth-child(1) {
-            transform: translateY(-6px);
-          }
-
-          &:nth-child(2) {
-            transform: translateY(6px);
-          }
-        }
-
-        &.open {
-          .bar:nth-child(1) {
-            transform: rotate(45deg);
-          }
-          .bar:nth-child(2) {
-            display: none;
-          }
-          .bar:nth-child(3) {
-            transform: rotate(-45deg);
-          }
-        }
-      }
     }
 
-    .nav-dropdown {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      display: grid;
-      gap: 0;
-      opacity: 0;
-      pointer-events: none;
+    .menu-toggle {
+      height: 28px;
+      width: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
 
-      text-transform: uppercase;
-      font-weight: 400;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      color: $white;
+      .bar {
+        background: $accent;
+        width: 24px;
+        height: 2px;
+        transition: all 0.3s ease;
+        position: absolute;
 
-      .nav-socials {
-        display: flex;
-        gap: 1rem;
+        &:nth-child(1) {
+          transform: translateY(-6px);
+        }
+
+        &:nth-child(2) {
+          transform: translateY(6px);
+        }
       }
 
       &.open {
-        max-height: 500px;
-        opacity: 1;
-        pointer-events: auto;
-        gap: 1rem;
-        padding-top: 1rem;
+        .bar:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        .bar:nth-child(2) {
+          display: none;
+        }
+        .bar:nth-child(3) {
+          transform: rotate(-45deg);
+        }
       }
-      li {
-        a {
-          color: $black;
-          text-decoration: none;
-          display: flex;
-          justify-content: space-between;
-          &:hover {
-            color: $accent;
-            .nav-icon {
-              transition: all 0.3s ease;
-              transform: rotate(90deg);
-            }
+    }
+  }
+
+  .nav-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    display: grid;
+    gap: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    text-transform: uppercase;
+    font-weight: 400;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: $white;
+
+    .nav-socials {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &.open {
+      max-height: 500px;
+      opacity: 1;
+      pointer-events: auto;
+      gap: 1rem;
+      padding-top: 1rem;
+    }
+    li {
+      a {
+        color: $black;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        &:hover {
+          color: $accent;
+          .nav-icon {
+            transition: all 0.3s ease;
+            transform: rotate(90deg);
           }
         }
-        .nav-icon {
-          color: $accent;
-        }
+      }
+      .nav-icon {
+        color: $accent;
       }
     }
   }
