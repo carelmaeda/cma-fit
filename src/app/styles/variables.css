@@ -134,13 +134,13 @@ h2 {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-.img-overlay {
+.overlay-dark {
   position: relative;
   display: inline-block;
   overflow: hidden;
 }
 
-.img-overlay::after {
+.overlay-dark::after {
   content: "";
   position: absolute;
   inset: 0;

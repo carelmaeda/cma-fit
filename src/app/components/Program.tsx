@@ -18,10 +18,10 @@ const programData: ProgramPhase[] = [
   {
     step: '1',
     title: 'Foundation',
-    image: '/images/justin/jl-img1.webp',
+    image: '/images/justin/jl-img7.webp',
     duration: '4 Weeks',
     description:
-      'Start by building a solid foundation through proper form, better mobility, and basic strength and cardio development.',
+      'Build a solid foundation through proper form, better mobility, and basic strength and cardio development.',
     goals: ['Build consistency', 'Improve mobility', 'Learn proper form'],
     focus: ['Fundamental movements', 'Core activation', 'Technique'],
     outcomes: 'You will have built a solid base and confidence in key movements.',
@@ -29,10 +29,10 @@ const programData: ProgramPhase[] = [
   {
     step: '2',
     title: 'Adaptation',
-    image: '/images/justin/jl-img2.webp',
+    image: '/images/justin/jl-img12.webp',
     duration: '4 Weeks',
     description:
-      'With a solid foundation in place, it’s time to challenge your body with increased intensity. You’ll introduce more advanced movements and weight training.',
+      'Time to challenge your body with increased intensity. You’ll introduce more advanced movements and weight training.',
     goals: ['Increase stamina', 'Enhance strength', 'Adapt to routine'],
     focus: ['Progressive overload', 'Volume training', 'Body awareness'],
     outcomes: 'Visible improvements in endurance and strength.',
@@ -43,7 +43,7 @@ const programData: ProgramPhase[] = [
     image: '/images/justin/jl-img3.webp',
     duration: '4 Weeks',
     description:
-      'This phase is about pushing past limits with demanding workouts, refining technique, and aiming for specific performance goals.',
+      'Push past limits with demanding workouts, refining technique, and aiming for specific performance goals.',
     goals: ['Break plateaus', 'Elevate performance', 'Boost metabolism'],
     focus: ['Intensity training', 'Interval work', 'Power output'],
     outcomes: 'Major breakthroughs in performance and resilience.',
@@ -51,10 +51,10 @@ const programData: ProgramPhase[] = [
   {
     step: '4',
     title: 'Peak',
-    image: '/images/justin/jl-img4.webp',
+    image: '/images/justin/jl-img5.webp',
     duration: 'Ongoing',
     description:
-      'You’ll fine-tune your training to reach peak physical condition, focusing on precision, intensity, and sustainability.',
+      'Fine-tune your training to reach peak physical condition, focusing on precision, intensity, and sustainability.',
     goals: ['Maximize output', 'Sharpen physique', 'Achieve peak form'],
     focus: ['High-intensity', 'Sport-specific drills', 'Recovery management'],
     outcomes: 'Achieve your personal best in fitness.',
@@ -80,15 +80,27 @@ const Program: React.FC = () => {
     <section className='program-section'>
       <h2>Program Breakdown</h2>
 
-      <div className="program-card">
-        <div className="card-img" style={{ backgroundImage: `url(${programData[activeIndex].image})` }}>
-          <div className='card-img-top'>
+      <div className="program-card"  >
+
+          {/* 1. Step number and duration */}
+          <div className="card-row-top" style={{ backgroundImage: `url(${programData[activeIndex].image})` }}>
             <h3>{programData[activeIndex].step}</h3>
             <span className="badge badge-secondary">
                 <Clock size={16} /> {programData[activeIndex].duration}
             </span>
           </div>
 
+          {/* 2. Outcome (Moved Up) */}
+          <div className="program-outcome">
+            <p>{programData[activeIndex].outcomes}</p>
+          </div>
+
+          {/* 3. Description */}
+          <div className="program-description">
+            <p>{programData[activeIndex].description}</p>
+          </div>
+
+          {/* 4. Navigation Tabs */}
           <div className="program-nav">
             {programData.map((phase, index) => {
               const isCompleted = index < activeIndex;
@@ -104,47 +116,32 @@ const Program: React.FC = () => {
               );
             })}
           </div>
-        </div>
 
-        <div className="card-body">
-
-          {/* <div className="card-title">
-            <h3>{programData[activeIndex].title}</h3>
-            <p className="badge badge-primary">
-              <Clock size={16} /> {programData[activeIndex].duration}
-            </p>
-          </div> */}
-
-          <p>{programData[activeIndex].description}</p>
-
-          <div>
+          {/* 5. Goals */}
+          <div className="program-list">
             <h4>Goals</h4>
             <ul className="badge-list">
               {programData[activeIndex].goals.map((goal, i) => (
-                <li key={i} className="badge badge-primary">
+                <li key={i} className="badge badge-secondary">
                   {goal}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div>
+          {/* 6. Key Focus */}
+          <div className="program-list">
             <h4>Key Focus</h4>
             <ul className="badge-list">
               {programData[activeIndex].focus.map((item, i) => (
-                <li key={i} className="badge badge-primary">
+                <li key={i} className="badge badge-secondary">
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-
-          <div>
-            <h4>Outcomes</h4>
-            <p>{programData[activeIndex].outcomes}</p>
-          </div>
-        </div>
       </div>
+
       <div className='btn-row'>
             <button className="btn btn-icon-primary" onClick={handlePrev}>
               <MoveLeft />
