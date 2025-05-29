@@ -5,6 +5,7 @@ import Testimonials from "./components/Testimonials";
 import About from "./components/About";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Partials/Footer";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
@@ -23,6 +24,9 @@ export default function Home() {
        </div>
       <div id="faq">
        <FAQ />
+       </div>
+       <div id="contact">
+        <Contact />
        </div>
       </main>
       <Footer />

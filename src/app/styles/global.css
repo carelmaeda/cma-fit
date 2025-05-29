@@ -763,6 +763,62 @@ nav .navbar .nav-dropdown li .nav-icon {
   padding: 1rem;
 }
 
+/*CONTACT*/
+.contact-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.contact-input,
+.contact-textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-button {
+  padding: 0.75rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-status {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
 /*FOOTER*/
 /* Footer section */
 .footer-section {
