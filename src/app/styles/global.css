@@ -732,6 +732,7 @@ nav .navbar .nav-dropdown li .nav-icon {
   padding-block: 0.5rem;
 }
 .faq-section .faq-accordion details summary {
+  border-radius: 1rem;
   cursor: pointer;
   list-style: none;
   padding: 1rem;
@@ -755,6 +756,8 @@ nav .navbar .nav-dropdown li .nav-icon {
   transform: rotate(45deg);
 }
 .faq-section .faq-accordion details[open] .faq-answer {
+  border-radius: 1rem;
+  margin-top: 0.5rem;
   background: #ffffff;
   color: #1d1d1d;
   padding: 1rem;

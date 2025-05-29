@@ -568,6 +568,7 @@ nav {
   margin: auto;
   gap: 1rem;
   background: $gray-700;
+
   color: $white;
 
   h2 {
@@ -582,6 +583,8 @@ nav {
       padding-block: 0.5rem;
 
       summary {
+        border-radius: $border-radius-md;
+
         cursor: pointer;
         list-style: none;
         padding: 1rem;
@@ -611,6 +614,8 @@ nav {
         }
 
         .faq-answer {
+          border-radius: $border-radius-md;
+          margin-top: 0.5rem;
           background: $white;
           color: $black;
           padding: 1rem;
