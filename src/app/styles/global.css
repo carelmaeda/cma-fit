@@ -702,12 +702,11 @@ nav .navbar .nav-dropdown li .nav-icon {
   justify-content: center;
 }
 .about-section .about-card img {
-  height: 100px;
-  width: 100px;
-  aspect-ratio: 1/1;
+  height: 100%;
+  width: 150px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 99px;
+  border-radius: 1rem;
   border: solid 0.2em #ff6200;
 }
 .about-section .about-card p {

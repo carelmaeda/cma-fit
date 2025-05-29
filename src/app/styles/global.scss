@@ -547,11 +547,10 @@ nav {
     justify-content: center;
 
     img {
-      height: 100px;
-      width: 100px;
-      aspect-ratio: 1/1;
+      height: 100%;
+      width: 150px;
       object-fit: cover;
-      border-radius: 99px;
+      border-radius: $border-radius-md;
       border: $border-accent;
     }
 
