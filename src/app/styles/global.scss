@@ -302,9 +302,7 @@ nav {
 /* PROGRAM */
 
 .program-section {
-  $card-padding: 0.5rem 1rem;
-
-  gap: 0.5rem;
+  $card-padding: 0 1rem;
   justify-content: center;
 
   h2 {
@@ -316,6 +314,7 @@ nav {
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
     align-items: center;
     border: $border-white;
     border-radius: $border-radius-md;
@@ -330,13 +329,14 @@ nav {
       width: 100%;
       justify-content: space-between;
       align-items: start;
-      min-height: 250px;
+      min-height: 200px;
+      margin-bottom: 1rem;
 
       background-size: cover;
       background-position: center;
 
       h3 {
-        font-size: 6rem;
+        font-size: 10rem;
         line-height: 0.8;
       }
     }
@@ -344,8 +344,10 @@ nav {
     .program-outcome {
       padding: $card-padding;
       width: 100%;
+      margin-bottom: 0.25rem;
       p {
         font-size: 1.4rem;
+        line-height: 1;
         font-weight: 600;
       }
     }
@@ -354,12 +356,13 @@ nav {
       padding: $card-padding;
       p {
         font-size: 1rem;
-        line-height: 1.4;
+        line-height: 1.1;
+        font-weight: 300;
       }
     }
 
     .program-nav {
-      padding: $card-padding;
+      padding: 1rem;
       display: flex;
       overflow: hidden;
       width: 100%;
@@ -371,7 +374,7 @@ nav {
         font-size: 0.7rem;
         font-weight: 600;
         color: $gray-100;
-        background-color: $gray-500;
+        background-color: $gray-800;
         position: relative;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -411,7 +414,7 @@ nav {
 
         &:nth-child(4).active,
         &:nth-child(4).completed {
-          background-color: $accent-contrast;
+          background-color: red;
           color: $white;
         }
       }
@@ -424,6 +427,7 @@ nav {
   }
 
   .btn-row {
+    padding: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;

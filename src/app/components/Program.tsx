@@ -24,7 +24,7 @@ const programData: ProgramPhase[] = [
       'Build a solid foundation through proper form, better mobility, and basic strength and cardio development.',
     goals: ['Build consistency', 'Improve mobility', 'Learn proper form'],
     focus: ['Fundamental movements', 'Core activation', 'Technique'],
-    outcomes: 'You will have built a solid base and confidence in key movements.',
+    outcomes: 'Solid base and confidence in key movements.',
   },
   {
     step: '2',
@@ -57,7 +57,7 @@ const programData: ProgramPhase[] = [
       'Fine-tune your training to reach peak physical condition, focusing on precision, intensity, and sustainability.',
     goals: ['Maximize output', 'Sharpen physique', 'Achieve peak form'],
     focus: ['High-intensity', 'Sport-specific drills', 'Recovery management'],
-    outcomes: 'Achieve your personal best in fitness.',
+    outcomes: 'Achieve your personal best.',
   },
 ];
 
@@ -90,6 +90,7 @@ const Program: React.FC = () => {
             </span>
           </div>
 
+          <div>
           {/* 2. Outcome (Moved Up) */}
           <div className="program-outcome">
             <p>{programData[activeIndex].outcomes}</p>
@@ -99,6 +100,9 @@ const Program: React.FC = () => {
           <div className="program-description">
             <p>{programData[activeIndex].description}</p>
           </div>
+          </div>
+
+       
 
           {/* 4. Navigation Tabs */}
           <div className="program-nav">
