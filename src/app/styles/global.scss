@@ -533,7 +533,7 @@ nav {
 
 /* About section */
 .about-section {
-  gap: 1rem;
+  gap: 0.5rem;
   color: $black;
 
   h2 {
@@ -543,20 +543,20 @@ nav {
 
   .about-card {
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    padding-inline: 1rem;
 
     img {
+      width: 100%;
+      max-width: 100px;
       height: 100%;
-      width: 150px;
       object-fit: cover;
       border-radius: $border-radius-md;
       border: $border-accent;
     }
-
     p {
-      max-width: 250px;
+      max-width: 550px;
       text-align: justify;
     }
   }
@@ -628,10 +628,11 @@ nav {
 
 /*CONTACT*/
 
-.contact-section {
+.contact-section,
+.calendly-section {
   margin: auto;
   gap: 1rem;
-  justify-content: stretch;
+  text-align: center;
 }
 
 .contact-header h2 {

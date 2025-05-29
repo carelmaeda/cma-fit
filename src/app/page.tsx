@@ -5,7 +5,7 @@ import Testimonials from "./components/Testimonials";
 import About from "./components/About";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Partials/Footer";
-import Contact from "./components/Contact";
+import CalendlyEmbed from "./components/CalendlyEmbed";
 
 export default function Home() {
   return (
@@ -26,7 +26,7 @@ export default function Home() {
        <FAQ />
        </div>
        <div id="contact">
-        <Contact />
+       <CalendlyEmbed />
        </div>
       </main>
       <Footer />
