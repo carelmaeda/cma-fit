@@ -162,18 +162,20 @@ h2 {
   font-weight: 700;
   font-size: 1rem;
   border-radius: 99px;
+  text-align: center;
+  max-width: 300px;
   transition: background-color 0.3s ease;
   color: #ffffff;
 }
 
 /* Primary Button */
 .btn-primary, .btn-tab-outline, .btn-icon-primary {
-  background-color: #ff6200;
-  border: solid 0.2em #ff6200;
+  background-color: #f25005;
+  border: solid 0.2em #f25005;
   padding: 1rem 2rem;
 }
 .btn-primary:hover, .btn-tab-outline:hover, .btn-icon-primary:hover {
-  background-color: #a75312;
+  background-color: #f24405;
 }
 
 /* Icon Button Variant (filled) */
@@ -183,7 +185,7 @@ h2 {
 
 .btn-outline, .btn-icon-outline {
   background: transparent;
-  border: solid 0.2em #ff6200;
+  border: solid 0.2em #f25005;
   padding: 1rem 2rem;
 }
 
@@ -197,7 +199,7 @@ h2 {
   padding: 1rem;
 }
 .btn-icon-outline:hover {
-  background-color: #a75312;
+  background-color: #f24405;
 }
 
 /*BADGE*/
@@ -218,7 +220,7 @@ h2 {
 }
 
 .badge-primary {
-  background-color: #ff6200;
+  background-color: #f25005;
   color: #ffffff;
 }
 
@@ -264,8 +266,9 @@ textarea {
 }
 
 /* LAYOUT */
-section:not(.hero),
+section:not(.hero):not(.bridge-section),
 footer {
   display: grid;
   padding: 2rem 0.5rem;
+  justify-items: center;
 }/*# sourceMappingURL=variables.css.map */

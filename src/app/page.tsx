@@ -6,6 +6,7 @@ import About from "./components/About";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Partials/Footer";
 import CalendlyEmbed from "./components/CalendlyEmbed";
+import Bridge from "./components/Bridge";
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
        </div>
         <div id="community">
        <Testimonials />
+       </div>
+       <div id="bridge">
+       <Bridge />
        </div>
       <div id="about">
        <About />

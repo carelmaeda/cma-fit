@@ -162,18 +162,20 @@ h2 {
   font-weight: 700;
   font-size: 1rem;
   border-radius: 99px;
+  text-align: center;
+  max-width: 300px;
   transition: background-color 0.3s ease;
   color: #ffffff;
 }
 
 /* Primary Button */
 .btn-primary, .btn-tab-outline, .btn-icon-primary {
-  background-color: #ff6200;
-  border: solid 0.2em #ff6200;
+  background-color: #f25005;
+  border: solid 0.2em #f25005;
   padding: 1rem 2rem;
 }
 .btn-primary:hover, .btn-tab-outline:hover, .btn-icon-primary:hover {
-  background-color: #a75312;
+  background-color: #f24405;
 }
 
 /* Icon Button Variant (filled) */
@@ -183,7 +185,7 @@ h2 {
 
 .btn-outline, .btn-icon-outline {
   background: transparent;
-  border: solid 0.2em #ff6200;
+  border: solid 0.2em #f25005;
   padding: 1rem 2rem;
 }
 
@@ -197,7 +199,7 @@ h2 {
   padding: 1rem;
 }
 .btn-icon-outline:hover {
-  background-color: #a75312;
+  background-color: #f24405;
 }
 
 /*BADGE*/
@@ -218,7 +220,7 @@ h2 {
 }
 
 .badge-primary {
-  background-color: #ff6200;
+  background-color: #f25005;
   color: #ffffff;
 }
 
@@ -264,10 +266,11 @@ textarea {
 }
 
 /* LAYOUT */
-section:not(.hero),
+section:not(.hero):not(.bridge-section),
 footer {
   display: grid;
   padding: 2rem 0.5rem;
+  justify-items: center;
 }
 
 /* NAVBAR */
@@ -319,7 +322,7 @@ nav .navbar .menu-toggle {
   z-index: 1001;
 }
 nav .navbar .menu-toggle .bar {
-  background: #ff6200;
+  background: #f25005;
   width: 24px;
   height: 2px;
   transition: all 0.3s ease;
@@ -373,14 +376,14 @@ nav .nav-dropdown li a {
   justify-content: space-between;
 }
 nav .nav-dropdown li a:hover {
-  color: #ff6200;
+  color: #f25005;
 }
 nav .nav-dropdown li a:hover .nav-icon {
   transition: all 0.3s ease;
   transform: rotate(90deg);
 }
 nav .nav-dropdown li .nav-icon {
-  color: #ff6200;
+  color: #f25005;
 }
 
 @media (min-width: 768px) {
@@ -620,19 +623,19 @@ nav .nav-dropdown li .nav-icon {
   margin-right: -6px;
 }
 .program-section .program-card .program-nav .nav-tab:nth-child(1).active, .program-section .program-card .program-nav .nav-tab:nth-child(1).completed {
-  background-color: #e8ff6b;
-  color: #1d1d1d;
+  background-color: #f2f0e4;
+  color: #707070;
 }
 .program-section .program-card .program-nav .nav-tab:nth-child(2).active, .program-section .program-card .program-nav .nav-tab:nth-child(2).completed {
-  background-color: #ff6200;
-  color: #ffffff;
+  background-color: #f28705;
+  color: #707070;
 }
 .program-section .program-card .program-nav .nav-tab:nth-child(3).active, .program-section .program-card .program-nav .nav-tab:nth-child(3).completed {
-  background-color: #a75312;
+  background-color: #f25005;
   color: #ffffff;
 }
 .program-section .program-card .program-nav .nav-tab:nth-child(4).active, .program-section .program-card .program-nav .nav-tab:nth-child(4).completed {
-  background-color: red;
+  background-color: #f24405;
   color: #ffffff;
 }
 .program-section .program-card .program-list {
@@ -669,6 +672,20 @@ nav .nav-dropdown li .nav-icon {
     font-size: 2.5rem;
   }
 }
+/*BRIDGE*/
+.bridge-section {
+  display: grid;
+  gap: 3rem;
+  justify-items: center;
+  background: #1d1d1d;
+  color: #ffffff;
+  padding-block: 4rem;
+}
+.bridge-section h2 {
+  font-size: 4rem;
+  line-height: 0.9;
+}
+
 /*TESTIMONIALS*/
 /* Testimonials section */
 .testimonial-section {
@@ -702,7 +719,7 @@ nav .nav-dropdown li .nav-icon {
   font-weight: 300;
 }
 .testimonial-section .testimonial-content .testimonial-card:hover {
-  border: solid 0.2em #ff6200;
+  border: solid 0.2em #f25005;
 }
 .testimonial-section .testimonial-content .testimonial-card .testimonial-footer {
   display: flex;
@@ -749,7 +766,7 @@ nav .nav-dropdown li .nav-icon {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem;
-  border: solid 0.2em #ff6200;
+  border: solid 0.2em #f25005;
 }
 .about-section .about-card p {
   max-width: 550px;
@@ -758,7 +775,6 @@ nav .nav-dropdown li .nav-icon {
 
 /* FAQ */
 .faq-section {
-  max-width: 600px;
   margin: auto;
   gap: 1rem;
   background: #383838;
@@ -768,6 +784,9 @@ nav .nav-dropdown li .nav-icon {
   color: #ffffff;
   text-align: center;
   margin-bottom: 1rem;
+}
+.faq-section .faq-accordion {
+  max-width: 600px;
 }
 .faq-section .faq-accordion details {
   border-bottom: solid 0.2em #ffffff;
@@ -787,7 +806,7 @@ nav .nav-dropdown li .nav-icon {
   display: none;
 }
 .faq-section .faq-accordion details summary:hover {
-  background: #ff6200;
+  background: #f25005;
 }
 .faq-section .faq-accordion details summary .faq-toggle-icon {
   font-size: 1.5rem;
@@ -857,7 +876,7 @@ form {
 }
 
 .footer-section a:hover {
-  color: #ff6200;
+  color: #f25005;
 }
 
 .footer-social a {
@@ -868,7 +887,7 @@ form {
 }
 
 .footer-social a:hover {
-  color: #ff6200;
+  color: #f25005;
 }
 
 .footer-section .border-top {
