@@ -5,14 +5,19 @@ import { MoveDown } from "lucide-react";
 import Carousel from './Partials/Carousel';
 import { testimonials } from '../data/testimonials';
 import Image from 'next/image';
+import { MotionVertical } from '../utils/Motions';
 
 const Hero: React.FC = () => {
   return (
     <section className="hero">
       <div className="hero-header">
         <div className="hero-title">
+          <MotionVertical>
           <h1>3 Month Body Transformation</h1>
+          </MotionVertical>
+          <MotionVertical>
           <p className="hero-subtext">We need something here</p>
+          </MotionVertical>
         </div>
 
     <div className="avatar">
@@ -39,7 +44,7 @@ const Hero: React.FC = () => {
 
         <div className="hero-btns">
           <a href="#the program" className="btn btn-icon-outline"><MoveDown /></a>
-          <a href="#pricing" className="btn btn-primary">Get Started</a>
+          <a href="#pricing" className="btn btn-primary">Book a call with me</a>
         </div>
       </div>
 

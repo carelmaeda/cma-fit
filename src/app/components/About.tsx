@@ -7,7 +7,7 @@ const About: React.FC = () => {
         <h2>About Me</h2>
         <div className='about-card'>
             <Image
-              src="/images/justin/jl-img3.webp"
+              src="/images/justin/jl-img8.webp"
               alt="Justin Lyons Profile Pic"
               width={400}
               height={400}

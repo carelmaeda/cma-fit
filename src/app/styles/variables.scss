@@ -14,9 +14,10 @@ $gray-800: #282828;
 $gray-900: #181818;
 
 // Accent Colors
-$accent-light: #e8ff6b;
-$accent: #ff6200;
-$accent-dark: #a75312;
+$accent-lightest: #f2f0e4;
+$accent-light: #f28705;
+$accent: #f25005;
+$accent-dark: #f24405;
 $accent-contrast: #1a1a1a;
 
 $overlay-dark: rgba(44, 44, 44, 0.5);
@@ -216,6 +217,8 @@ h2 {
   font-weight: 700;
   font-size: 1rem;
   border-radius: 99px;
+  text-align: center;
+  max-width: 300px;
   transition: background-color 0.3s ease;
   color: $white;
 }
@@ -326,8 +329,9 @@ textarea {
 
 /* LAYOUT */
 
-section:not(.hero),
+section:not(.hero):not(.bridge-section),
 footer {
   display: grid;
   padding: 2rem 0.5rem;
+  justify-items: center;
 }
