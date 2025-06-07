@@ -65,35 +65,20 @@ const programData: ProgramPhase[] = [
 const Program: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  // Handle swipe drag end
   const handleDragEnd = (_: any, info: PanInfo) => {
     if (info.offset.x < -50) {
-      // Swiped left — next
       setActiveIndex((prev) => (prev === programData.length - 1 ? 0 : prev + 1));
     } else if (info.offset.x > 50) {
-      // Swiped right — prev
       setActiveIndex((prev) => (prev === 0 ? programData.length - 1 : prev - 1));
     }
   };
 
-  // Progress bar width percentage
-  const progressPercent = ((activeIndex + 1) / programData.length) * 100;
+  // We no longer need progressPercent for a dedicated bar, but conceptually it's similar
+  // The progress is now represented by the width of the active tab's indicator.
 
   return (
     <section className="program-section">
       <h2>Program Breakdown</h2>
-
-      {/* Progress Bar */}
-      <div className="progress-bar-container" aria-label="Program progress">
-        <div
-          className="progress-bar-fill"
-          style={{ width: `${progressPercent}%` }}
-          aria-valuenow={activeIndex + 1}
-          aria-valuemin={1}
-          aria-valuemax={programData.length}
-          role="progressbar"
-        />
-      </div>
 
       <motion.div
         className="program-card"
@@ -118,6 +103,33 @@ const Program: React.FC = () => {
           </span>
         </div>
 
+              {/* Blended Navigation and Progress Bar */}
+      <div className="program-nav-blended">
+        {programData.map((phase, index) => {
+          const isCompleted = index < activeIndex;
+          const isActive = index === activeIndex;
+          return (
+            <button
+              key={index}
+              className={`nav-tab ${isCompleted ? 'completed' : ''} ${isActive ? 'active' : ''}`}
+              onClick={() => setActiveIndex(index)}
+              aria-current={isActive ? 'step' : undefined}
+            >
+              {phase.title}
+              {/* This span will act as the individual tab's progress fill */}
+              {isActive && (
+                <motion.span
+                  className="nav-tab-progress-fill"
+                  initial={{ width: 0 }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 0.4 }}
+                />
+              )}
+            </button>
+          );
+        })}
+      </div>
+
         <div>
           {/* 2. Outcome */}
           <div className="program-outcome">
@@ -130,25 +142,7 @@ const Program: React.FC = () => {
           </div>
         </div>
 
-        {/* 4. Navigation Tabs */}
-        <div className="program-nav">
-          {programData.map((phase, index) => {
-            const isCompleted = index < activeIndex;
-            const isActive = index === activeIndex;
-            return (
-              <button
-                key={index}
-                className={`nav-tab ${isCompleted ? 'completed' : ''} ${isActive ? 'active' : ''}`}
-                onClick={() => setActiveIndex(index)}
-                aria-current={isActive ? 'step' : undefined}
-              >
-                {phase.title}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* 5. Goals */}
+        {/* 4. Goals */}
         <div className="program-list">
           <h4>Goals</h4>
           <ul className="badge-list">
@@ -160,7 +154,7 @@ const Program: React.FC = () => {
           </ul>
         </div>
 
-        {/* 6. Key Focus */}
+        {/* 5. Key Focus */}
         <div className="program-list">
           <h4>Key Focus</h4>
           <ul className="badge-list">

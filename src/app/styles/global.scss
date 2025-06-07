@@ -321,22 +321,83 @@ nav {
     margin-bottom: 1rem;
   }
 
-  /* Progress Bar Container */
-  .progress-bar-container {
+  /* Blended Navigation and Progress Bar Container */
+  .program-nav-blended {
     width: 100%;
-    height: 6px;
-    background: $gray-800; // dark gray background
+    max-width: 480px;
+    margin: 0 auto 1rem;
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    background-color: $gray-800; /* Background for the entire progress/nav track */
     border-radius: $border-radius-sm;
-    margin-bottom: 1rem;
-    overflow: hidden;
-  }
+    padding: 0.25rem; /* Little padding around the tabs */
+    box-shadow: inset 0 0 5px rgba($black, 0.5); /* Subtle inner shadow */
 
-  /* Progress Bar Fill */
-  .progress-bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, $accent, $accent-dark);
-    transition: width 0.4s ease;
-    border-radius: $border-radius-sm 0 0 $border-radius-sm;
+    /* Hide scrollbar on mobile */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-tab {
+      flex: 1 0 auto; /* Allow tabs to grow/shrink but not completely collapse */
+      padding: 0.75rem 1rem;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: $gray-100;
+      background-color: transparent; /* Tabs themselves are transparent */
+      position: relative; /* For the progress fill pseudo-element */
+      cursor: pointer;
+      transition: color 0.3s ease; /* Only color transition on tab itself */
+      text-transform: uppercase;
+      border-radius: $border-radius-sm - 0.1rem; /* Slightly smaller than container for visual space */
+      user-select: none;
+      white-space: nowrap; /* Prevent text wrapping */
+      z-index: 1; /* Ensure text is above the progress fill */
+      overflow: hidden; /* Hide overflow of the progress fill */
+
+      &::before {
+        /* This will be the actual progress fill */
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(90deg, $accent, $accent-dark);
+        border-radius: inherit; /* Inherit border radius from parent */
+        z-index: -1; /* Place behind the text */
+        width: 0; /* Initial state, will be animated by React */
+        transition: width 0.4s ease; /* For initial animation */
+      }
+
+      &.completed {
+        /* When a tab is completed, its background is fully filled */
+        color: $white; /* Ensure text is visible on filled background */
+        &::before {
+          width: 100%;
+        }
+      }
+
+      &.active {
+        color: $white;
+        font-weight: $fw-header; /* Make active tab slightly bolder */
+        box-shadow: 0 0 8px rgba($accent, 0.7); /* Subtle glow for active tab */
+
+        .nav-tab-progress-fill {
+          /* The motion.span inside the active tab */
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: linear-gradient(90deg, $accent, $accent-dark);
+          border-radius: inherit;
+          z-index: -1;
+        }
+      }
+    }
   }
 
   .program-card {
@@ -417,47 +478,6 @@ nav {
       }
     }
 
-    .program-nav {
-      padding: 1rem 0;
-      display: flex;
-      overflow-x: auto;
-      width: 100%;
-      gap: 0.5rem;
-
-      /* Hide scrollbar on mobile */
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-
-      .nav-tab {
-        flex: 1 0 auto;
-        padding: 0.75rem 1rem;
-        text-align: center;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: $gray-100;
-        background-color: $gray-800;
-        position: relative;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        border-radius: 10px;
-        user-select: none;
-
-        &.completed {
-          opacity: 0.6;
-        }
-
-        &.active {
-          background-color: $accent;
-          color: $white;
-          box-shadow: 0 0 10px $accent;
-        }
-      }
-    }
-
     .program-list {
       padding: $card-padding;
       width: 100%;
@@ -528,24 +548,10 @@ nav {
           font-size: 6rem;
         }
       }
-
-      .program-nav {
-        .nav-tab {
-          font-size: 0.65rem;
-          padding: 0.6rem 0.75rem;
-        }
-      }
-
-      .program-list {
-        h4 {
-          font-size: 1rem;
-        }
-
-        .badge-list li.badge-secondary {
-          font-size: 0.75rem;
-          padding: 0.3rem 0.7rem;
-        }
-      }
+    }
+    .program-nav-blended .nav-tab {
+      font-size: 0.6rem; /* Adjust font size for very small screens */
+      padding: 0.6rem 0.5rem;
     }
   }
 }
