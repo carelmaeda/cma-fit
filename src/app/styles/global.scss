@@ -310,14 +310,39 @@ nav {
   background: $black;
   $card-padding: 0 1rem;
   justify-content: center;
+  padding: 1rem;
 
   h2 {
     color: $white;
     text-align: center;
+    font-family: $font-header;
+    font-weight: $fw-header;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Progress Bar Container */
+  .progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background: $gray-800; // dark gray background
+    border-radius: $border-radius-sm;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  /* Progress Bar Fill */
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, $accent, $accent-dark);
+    transition: width 0.4s ease;
+    border-radius: $border-radius-sm 0 0 $border-radius-sm;
   }
 
   .program-card {
     width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -326,8 +351,10 @@ nav {
     border-radius: $border-radius-md;
     color: $white;
     overflow: hidden;
-    transition: transform 0.3s ease;
     padding-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    font-family: $font-body;
+    font-weight: $fw-body;
 
     .card-row-top {
       padding: 1rem;
@@ -340,44 +367,75 @@ nav {
 
       background-size: cover;
       background-position: center;
+      border-radius: $border-radius-md $border-radius-md 0 0;
 
       h3 {
-        font-size: 10rem;
+        font-family: $font-header;
+        font-weight: $fw-header;
+        font-size: 8rem;
         line-height: 0.8;
+        color: rgba($white, 0.9);
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      .badge-secondary {
+        background-color: rgba(0, 0, 0, 0.5);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: $white;
+        box-shadow: 0 0 10px rgba($accent, 0.7);
       }
     }
 
     .program-outcome {
       padding: $card-padding;
       width: 100%;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+
       p {
-        font-size: 1.4rem;
-        line-height: 1;
+        font-size: 1.3rem;
+        line-height: 1.1;
         font-weight: 600;
+        color: $accent-light;
       }
     }
 
     .program-description {
       padding: $card-padding;
+      width: 100%;
+
       p {
         font-size: 1rem;
-        line-height: 1.1;
+        line-height: 1.3;
         font-weight: 300;
+        color: $gray-200;
       }
     }
 
     .program-nav {
-      padding: 1rem;
+      padding: 1rem 0;
       display: flex;
-      overflow: hidden;
+      overflow-x: auto;
       width: 100%;
+      gap: 0.5rem;
+
+      /* Hide scrollbar on mobile */
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .nav-tab {
-        flex: 1;
-        padding: 0.75rem 0;
+        flex: 1 0 auto;
+        padding: 0.75rem 1rem;
         text-align: center;
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         font-weight: 600;
         color: $gray-100;
         background-color: $gray-800;
@@ -385,43 +443,17 @@ nav {
         cursor: pointer;
         transition: all 0.3s ease;
         text-transform: uppercase;
-        z-index: 1;
-        clip-path: polygon(
-          0 0,
-          calc(100% - 10px) 0,
-          100% 50%,
-          calc(100% - 10px) 100%,
-          0 100%,
-          10px 50%
-        );
+        border-radius: 10px;
+        user-select: none;
 
-        &:not(:last-child) {
-          margin-right: -6px;
+        &.completed {
+          opacity: 0.6;
         }
 
-        // STEP COLORS
-        &:nth-child(1).active,
-        &:nth-child(1).completed {
-          background-color: $accent-lightest;
-          color: $gray-500;
-        }
-
-        &:nth-child(2).active,
-        &:nth-child(2).completed {
-          background-color: $accent-light;
-          color: $gray-500;
-        }
-
-        &:nth-child(3).active,
-        &:nth-child(3).completed {
+        &.active {
           background-color: $accent;
           color: $white;
-        }
-
-        &:nth-child(4).active,
-        &:nth-child(4).completed {
-          background-color: $accent-dark;
-          color: $white;
+          box-shadow: 0 0 10px $accent;
         }
       }
     }
@@ -429,15 +461,92 @@ nav {
     .program-list {
       padding: $card-padding;
       width: 100%;
+
+      h4 {
+        margin-bottom: 0.5rem;
+        color: $accent-light;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .badge-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        li.badge-secondary {
+          background-color: $accent-dark;
+          padding: 0.4rem 0.9rem;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: $white;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+      }
     }
   }
 
   .btn-row {
     padding: 1rem;
     width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
+
+    .btn-icon-primary {
+      background-color: $accent;
+      border: none;
+      padding: 0.75rem 1.2rem;
+      border-radius: 50%;
+      color: $white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover,
+      &:focus {
+        background-color: $accent-light;
+      }
+
+      svg {
+        stroke-width: 1.5;
+      }
+    }
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 480px) {
+    .program-card {
+      .card-row-top {
+        h3 {
+          font-size: 6rem;
+        }
+      }
+
+      .program-nav {
+        .nav-tab {
+          font-size: 0.65rem;
+          padding: 0.6rem 0.75rem;
+        }
+      }
+
+      .program-list {
+        h4 {
+          font-size: 1rem;
+        }
+
+        .badge-list li.badge-secondary {
+          font-size: 0.75rem;
+          padding: 0.3rem 0.7rem;
+        }
+      }
+    }
   }
 }
 
@@ -476,7 +585,7 @@ nav {
   justify-items: center;
   background: $black;
   color: $white;
-  padding-block: 4rem;
+  padding: 4rem 0.5rem;
   h2 {
     font-size: 4rem;
     line-height: 0.9;
