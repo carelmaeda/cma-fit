@@ -310,14 +310,100 @@ nav {
   background: $black;
   $card-padding: 0 1rem;
   justify-content: center;
+  padding: 1rem;
 
   h2 {
     color: $white;
     text-align: center;
+    font-family: $font-header;
+    font-weight: $fw-header;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Blended Navigation and Progress Bar Container */
+  .program-nav-blended {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 1rem;
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    background-color: $gray-800; /* Background for the entire progress/nav track */
+    border-radius: $border-radius-sm;
+    padding: 0.25rem; /* Little padding around the tabs */
+    box-shadow: inset 0 0 5px rgba($black, 0.5); /* Subtle inner shadow */
+
+    /* Hide scrollbar on mobile */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-tab {
+      flex: 1 0 auto; /* Allow tabs to grow/shrink but not completely collapse */
+      padding: 0.75rem 1rem;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: $gray-100;
+      background-color: transparent; /* Tabs themselves are transparent */
+      position: relative; /* For the progress fill pseudo-element */
+      cursor: pointer;
+      transition: color 0.3s ease; /* Only color transition on tab itself */
+      text-transform: uppercase;
+      border-radius: $border-radius-sm - 0.1rem; /* Slightly smaller than container for visual space */
+      user-select: none;
+      white-space: nowrap; /* Prevent text wrapping */
+      z-index: 1; /* Ensure text is above the progress fill */
+      overflow: hidden; /* Hide overflow of the progress fill */
+
+      &::before {
+        /* This will be the actual progress fill */
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(90deg, $accent, $accent-dark);
+        border-radius: inherit; /* Inherit border radius from parent */
+        z-index: -1; /* Place behind the text */
+        width: 0; /* Initial state, will be animated by React */
+        transition: width 0.4s ease; /* For initial animation */
+      }
+
+      &.completed {
+        /* When a tab is completed, its background is fully filled */
+        color: $white; /* Ensure text is visible on filled background */
+        &::before {
+          width: 100%;
+        }
+      }
+
+      &.active {
+        color: $white;
+        font-weight: $fw-header; /* Make active tab slightly bolder */
+        box-shadow: 0 0 8px rgba($accent, 0.7); /* Subtle glow for active tab */
+
+        .nav-tab-progress-fill {
+          /* The motion.span inside the active tab */
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: linear-gradient(90deg, $accent, $accent-dark);
+          border-radius: inherit;
+          z-index: -1;
+        }
+      }
+    }
   }
 
   .program-card {
     width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -326,8 +412,10 @@ nav {
     border-radius: $border-radius-md;
     color: $white;
     overflow: hidden;
-    transition: transform 0.3s ease;
     padding-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    font-family: $font-body;
+    font-weight: $fw-body;
 
     .card-row-top {
       padding: 1rem;
@@ -340,104 +428,131 @@ nav {
 
       background-size: cover;
       background-position: center;
+      border-radius: $border-radius-md $border-radius-md 0 0;
 
       h3 {
-        font-size: 10rem;
+        font-family: $font-header;
+        font-weight: $fw-header;
+        font-size: 8rem;
         line-height: 0.8;
+        color: rgba($white, 0.9);
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      .badge-secondary {
+        background-color: rgba(0, 0, 0, 0.5);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: $white;
+        box-shadow: 0 0 10px rgba($accent, 0.7);
       }
     }
 
     .program-outcome {
       padding: $card-padding;
       width: 100%;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+
       p {
-        font-size: 1.4rem;
-        line-height: 1;
+        font-size: 1.3rem;
+        line-height: 1.1;
         font-weight: 600;
+        color: $accent-light;
       }
     }
 
     .program-description {
       padding: $card-padding;
-      p {
-        font-size: 1rem;
-        line-height: 1.1;
-        font-weight: 300;
-      }
-    }
-
-    .program-nav {
-      padding: 1rem;
-      display: flex;
-      overflow: hidden;
       width: 100%;
 
-      .nav-tab {
-        flex: 1;
-        padding: 0.75rem 0;
-        text-align: center;
-        font-size: 0.7rem;
-        font-weight: 600;
-        color: $gray-100;
-        background-color: $gray-800;
-        position: relative;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        z-index: 1;
-        clip-path: polygon(
-          0 0,
-          calc(100% - 10px) 0,
-          100% 50%,
-          calc(100% - 10px) 100%,
-          0 100%,
-          10px 50%
-        );
-
-        &:not(:last-child) {
-          margin-right: -6px;
-        }
-
-        // STEP COLORS
-        &:nth-child(1).active,
-        &:nth-child(1).completed {
-          background-color: $accent-lightest;
-          color: $gray-500;
-        }
-
-        &:nth-child(2).active,
-        &:nth-child(2).completed {
-          background-color: $accent-light;
-          color: $gray-500;
-        }
-
-        &:nth-child(3).active,
-        &:nth-child(3).completed {
-          background-color: $accent;
-          color: $white;
-        }
-
-        &:nth-child(4).active,
-        &:nth-child(4).completed {
-          background-color: $accent-dark;
-          color: $white;
-        }
+      p {
+        font-size: 1rem;
+        line-height: 1.3;
+        font-weight: 300;
+        color: $gray-200;
       }
     }
 
     .program-list {
       padding: $card-padding;
       width: 100%;
+
+      h4 {
+        margin-bottom: 0.5rem;
+        color: $accent-light;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .badge-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        li.badge-secondary {
+          background-color: $accent-dark;
+          padding: 0.4rem 0.9rem;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: $white;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+      }
     }
   }
 
   .btn-row {
     padding: 1rem;
     width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
+
+    .btn-icon-primary {
+      background-color: $accent;
+      border: none;
+      padding: 0.75rem 1.2rem;
+      border-radius: 50%;
+      color: $white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover,
+      &:focus {
+        background-color: $accent-light;
+      }
+
+      svg {
+        stroke-width: 1.5;
+      }
+    }
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 480px) {
+    .program-card {
+      .card-row-top {
+        h3 {
+          font-size: 6rem;
+        }
+      }
+    }
+    .program-nav-blended .nav-tab {
+      font-size: 0.6rem; /* Adjust font size for very small screens */
+      padding: 0.6rem 0.5rem;
+    }
   }
 }
 
@@ -476,7 +591,7 @@ nav {
   justify-items: center;
   background: $black;
   color: $white;
-  padding-block: 4rem;
+  padding: 4rem 0.5rem;
   h2 {
     font-size: 4rem;
     line-height: 0.9;
