@@ -65,16 +65,13 @@ const programData: ProgramPhase[] = [
 const Program: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const handleDragEnd = (_: any, info: PanInfo) => {
+  const handleDragEnd = (_: unknown, info: PanInfo) => {
     if (info.offset.x < -50) {
       setActiveIndex((prev) => (prev === programData.length - 1 ? 0 : prev + 1));
     } else if (info.offset.x > 50) {
       setActiveIndex((prev) => (prev === 0 ? programData.length - 1 : prev - 1));
     }
   };
-
-  // We no longer need progressPercent for a dedicated bar, but conceptually it's similar
-  // The progress is now represented by the width of the active tab's indicator.
 
   return (
     <section className="program-section">
@@ -86,13 +83,12 @@ const Program: React.FC = () => {
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.2}
         onDragEnd={handleDragEnd}
-        key={programData[activeIndex].step} // helps with smooth animation when index changes
+        key={programData[activeIndex].step}
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
         transition={{ duration: 0.4 }}
       >
-        {/* 1. Step number and duration */}
         <div
           className="card-row-top"
           style={{ backgroundImage: `url(${programData[activeIndex].image})` }}
@@ -103,46 +99,41 @@ const Program: React.FC = () => {
           </span>
         </div>
 
-              {/* Blended Navigation and Progress Bar */}
-      <div className="program-nav-blended">
-        {programData.map((phase, index) => {
-          const isCompleted = index < activeIndex;
-          const isActive = index === activeIndex;
-          return (
-            <button
-              key={index}
-              className={`nav-tab ${isCompleted ? 'completed' : ''} ${isActive ? 'active' : ''}`}
-              onClick={() => setActiveIndex(index)}
-              aria-current={isActive ? 'step' : undefined}
-            >
-              {phase.title}
-              {/* This span will act as the individual tab's progress fill */}
-              {isActive && (
-                <motion.span
-                  className="nav-tab-progress-fill"
-                  initial={{ width: 0 }}
-                  animate={{ width: '100%' }}
-                  transition={{ duration: 0.4 }}
-                />
-              )}
-            </button>
-          );
-        })}
-      </div>
+        <div className="program-nav-blended">
+          {programData.map((phase, index) => {
+            const isCompleted = index < activeIndex;
+            const isActive = index === activeIndex;
+            return (
+              <button
+                key={index}
+                className={`nav-tab ${isCompleted ? 'completed' : ''} ${isActive ? 'active' : ''}`}
+                onClick={() => setActiveIndex(index)}
+                aria-current={isActive ? 'step' : undefined}
+              >
+                {phase.title}
+                {isActive && (
+                  <motion.span
+                    className="nav-tab-progress-fill"
+                    initial={{ width: 0 }}
+                    animate={{ width: '100%' }}
+                    transition={{ duration: 0.4 }}
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
 
         <div>
-          {/* 2. Outcome */}
           <div className="program-outcome">
             <p>{programData[activeIndex].outcomes}</p>
           </div>
 
-          {/* 3. Description */}
           <div className="program-description">
             <p>{programData[activeIndex].description}</p>
           </div>
         </div>
 
-        {/* 4. Goals */}
         <div className="program-list">
           <h4>Goals</h4>
           <ul className="badge-list">
@@ -154,7 +145,6 @@ const Program: React.FC = () => {
           </ul>
         </div>
 
-        {/* 5. Key Focus */}
         <div className="program-list">
           <h4>Key Focus</h4>
           <ul className="badge-list">
@@ -167,13 +157,24 @@ const Program: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Navigation Buttons */}
       <div className="btn-row">
-        <button className="btn btn-icon-primary" onClick={() => setActiveIndex((prev) => (prev === 0 ? programData.length - 1 : prev - 1))} aria-label="Previous phase">
+        <button
+          className="btn btn-icon-primary"
+          onClick={() =>
+            setActiveIndex((prev) => (prev === 0 ? programData.length - 1 : prev - 1))
+          }
+          aria-label="Previous phase"
+        >
           <MoveLeft />
         </button>
 
-        <button className="btn btn-icon-primary" onClick={() => setActiveIndex((prev) => (prev === programData.length - 1 ? 0 : prev + 1))} aria-label="Next phase">
+        <button
+          className="btn btn-icon-primary"
+          onClick={() =>
+            setActiveIndex((prev) => (prev === programData.length - 1 ? 0 : prev + 1))
+          }
+          aria-label="Next phase"
+        >
           <MoveRight />
         </button>
       </div>
