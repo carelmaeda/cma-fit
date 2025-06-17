@@ -321,7 +321,6 @@ nav {
     margin-bottom: 1rem;
   }
 
-  /* Blended Navigation and Progress Bar Container */
   .program-nav-blended {
     width: 100%;
     max-width: 480px;
@@ -332,8 +331,6 @@ nav {
     background-color: $gray-800; /* Background for the entire progress/nav track */
     border-radius: $border-radius-sm;
     padding: 0.25rem; /* Little padding around the tabs */
-    box-shadow: inset 0 0 5px rgba($black, 0.5); /* Subtle inner shadow */
-
     /* Hide scrollbar on mobile */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -436,7 +433,6 @@ nav {
         font-size: 8rem;
         line-height: 0.8;
         color: rgba($white, 0.9);
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
       }
 
       .badge-secondary {
@@ -449,7 +445,6 @@ nav {
         border-radius: 20px;
         font-size: 0.9rem;
         color: $white;
-        box-shadow: 0 0 10px rgba($accent, 0.7);
       }
     }
 
@@ -519,8 +514,8 @@ nav {
     .btn-icon-primary {
       background-color: $accent;
       border: none;
-      padding: 0.75rem 1.2rem;
-      border-radius: 50%;
+      padding: 1rem;
+      border-radius: 99px;
       color: $white;
       font-size: 1.5rem;
       cursor: pointer;
@@ -757,6 +752,7 @@ nav {
   }
 
   .faq-accordion {
+    width: 100%;
     max-width: 600px;
 
     details {
@@ -836,6 +832,7 @@ form {
 
 /* Footer section */
 .footer-section {
+  padding: 1rem;
   background: $gray-900;
   color: $white;
 }

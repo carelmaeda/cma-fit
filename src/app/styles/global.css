@@ -548,7 +548,6 @@ nav .nav-dropdown li .nav-icon {
   background: #1d1d1d;
   justify-content: center;
   padding: 1rem;
-  /* Blended Navigation and Progress Bar Container */
   /* Responsive tweaks */
 }
 .program-section h2 {
@@ -569,7 +568,6 @@ nav .nav-dropdown li .nav-icon {
   background-color: #282828; /* Background for the entire progress/nav track */
   border-radius: 0.5rem;
   padding: 0.25rem; /* Little padding around the tabs */
-  box-shadow: inset 0 0 5px rgba(29, 29, 29, 0.5); /* Subtle inner shadow */
   /* Hide scrollbar on mobile */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -667,7 +665,6 @@ nav .nav-dropdown li .nav-icon {
   font-size: 8rem;
   line-height: 0.8;
   color: rgba(255, 255, 255, 0.9);
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 .program-section .program-card .card-row-top .badge-secondary {
   background-color: rgba(0, 0, 0, 0.5);
@@ -679,7 +676,6 @@ nav .nav-dropdown li .nav-icon {
   border-radius: 20px;
   font-size: 0.9rem;
   color: #ffffff;
-  box-shadow: 0 0 10px rgba(242, 80, 5, 0.7);
 }
 .program-section .program-card .program-outcome {
   padding: 0 1rem;
@@ -738,8 +734,8 @@ nav .nav-dropdown li .nav-icon {
 .program-section .btn-row .btn-icon-primary {
   background-color: #f25005;
   border: none;
-  padding: 0.75rem 1.2rem;
-  border-radius: 50%;
+  padding: 1rem;
+  border-radius: 99px;
   color: #ffffff;
   font-size: 1.5rem;
   cursor: pointer;
@@ -937,6 +933,7 @@ nav .nav-dropdown li .nav-icon {
   margin-bottom: 1rem;
 }
 .faq-section .faq-accordion {
+  width: 100%;
   max-width: 600px;
 }
 .faq-section .faq-accordion details {
@@ -1003,6 +1000,7 @@ form {
 /*FOOTER*/
 /* Footer section */
 .footer-section {
+  padding: 1rem;
   background: #181818;
   color: #ffffff;
 }
