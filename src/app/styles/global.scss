@@ -752,6 +752,7 @@ nav {
   }
 
   .faq-accordion {
+    width: 100%;
     max-width: 600px;
 
     details {
@@ -831,6 +832,7 @@ form {
 
 /* Footer section */
 .footer-section {
+  padding: 1rem;
   background: $gray-900;
   color: $white;
 }

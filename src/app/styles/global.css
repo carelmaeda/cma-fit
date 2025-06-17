@@ -933,6 +933,7 @@ nav .nav-dropdown li .nav-icon {
   margin-bottom: 1rem;
 }
 .faq-section .faq-accordion {
+  width: 100%;
   max-width: 600px;
 }
 .faq-section .faq-accordion details {
@@ -999,6 +1000,7 @@ form {
 /*FOOTER*/
 /* Footer section */
 .footer-section {
+  padding: 1rem;
   background: #181818;
   color: #ffffff;
 }
