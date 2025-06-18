@@ -13,7 +13,7 @@ const About: React.FC = () => {
               height={400}
             />
           <div className="about-text">
-            <p>We need Justin's Bio here</p>
+            <p>We need Justins Bio here</p>
             <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel venenatis mi. Mauris ultrices molestie nibh ac venenatis. Donec placerat semper urna. Donec gravida, massa ut rutrum ullamcorper, nulla enim volutpat felis.
             </p>
