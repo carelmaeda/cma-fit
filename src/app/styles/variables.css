@@ -165,17 +165,17 @@ h2 {
   text-align: center;
   max-width: 300px;
   transition: background-color 0.3s ease;
-  color: #ffffff;
+  color: #1d1d1d;
 }
 
 /* Primary Button */
 .btn-primary, .btn-tab-outline, .btn-icon-primary {
-  background-color: #f25005;
-  border: solid 0.2em #f25005;
+  background-color: #39ff14;
+  border: solid 0.2em #39ff14;
   padding: 1rem 2rem;
 }
 .btn-primary:hover, .btn-tab-outline:hover, .btn-icon-primary:hover {
-  background-color: #f24405;
+  background-color: #22ee00;
 }
 
 /* Icon Button Variant (filled) */
@@ -185,7 +185,7 @@ h2 {
 
 .btn-outline, .btn-icon-outline {
   background: transparent;
-  border: solid 0.2em #f25005;
+  border: solid 0.2em #39ff14;
   padding: 1rem 2rem;
 }
 
@@ -199,7 +199,7 @@ h2 {
   padding: 1rem;
 }
 .btn-icon-outline:hover {
-  background-color: #f24405;
+  background-color: #22ee00;
 }
 
 /*BADGE*/
@@ -220,7 +220,7 @@ h2 {
 }
 
 .badge-primary {
-  background-color: #f25005;
+  background-color: #39ff14;
   color: #ffffff;
 }
 

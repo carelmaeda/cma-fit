@@ -12,11 +12,12 @@ const Hero: React.FC = () => {
     <section className="hero">
       <div className="hero-header">
         <div className="hero-title">
-          <MotionVertical>
-          <h1>3 Month Body Transformation</h1>
+        <MotionVertical>
+          <small>3 Month body transformation</small>
           </MotionVertical>
           <MotionVertical>
-          <p className="hero-subtext">We need something here</p>
+          <h1>Hi! I'm Justin.</h1>
+          <p>I will help you get fit, strong, and confident with my simple 3-month transformation program.</p>
           </MotionVertical>
         </div>
 

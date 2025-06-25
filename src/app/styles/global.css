@@ -166,17 +166,17 @@ h2 {
   text-align: center;
   max-width: 300px;
   transition: background-color 0.3s ease;
-  color: #ffffff;
+  color: #1d1d1d;
 }
 
 /* Primary Button */
 .btn-primary, .btn-tab-outline, .btn-icon-primary {
-  background-color: #f25005;
-  border: solid 0.2em #f25005;
+  background-color: #39ff14;
+  border: solid 0.2em #39ff14;
   padding: 1rem 2rem;
 }
 .btn-primary:hover, .btn-tab-outline:hover, .btn-icon-primary:hover {
-  background-color: #f24405;
+  background-color: #22ee00;
 }
 
 /* Icon Button Variant (filled) */
@@ -186,7 +186,7 @@ h2 {
 
 .btn-outline, .btn-icon-outline {
   background: transparent;
-  border: solid 0.2em #f25005;
+  border: solid 0.2em #39ff14;
   padding: 1rem 2rem;
 }
 
@@ -200,7 +200,7 @@ h2 {
   padding: 1rem;
 }
 .btn-icon-outline:hover {
-  background-color: #f24405;
+  background-color: #22ee00;
 }
 
 /*BADGE*/
@@ -221,7 +221,7 @@ h2 {
 }
 
 .badge-primary {
-  background-color: #f25005;
+  background-color: #39ff14;
   color: #ffffff;
 }
 
@@ -323,7 +323,7 @@ nav .navbar .menu-toggle {
   z-index: 1001;
 }
 nav .navbar .menu-toggle .bar {
-  background: #f25005;
+  background: #39ff14;
   width: 24px;
   height: 2px;
   transition: all 0.3s ease;
@@ -377,14 +377,14 @@ nav .nav-dropdown li a {
   justify-content: space-between;
 }
 nav .nav-dropdown li a:hover {
-  color: #f25005;
+  color: #39ff14;
 }
 nav .nav-dropdown li a:hover .nav-icon {
   transition: all 0.3s ease;
   transform: rotate(90deg);
 }
 nav .nav-dropdown li .nav-icon {
-  color: #f25005;
+  color: #39ff14;
 }
 
 @media (min-width: 768px) {
@@ -560,11 +560,9 @@ nav .nav-dropdown li .nav-icon {
 }
 .program-section .program-nav-blended {
   width: 100%;
-  max-width: 480px;
   margin: 0 auto 1rem;
   display: flex;
   overflow-x: auto;
-  gap: 0.5rem;
   background-color: #282828; /* Background for the entire progress/nav track */
   border-radius: 0.5rem;
   padding: 0.25rem; /* Little padding around the tabs */
@@ -577,17 +575,15 @@ nav .nav-dropdown li .nav-icon {
 }
 .program-section .program-nav-blended .nav-tab {
   flex: 1 0 auto; /* Allow tabs to grow/shrink but not completely collapse */
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   text-align: center;
   font-size: 0.75rem;
-  font-weight: 600;
-  color: #e8e8e8;
-  background-color: transparent; /* Tabs themselves are transparent */
+  color: #ffffff;
   position: relative; /* For the progress fill pseudo-element */
   cursor: pointer;
   transition: color 0.3s ease; /* Only color transition on tab itself */
   text-transform: uppercase;
-  border-radius: 0.4rem; /* Slightly smaller than container for visual space */
+  border-radius: 0.5rem; /* Slightly smaller than container for visual space */
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -602,7 +598,7 @@ nav .nav-dropdown li .nav-icon {
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(90deg, #f25005, #f24405);
+  background: #39ff14;
   border-radius: inherit; /* Inherit border radius from parent */
   z-index: -1; /* Place behind the text */
   width: 0; /* Initial state, will be animated by React */
@@ -610,15 +606,14 @@ nav .nav-dropdown li .nav-icon {
 }
 .program-section .program-nav-blended .nav-tab.completed {
   /* When a tab is completed, its background is fully filled */
-  color: #ffffff; /* Ensure text is visible on filled background */
+  color: #1d1d1d;
 }
 .program-section .program-nav-blended .nav-tab.completed::before {
   width: 100%;
 }
 .program-section .program-nav-blended .nav-tab.active {
-  color: #ffffff;
+  color: #1d1d1d;
   font-weight: 700; /* Make active tab slightly bolder */
-  box-shadow: 0 0 8px rgba(242, 80, 5, 0.7); /* Subtle glow for active tab */
 }
 .program-section .program-nav-blended .nav-tab.active .nav-tab-progress-fill {
   /* The motion.span inside the active tab */
@@ -626,7 +621,7 @@ nav .nav-dropdown li .nav-icon {
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(90deg, #f25005, #f24405);
+  background: linear-gradient(90deg, #39ff14, #22ee00);
   border-radius: inherit;
   z-index: -1;
 }
@@ -640,12 +635,8 @@ nav .nav-dropdown li .nav-icon {
   align-items: center;
   border: solid 0.2em #ffffff;
   border-radius: 1rem;
-  color: #ffffff;
   overflow: hidden;
   padding-bottom: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
 }
 .program-section .program-card .card-row-top {
   padding: 1rem;
@@ -664,17 +655,15 @@ nav .nav-dropdown li .nav-icon {
   font-weight: 700;
   font-size: 8rem;
   line-height: 0.8;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 }
 .program-section .program-card .card-row-top .badge-secondary {
-  background-color: rgba(0, 0, 0, 0.5);
-  font-weight: 600;
+  background-color: #282828;
   display: flex;
   align-items: center;
   gap: 0.25rem;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.9rem;
   color: #ffffff;
 }
 .program-section .program-card .program-outcome {
@@ -686,7 +675,7 @@ nav .nav-dropdown li .nav-icon {
   font-size: 1.3rem;
   line-height: 1.1;
   font-weight: 600;
-  color: #f28705;
+  color: #ffffff;
 }
 .program-section .program-card .program-description {
   padding: 0 1rem;
@@ -696,7 +685,7 @@ nav .nav-dropdown li .nav-icon {
   font-size: 1rem;
   line-height: 1.3;
   font-weight: 300;
-  color: #d0d0d0;
+  color: #e8e8e8;
 }
 .program-section .program-card .program-list {
   padding: 0 1rem;
@@ -704,7 +693,7 @@ nav .nav-dropdown li .nav-icon {
 }
 .program-section .program-card .program-list h4 {
   margin-bottom: 0.5rem;
-  color: #f28705;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -714,10 +703,10 @@ nav .nav-dropdown li .nav-icon {
   gap: 0.5rem;
 }
 .program-section .program-card .program-list .badge-list li.badge-secondary {
-  background-color: #f24405;
-  padding: 0.4rem 0.9rem;
+  background-color: #383838;
+  padding: 0.35rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #ffffff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
@@ -732,7 +721,7 @@ nav .nav-dropdown li .nav-icon {
   gap: 2rem;
 }
 .program-section .btn-row .btn-icon-primary {
-  background-color: #f25005;
+  background-color: #39ff14;
   border: none;
   padding: 1rem;
   border-radius: 99px;
@@ -745,7 +734,7 @@ nav .nav-dropdown li .nav-icon {
   justify-content: center;
 }
 .program-section .btn-row .btn-icon-primary:hover, .program-section .btn-row .btn-icon-primary:focus {
-  background-color: #f28705;
+  background-color: #66ff66;
 }
 .program-section .btn-row .btn-icon-primary svg {
   stroke-width: 1.5;
@@ -846,7 +835,7 @@ nav .nav-dropdown li .nav-icon {
 .testimonial-section .testimonial-card .testimonial-quote::before {
   content: "“";
   font-size: 3rem;
-  color: #f25005;
+  color: #39ff14;
   opacity: 0.1;
   position: absolute;
   left: -1rem;
@@ -873,7 +862,7 @@ nav .nav-dropdown li .nav-icon {
   text-align: center;
 }
 .testimonial-section .swiper-pagination .swiper-pagination-bullet {
-  background: #f25005;
+  background: #39ff14;
   opacity: 1;
   width: 12px;
   height: 12px;
@@ -882,7 +871,7 @@ nav .nav-dropdown li .nav-icon {
   transition: background-color 0.3s ease;
 }
 .testimonial-section .swiper-pagination .swiper-pagination-bullet-active {
-  background: #fb8148;
+  background: #79ff61;
 }
 
 @media (min-width: 768px) {
@@ -913,7 +902,7 @@ nav .nav-dropdown li .nav-icon {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem;
-  border: solid 0.2em #f25005;
+  border: solid 0.2em #39ff14;
 }
 .about-section .about-card p {
   max-width: 550px;
@@ -954,7 +943,7 @@ nav .nav-dropdown li .nav-icon {
   display: none;
 }
 .faq-section .faq-accordion details summary:hover {
-  background: #f25005;
+  background: #39ff14;
 }
 .faq-section .faq-accordion details summary .faq-toggle-icon {
   font-size: 1.5rem;
@@ -994,7 +983,7 @@ form {
 .contact-status {
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: #1a1a1a;
+  color: #0c4d00;
 }
 
 /*FOOTER*/
@@ -1025,7 +1014,7 @@ form {
 }
 
 .footer-section a:hover {
-  color: #f25005;
+  color: #39ff14;
 }
 
 .footer-social a {
@@ -1036,7 +1025,7 @@ form {
 }
 
 .footer-social a:hover {
-  color: #f25005;
+  color: #39ff14;
 }
 
 .footer-section .border-top {
