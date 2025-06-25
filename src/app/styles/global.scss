@@ -315,6 +315,45 @@ nav {
   }
 }
 
+/*AUDIENCE*/
+
+.audience-section {
+  background: $black;
+  color: $white;
+  padding: 3rem;
+}
+
+/*ABOUT*/
+
+/* About section */
+.about-section {
+  padding: 2rem 1rem 2rem 0;
+  gap: 0.5rem;
+  color: $black;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .about-card {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 150px;
+      object-fit: cover;
+      border-radius: 0 1rem 1rem 0;
+    }
+    p {
+      max-width: 550px;
+      text-align: justify;
+    }
+  }
+}
+
 /* PROGRAM */
 
 .program-section {
@@ -581,14 +620,13 @@ nav {
 /*BRIDGE*/
 
 .bridge-section {
+  padding: 2rem 1rem;
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
   justify-items: center;
   background: $black;
   color: $white;
-  padding: 4rem 0.5rem;
   h2 {
-    font-size: 4rem;
     line-height: 0.9;
   }
 }
@@ -703,42 +741,10 @@ nav {
   }
 }
 
-/*ABOUT*/
-
-/* About section */
-.about-section {
-  gap: 0.5rem;
-  color: $black;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .about-card {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    padding-inline: 1rem;
-
-    img {
-      width: 100%;
-      max-width: 100px;
-      height: 100%;
-      object-fit: cover;
-      border-radius: $border-radius-md;
-      border: $border-accent;
-    }
-    p {
-      max-width: 550px;
-      text-align: justify;
-    }
-  }
-}
-
 /* FAQ */
 
 .faq-section {
+  padding: 2rem 1rem;
   margin: auto;
   gap: 1rem;
   background: $gray-700;
@@ -806,6 +812,7 @@ nav {
 
 .contact-section,
 .calendly-section {
+  padding: 2rem 1rem;
   margin: auto;
   gap: 1rem;
   text-align: center;

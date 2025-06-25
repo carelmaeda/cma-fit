@@ -295,7 +295,6 @@ textarea {
 }
 
 /* LAYOUT */
-section:not(.hero):not(.bridge-section),
 footer {
   display: grid;
   padding: 2rem 0.5rem;

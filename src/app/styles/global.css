@@ -296,7 +296,6 @@ textarea {
 }
 
 /* LAYOUT */
-section:not(.hero):not(.bridge-section),
 footer {
   display: grid;
   padding: 2rem 0.5rem;
@@ -579,6 +578,41 @@ nav .nav-dropdown li .nav-icon {
     transform: translateX(-50%);
   }
 }
+/*AUDIENCE*/
+.audience-section {
+  background: #1d1d1d;
+  color: #ffffff;
+  padding: 3rem;
+}
+
+/*ABOUT*/
+/* About section */
+.about-section {
+  padding: 2rem 1rem 2rem 0;
+  gap: 0.5rem;
+  color: #1d1d1d;
+}
+.about-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.about-section .about-card {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.about-section .about-card img {
+  width: 100%;
+  max-width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0 1rem 1rem 0;
+}
+.about-section .about-card p {
+  max-width: 550px;
+  text-align: justify;
+}
+
 /* PROGRAM */
 .program-section {
   background: #1d1d1d;
@@ -809,15 +843,14 @@ nav .nav-dropdown li .nav-icon {
 }
 /*BRIDGE*/
 .bridge-section {
+  padding: 2rem 1rem;
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
   justify-items: center;
   background: #1d1d1d;
   color: #ffffff;
-  padding: 4rem 0.5rem;
 }
 .bridge-section h2 {
-  font-size: 4rem;
   line-height: 0.9;
 }
 
@@ -915,38 +948,9 @@ nav .nav-dropdown li .nav-icon {
     font-size: 0.9rem;
   }
 }
-/*ABOUT*/
-/* About section */
-.about-section {
-  gap: 0.5rem;
-  color: #1d1d1d;
-}
-.about-section h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.about-section .about-card {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  padding-inline: 1rem;
-}
-.about-section .about-card img {
-  width: 100%;
-  max-width: 100px;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 1rem;
-  border: solid 0.2em #39ff14;
-}
-.about-section .about-card p {
-  max-width: 550px;
-  text-align: justify;
-}
-
 /* FAQ */
 .faq-section {
+  padding: 2rem 1rem;
   margin: auto;
   gap: 1rem;
   background: #383838;
@@ -1000,6 +1004,7 @@ nav .nav-dropdown li .nav-icon {
 /*CONTACT*/
 .contact-section,
 .calendly-section {
+  padding: 2rem 1rem;
   margin: auto;
   gap: 1rem;
   text-align: center;

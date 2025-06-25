@@ -6,17 +6,21 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Partials/Footer";
 import CalendlyEmbed from "./components/Partials/CalendlyEmbed";
 import Bridge from "./components/Bridge";
+import Audience from "./components/Audience";
 
 export default function Home() {
   return (
     <>
       <main>
        <Hero />
-       <div id="the program">
-       <Program />
+       <div id="audience">
+       <Audience />
        </div>
        <div id="about">
        <About />
+       </div>
+       <div id="the program">
+       <Program />
        </div>
         <div id="community">
        <Testimonials />
