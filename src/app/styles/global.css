@@ -333,9 +333,12 @@ nav .navbar .nav-header {
   align-items: center;
   gap: 1rem;
 }
-nav .navbar .menu-toggle {
+nav .navbar .nav-header .logo {
   height: 28px;
-  width: 28px;
+}
+nav .navbar .menu-toggle {
+  height: 32px;
+  width: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -346,8 +349,8 @@ nav .navbar .menu-toggle {
 }
 nav .navbar .menu-toggle .bar {
   background: #39ff14;
-  width: 24px;
-  height: 2px;
+  width: 32px;
+  height: 3px;
   transition: all 0.3s ease;
   position: absolute;
 }
@@ -425,6 +428,9 @@ nav .nav-dropdown li .nav-icon {
   overflow: hidden;
   position: relative;
 }
+.hero small {
+  color: #d0d0d0;
+}
 .hero .hero-header {
   width: 100%;
   height: 100%;
@@ -436,10 +442,6 @@ nav .nav-dropdown li .nav-icon {
   align-items: center;
   justify-content: center;
 }
-.hero .hero-header small {
-  text-transform: uppercase;
-  color: #d0d0d0;
-}
 .hero .hero-header h1 {
   line-height: 1.6;
   margin: 0;
@@ -450,9 +452,8 @@ nav .nav-dropdown li .nav-icon {
   transform: scaleY(1.9);
 }
 .hero .hero-header .hero-subtext {
-  font-size: clamp(1rem, 3.5vw, 2rem);
-  text-transform: uppercase;
-  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
   color: #ffffff;
 }
 .hero .hero-btns {
@@ -471,7 +472,11 @@ nav .nav-dropdown li .nav-icon {
 }
 .hero .avatar-btns a {
   color: #ffffff;
-  font-size: 2rem;
+}
+.hero .avatar-btns .social {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 .hero video {
   position: absolute;
@@ -510,7 +515,7 @@ nav .nav-dropdown li .nav-icon {
   position: relative;
 }
 .avatar .avatar-stack .avatar-wrapper:not(:first-child) {
-  margin-left: -12px;
+  margin-left: -16px;
 }
 .avatar .avatar-stack .avatar-wrapper:hover {
   transform: scale(1.1);
@@ -522,9 +527,6 @@ nav .nav-dropdown li .nav-icon {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.avatar small {
-  color: #e8e8e8;
 }
 
 @media (min-width: 768px) {

@@ -55,9 +55,11 @@ const Hero: React.FC = () => {
               </div>
               <small>Join the crew!</small>
           </div>
-          <a href="https://www.instagram.com/the.lyonsking" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Instagram size={32} />
-              </a>
+          <div className="social">
+              <a href="https://www.instagram.com/the.lyonsking" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={32} /></a>
+              <small>@justin.lyons</small>
+          </div>
+
     </div>
 
 
