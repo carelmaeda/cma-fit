@@ -423,8 +423,7 @@ nav .nav-dropdown li .nav-icon {
 }
 /* HERO */
 .hero {
-  height: 70vh;
-  min-height: 500px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -437,7 +436,8 @@ nav .nav-dropdown li .nav-icon {
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem 1rem;
+  flex: 1;
   gap: 1rem;
   flex-direction: column;
   align-items: center;
@@ -492,7 +492,7 @@ nav .nav-dropdown li .nav-icon {
 /* Avatar Stack */
 .avatar {
   text-align: center;
-  margin-block: 1rem;
+  margin-bottom: 1rem;
 }
 .avatar .avatar-stack {
   display: flex;
