@@ -305,10 +305,6 @@ footer {
 
 /* NAVBAR */
 .nav-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: center;
   z-index: 1000;
@@ -325,12 +321,9 @@ nav {
   justify-content: center;
 }
 nav .navbar {
-  background: #ffffff;
   width: 100%;
-  padding: 0.75rem 1.5rem;
-  margin: 0.75rem;
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1rem;
+  background: transparent;
   transition: box-shadow 0.3s ease;
 }
 nav .navbar .nav-header {
@@ -400,7 +393,7 @@ nav .nav-dropdown.open {
   padding-top: 1rem;
 }
 nav .nav-dropdown li a {
-  color: #1d1d1d;
+  color: #ffffff;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
@@ -436,8 +429,8 @@ nav .nav-dropdown li .nav-icon {
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 2rem 1rem 1rem 1rem;
   flex: 1;
+  padding: 1rem;
   gap: 1rem;
   flex-direction: column;
   align-items: center;
@@ -468,6 +461,18 @@ nav .nav-dropdown li .nav-icon {
   gap: 0.5rem;
   align-items: center;
 }
+.hero .avatar-btns {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.hero .avatar-btns a {
+  color: #ffffff;
+  font-size: 2rem;
+}
 .hero video {
   position: absolute;
   filter: contrast(120%);
@@ -490,22 +495,17 @@ nav .nav-dropdown li .nav-icon {
 }
 
 /* Avatar Stack */
-.avatar {
-  text-align: center;
-  margin-bottom: 1rem;
-}
 .avatar .avatar-stack {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
 }
 .avatar .avatar-stack .avatar-wrapper {
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 999px;
   overflow: hidden;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   transition: transform 0.2s;
   position: relative;
 }

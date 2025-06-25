@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
       <div className="navbar">
         <div className="nav-header">
           <Link href="/" className="logo">         
-            <Image src="/images/jl-logo.png" alt="Justin Lyons Logo" width={746} height={100} />
+            <Image src="/images/jl-logo-white.png" alt="Justin Lyons Logo" width={746} height={100} />
           </Link>
           <button
             className={`menu-toggle ${menuOpen ? 'open' : ''}`}

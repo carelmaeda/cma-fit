@@ -11,20 +11,19 @@ import Bridge from "./components/Bridge";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main>
        <Hero />
        <div id="the program">
        <Program />
+       </div>
+       <div id="about">
+       <About />
        </div>
         <div id="community">
        <Testimonials />
        </div>
        <div id="bridge">
        <Bridge />
-       </div>
-      <div id="about">
-       <About />
        </div>
       <div id="faq">
        <FAQ />
