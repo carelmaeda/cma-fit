@@ -101,11 +101,6 @@ h6 {
 }
 
 h1,
-h2 {
-  text-align: center;
-}
-
-h1,
 h2,
 h3 {
   font-family: "Teko", sans-serif;
@@ -156,51 +151,85 @@ h2 {
 
 /* Base Button */
 .btn {
+  width: 100%;
   cursor: pointer;
-  display: inline-block;
+  display: block;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1rem;
+  line-height: 1;
+  padding: 1rem 2rem;
   border-radius: 99px;
-  text-align: center;
-  max-width: 300px;
   transition: background-color 0.3s ease;
-  color: #1d1d1d;
+  border: none;
 }
 
-/* Primary Button */
-.btn-primary, .btn-tab-outline, .btn-icon-primary {
+.btn-primary {
   background-color: #39ff14;
+  color: #1d1d1d;
   border: solid 0.2em #39ff14;
-  padding: 1rem 2rem;
 }
-.btn-primary:hover, .btn-tab-outline:hover, .btn-icon-primary:hover {
+.btn-primary:hover {
   background-color: #22ee00;
 }
 
-/* Icon Button Variant (filled) */
-.btn-icon-primary {
-  padding: 1rem;
+.btn-secondary {
+  background-color: #1d1d1d;
+  color: #ffffff;
+  border: #1d1d1d;
+}
+.btn-secondary:hover {
+  background-color: #1d1d1d;
 }
 
-.btn-outline, .btn-icon-outline {
+.btn-outline {
   background: transparent;
+  color: #39ff14;
   border: solid 0.2em #39ff14;
-  padding: 1rem 2rem;
+}
+.btn-outline:hover {
+  background-color: #22ee00;
+  color: #ffffff;
 }
 
-/* Icon Button Variant (filled) */
-.btn-tab-outline {
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
   padding: 1rem;
+  border-radius: 99px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
 }
 
-/* Icon Button Variant (outline) */
+.btn-icon-primary {
+  background-color: #39ff14;
+  color: #1d1d1d;
+}
+.btn-icon-primary:hover {
+  background-color: #22ee00;
+}
+
+.btn-icon-secondary {
+  background-color: #1d1d1d;
+  color: #ffffff;
+}
+.btn-icon-secondary:hover {
+  background-color: #1d1d1d;
+}
+
 .btn-icon-outline {
-  padding: 1rem;
+  background: transparent;
+  color: #39ff14;
+  border: solid 0.2em #39ff14;
 }
 .btn-icon-outline:hover {
   background-color: #22ee00;
+  color: #ffffff;
 }
 
 /*BADGE*/
@@ -394,13 +423,12 @@ nav .nav-dropdown li .nav-icon {
 }
 /* HERO */
 .hero {
-  height: 75vh;
+  height: 70vh;
   min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  text-align: center;
   color: #ffffff;
   overflow: hidden;
   position: relative;
@@ -409,21 +437,24 @@ nav .nav-dropdown li .nav-icon {
   width: 100%;
   height: 100%;
   display: flex;
-  padding-top: 1rem;
+  padding: 1rem;
   gap: 1rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.hero .hero-header small {
+  text-transform: uppercase;
+  color: #d0d0d0;
+}
 .hero .hero-header h1 {
-  line-height: 0.8;
+  line-height: 1.6;
   margin: 0;
-  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: -2px;
-  margin: 0 auto;
   overflow-wrap: break-word;
-  padding: 0 0.5rem;
+  transform: scaleY(1.9);
 }
 .hero .hero-header .hero-subtext {
   font-size: clamp(1rem, 3.5vw, 2rem);
@@ -432,11 +463,10 @@ nav .nav-dropdown li .nav-icon {
   color: #ffffff;
 }
 .hero .hero-btns {
+  width: 100%;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 .hero video {
   position: absolute;
@@ -460,6 +490,10 @@ nav .nav-dropdown li .nav-icon {
 }
 
 /* Avatar Stack */
+.avatar {
+  text-align: center;
+  margin-block: 1rem;
+}
 .avatar .avatar-stack {
   display: flex;
   align-items: center;

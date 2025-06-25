@@ -11,23 +11,32 @@ const Hero: React.FC = () => {
   return (
     <section className="hero">
       <div className="hero-header">
-        <div className="hero-title">
+      <div className="hero-title">
         <MotionVertical>
-          <small>3 Month body transformation</small>
-          </MotionVertical>
-          <MotionVertical>
-          <h1>Hi! I'm Justin.</h1>
-          <p>I will help you get fit, strong, and confident with my simple 3 month transformation program.</p>
-          </MotionVertical>
-        </div>
+          <small>3 Month&apos;s body transformation</small>
+        </MotionVertical>
+        <MotionVertical>
+          <h1>Hi! I&apos;m Justin.</h1>
+          <p className="hero-subtext">My simple 3-month program will get you fit, strong, and confident.</p>
+        </MotionVertical>
+      </div>
 
+    
+
+        <div className="hero-btns">
+          <a href="#the program" className="btn-icon btn-icon-outline"><MoveDown /></a>
+          <a href="#contact" className="btn btn-primary">Book a call with me</a>
+        </div>
+      </div>
+
+      
     <div className="avatar">
       <div className="avatar-stack">
           {testimonials.slice(0, 5).map((testimonial, index) => (
             <a
               href="#community"
               key={index}
-              className={`avatar-wrapper index-${index}`}
+              className={"avatar-wrapper index-${index}"}
             >
               <Image
                 src={testimonial.image}
@@ -41,13 +50,6 @@ const Hero: React.FC = () => {
         </div>
         <small>Join the crew!</small>
     </div>
-    
-
-        <div className="hero-btns">
-          <a href="#the program" className="btn btn-icon-outline"><MoveDown /></a>
-          <a href="#contact" className="btn btn-primary">Book a call with me</a>
-        </div>
-      </div>
 
       <Carousel />
 

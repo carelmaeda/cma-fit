@@ -15,9 +15,9 @@ $gray-900: #181818;
 
 // Accent Colors - Neon Green
 $accent-lightest: #eaffea; // A very light, almost white, neon green
-$accent-light: #66ff66;   // A lighter neon green
-$accent: #39ff14;         // The main neon green
-$accent-dark: #22ee00;    // A darker neon green
+$accent-light: #66ff66; // A lighter neon green
+$accent: #39ff14; // The main neon green
+$accent-dark: #22ee00; // A darker neon green
 $accent-contrast: #0c4d00; // A very dark green for contrast
 
 $overlay-dark: rgba(44, 44, 44, 0.5);
@@ -40,10 +40,25 @@ $fw-body: 400;
 //Border Radius
 $border-radius-md: 1rem;
 $border-radius-sm: 0.5rem;
+$border-radius-full: 99px;
 
 //Borders
 $border-white: solid 0.2em $white;
 $border-accent: solid 0.2em $accent;
+
+//Buttons
+$btn-padding: 0.6rem 1.2rem;
+$btn-font-size: 1rem;
+$btn-border-radius: 0.5rem;
+$btn-icon-size: 2.5rem;
+
+$btn-primary-color: #fff;
+$btn-primary-bg: #1e90ff;
+$btn-primary-hover: #1c86ee;
+
+$btn-secondary-color: #fff;
+$btn-secondary-bg: #6c757d;
+$btn-secondary-hover: #5a6268;
 
 /*-------------------------------------------------------------*/
 
@@ -153,11 +168,6 @@ h6 {
 }
 
 h1,
-h2 {
-  text-align: center;
-}
-
-h1,
 h2,
 h3 {
   font-family: $font-header;
@@ -209,56 +219,99 @@ h2 {
 
 /* Base Button */
 
+// Base Button
 .btn {
+  width: 100%;
   cursor: pointer;
-  display: inline-block;
+  display: block;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1rem;
+  line-height: 1;
+  padding: 1rem 2rem;
   border-radius: 99px;
-  text-align: center;
-  max-width: 300px;
   transition: background-color 0.3s ease;
-  color: $black;
+  border: none;
 }
 
-/* Primary Button */
+// Primary Button
 .btn-primary {
   background-color: $accent;
+  color: $black;
   border: $border-accent;
-  padding: 1rem 2rem;
 
   &:hover {
     background-color: $accent-dark;
   }
 }
 
-/* Icon Button Variant (filled) */
-.btn-icon-primary {
-  @extend .btn-primary;
-  padding: 1rem;
+// Secondary Button
+.btn-secondary {
+  background-color: $black;
+  color: $white;
+  border: $black;
+
+  &:hover {
+    background-color: $black;
+  }
 }
 
+// Outline Button
 .btn-outline {
   background: transparent;
+  color: $accent;
   border: $border-accent;
-  padding: 1rem 2rem;
-}
-
-/* Icon Button Variant (filled) */
-.btn-tab-outline {
-  @extend .btn-primary;
-  padding: 1rem;
-}
-
-/* Icon Button Variant (outline) */
-.btn-icon-outline {
-  @extend .btn-outline;
-  padding: 1rem;
 
   &:hover {
     background-color: $accent-dark;
+    color: $white;
+  }
+}
+
+// Icon Button Base
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 1rem;
+  border-radius: 99px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+// Icon Button Primary
+.btn-icon-primary {
+  background-color: $accent;
+  color: $black;
+
+  &:hover {
+    background-color: $accent-dark;
+  }
+}
+
+// Icon Button Secondary
+.btn-icon-secondary {
+  background-color: $black;
+  color: $white;
+
+  &:hover {
+    background-color: $black;
+  }
+}
+
+// Icon Button Outline
+.btn-icon-outline {
+  background: transparent;
+  color: $accent;
+  border: $border-accent;
+
+  &:hover {
+    background-color: $accent-dark;
+    color: $white;
   }
 }
 
