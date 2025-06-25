@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           </MotionVertical>
           <MotionVertical>
           <h1>Hi! I'm Justin.</h1>
-          <p>I will help you get fit, strong, and confident with my simple 3-month transformation program.</p>
+          <p>I will help you get fit, strong, and confident with my simple 3 month transformation program.</p>
           </MotionVertical>
         </div>
 
