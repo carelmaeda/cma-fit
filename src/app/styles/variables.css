@@ -151,6 +151,7 @@ h2 {
 /* Base Button */
 .btn {
   width: 100%;
+  max-width: 400px;
   cursor: pointer;
   display: block;
   text-align: center;

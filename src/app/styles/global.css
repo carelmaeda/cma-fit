@@ -152,6 +152,7 @@ h2 {
 /* Base Button */
 .btn {
   width: 100%;
+  max-width: 400px;
   cursor: pointer;
   display: block;
   text-align: center;
@@ -460,6 +461,7 @@ nav .nav-dropdown li .nav-icon {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  justify-content: center;
 }
 .hero .avatar-btns {
   width: 100%;
@@ -583,6 +585,19 @@ nav .nav-dropdown li .nav-icon {
   background: #1d1d1d;
   color: #ffffff;
   padding: 3rem;
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+}
+.audience-section svg {
+  color: #505050;
+}
+.audience-section .quote1 {
+  justify-self: start;
+  transform: scaleX(-1);
+}
+.audience-section .quote2 {
+  justify-self: flex-end;
 }
 
 /*ABOUT*/
@@ -964,6 +979,7 @@ nav .nav-dropdown li .nav-icon {
 .faq-section .faq-accordion {
   width: 100%;
   max-width: 600px;
+  margin: auto;
 }
 .faq-section .faq-accordion details {
   border-bottom: solid 0.2em #ffffff;
@@ -983,7 +999,7 @@ nav .nav-dropdown li .nav-icon {
   display: none;
 }
 .faq-section .faq-accordion details summary:hover {
-  background: #39ff14;
+  background: #66ff66;
 }
 .faq-section .faq-accordion details summary .faq-toggle-icon {
   font-size: 1.5rem;

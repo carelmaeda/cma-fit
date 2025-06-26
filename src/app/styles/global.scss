@@ -182,6 +182,7 @@ nav {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    justify-content: center;
   }
 
   .avatar-btns {
@@ -321,6 +322,19 @@ nav {
   background: $black;
   color: $white;
   padding: 3rem;
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  svg {
+    color: $gray-600;
+  }
+  .quote1 {
+    justify-self: start;
+    transform: scaleX(-1);
+  }
+  .quote2 {
+    justify-self: flex-end;
+  }
 }
 
 /*ABOUT*/
@@ -760,6 +774,7 @@ nav {
   .faq-accordion {
     width: 100%;
     max-width: 600px;
+    margin: auto;
 
     details {
       border-bottom: $border-white;
@@ -781,7 +796,7 @@ nav {
         }
 
         &:hover {
-          background: $accent;
+          background: $accent-light;
         }
 
         .faq-toggle-icon {
