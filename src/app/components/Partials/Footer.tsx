@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           </div>
 
             <div className="footer-social">
-              <h4>Let&apos;s Connect</h4>
+              <h5>Let&apos;s Connect</h5>
               <a href="https://www.instagram.com/the.lyonsking" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={32} /></a>
             </div>
 

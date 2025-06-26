@@ -30,7 +30,6 @@ nav {
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
-
       .logo {
         height: 28px;
       }
@@ -128,9 +127,6 @@ nav {
 
 // Responsive adjustments
 @media (min-width: 768px) {
-  .navbar {
-    max-width: 400px;
-  }
 }
 
 /* HERO */
@@ -821,6 +817,15 @@ nav {
       }
     }
   }
+}
+
+/*CALENDLY*/
+
+.calendly-section {
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 2rem;
+  text-align: center;
 }
 
 /*FOOTER*/
