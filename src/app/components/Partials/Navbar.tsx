@@ -1,75 +1,51 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { MoveRight, Instagram } from "lucide-react";
 import Image from 'next/image';
+import { MoveRight, Instagram } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [navbarVisible, setNavbarVisible] = useState(true);
-
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past 100px → hide navbar
-        setNavbarVisible(false);
-      } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
-        // Scrolling up or near top → show navbar
-        setNavbarVisible(true);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    // Add passive: true for better performance
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
+  const navLinks = ['The Program', 'Community', 'About', 'FAQ'];
 
   return (
-    <nav className={`nav-container ${!navbarVisible ? 'hidden' : ''}`}>
-      <div className="navbar">
-        <div className="nav-header">
-          <Link href="/" className="logo">         
-            <Image src="/images/jl-logo-white.png" alt="Justin Lyons Logo" width={746} height={100} />
-          </Link>
-          <button
-            className={`menu-toggle ${menuOpen ? 'open' : ''}`}
-            onClick={toggleMenu}
-            aria-label="Toggle navigation"
-          >
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
-        </div>
+    <nav className="navbar">
+      <Link href="/" className="logo">
+        <Image src="/images/jl-logo-white.png" alt="Justin Lyons Logo" width={746} height={100} />
+      </Link>
 
-        <ul className={`nav-dropdown ${menuOpen ? 'open' : ''}`}>
-          {['The Program', 'Community', 'About', 'FAQ'].map((label) => (
-            <li key={label}>
-              <Link href={`#${label.toLowerCase()}`} onClick={closeMenu}>
-                {label} <MoveRight className='nav-icon' />
-              </Link>
-            </li>
-          ))}
+      <button
+        className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+        onClick={toggleMenu}
+        aria-label="Toggle navigation"
+      >
+        <span className="bar" />
+        <span className="bar" />
+        <span className="bar" />
+      </button>
 
-          <li className="nav-socials">
-              <a href="https://www.instagram.com/the.lyonsking" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Instagram size={28} />
-              </a>
+      <ul className={`nav-menu ${menuOpen ? 'open' : ''}`}>
+        {navLinks.map(label => (
+          <li key={label}>
+            <Link href={`#${label.toLowerCase()}`} onClick={() => setMenuOpen(false)}>
+              {label} <MoveRight className="nav-icon" />
+            </Link>
           </li>
-        </ul>
-      </div>
+        ))}
+        <li className="nav-socials">
+          <a
+            href="https://www.instagram.com/the.lyonsking"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <Instagram size={28} />
+          </a>
+        </li>
+      </ul>
     </nav>
   );
 };
