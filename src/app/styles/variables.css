@@ -43,7 +43,6 @@ body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
 }
 
 /* Improve media defaults */
@@ -115,6 +114,7 @@ h4,
 p,
 small {
   font-family: "Roboto", sans-serif;
+  line-height: 1.2;
 }
 
 h2 {

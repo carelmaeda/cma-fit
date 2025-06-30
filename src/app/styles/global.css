@@ -44,7 +44,6 @@ body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
 }
 
 /* Improve media defaults */
@@ -116,6 +115,7 @@ h4,
 p,
 small {
   font-family: "Roboto", sans-serif;
+  line-height: 1.2;
 }
 
 h2 {
@@ -595,7 +595,7 @@ nav .nav-dropdown li .nav-icon {
 .program-section {
   background: #1d1d1d;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   /* Responsive tweaks */
 }
 .program-section h2 {
@@ -611,8 +611,8 @@ nav .nav-dropdown li .nav-icon {
   margin: 0 auto 1rem;
   display: flex;
   overflow-x: auto;
-  background-color: #282828; /* Background for the entire progress/nav track */
   border-radius: 0.5rem;
+  background: #282828;
   padding: 0.25rem; /* Little padding around the tabs */
   /* Hide scrollbar on mobile */
   -webkit-overflow-scrolling: touch;
@@ -670,18 +670,17 @@ nav .nav-dropdown li .nav-icon {
   left: 0;
   height: 100%;
   background: linear-gradient(90deg, #39ff14, #22ee00);
-  border-radius: inherit;
   z-index: -1;
 }
 .program-section .program-card {
   width: 100%;
+  background: #383838;
   max-width: 480px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
-  border: solid 0.2em #ffffff;
   border-radius: 1rem;
   overflow: hidden;
   padding-bottom: 1rem;
@@ -751,13 +750,12 @@ nav .nav-dropdown li .nav-icon {
   gap: 0.5rem;
 }
 .program-section .program-card .program-list .badge-list li.badge-secondary {
-  background-color: #383838;
+  background-color: #282828;
   padding: 0.35rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 500;
   color: #ffffff;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 .program-section .btn-row {
   padding: 1rem;
@@ -821,7 +819,7 @@ nav .nav-dropdown li .nav-icon {
 }
 /*BRIDGE*/
 .bridge-section {
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: grid;
   gap: 2rem;
   justify-items: center;
@@ -843,43 +841,52 @@ nav .nav-dropdown li .nav-icon {
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
-.testimonial-section .testimonial-swiper-container {
-  max-width: 360px;
-  margin: 0 auto;
-}
-.testimonial-section .testimonial-swiper {
-  padding-bottom: 3rem;
-}
-.testimonial-section .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-}
-.testimonial-section .testimonial-card {
-  background: #282828;
-  border: solid 0.2em #ffffff;
-  border-radius: 1rem;
-  padding: 1.5rem;
+.testimonial-section .testimonial-carousel-container {
+  overflow: hidden;
   width: 100%;
+}
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper .testimonial-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper .testimonial-marquee .testimonial-marquee-content {
+  display: flex;
+  gap: 1.5rem;
+  width: -moz-max-content;
+  width: max-content;
+  animation: scroll 60s linear infinite;
+}
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper .testimonial-marquee .testimonial-marquee-content .testimonial-card {
+  min-width: 250px;
+  max-width: 320px;
+  background: #282828;
+  border-radius: 0.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  box-sizing: border-box;
+  color: #ffffff;
   text-align: left;
+  box-sizing: border-box;
 }
-.testimonial-section .testimonial-card .stars {
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper .testimonial-marquee .testimonial-marquee-content .testimonial-card .stars {
   color: gold;
   margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
-.testimonial-section .testimonial-card .testimonial-quote {
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper .testimonial-marquee .testimonial-marquee-content .testimonial-card .testimonial-quote {
   font-style: italic;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   position: relative;
   flex-grow: 1;
 }
-.testimonial-section .testimonial-card .testimonial-quote::before {
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper .testimonial-marquee .testimonial-marquee-content .testimonial-card .testimonial-quote::before {
   content: "“";
   font-size: 3rem;
   color: #39ff14;
@@ -888,37 +895,21 @@ nav .nav-dropdown li .nav-icon {
   left: -1rem;
   top: -1rem;
 }
-.testimonial-section .testimonial-card .testimonial-footer {
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper .testimonial-marquee .testimonial-marquee-content .testimonial-card .testimonial-footer {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
-.testimonial-section .testimonial-card .testimonial-footer .testimonial-image {
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper .testimonial-marquee .testimonial-marquee-content .testimonial-card .testimonial-footer .testimonial-image {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.testimonial-section .testimonial-card .testimonial-footer .testimonial-signature {
+.testimonial-section .testimonial-carousel-container .testimonial-carousel-wrapper .testimonial-marquee .testimonial-marquee-content .testimonial-card .testimonial-footer .testimonial-signature {
   display: flex;
   flex-direction: column;
   font-size: 0.9rem;
   gap: 0.25rem;
-}
-.testimonial-section .swiper-pagination {
-  bottom: 0;
-  text-align: center;
-}
-.testimonial-section .swiper-pagination .swiper-pagination-bullet {
-  background: #39ff14;
-  opacity: 1;
-  width: 12px;
-  height: 12px;
-  margin: 0 4px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-.testimonial-section .swiper-pagination .swiper-pagination-bullet-active {
-  background: #79ff61;
 }
 
 @media (min-width: 768px) {
