@@ -74,8 +74,6 @@ const programData: ProgramPhase[] = [
 ];
 
 const Program: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-
   return (
     <section className="program-section">
       <h2>Program Breakdown</h2>
