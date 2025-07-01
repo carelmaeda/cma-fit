@@ -339,9 +339,14 @@
 
 /* PROGRAM */
 
+.program-swiper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
 .program-section {
   background: $black;
-  $card-padding: 0 1rem;
   justify-content: center;
   padding: 2rem 1rem;
 
@@ -351,12 +356,10 @@
     font-family: $font-header;
     font-weight: $fw-header;
     font-size: 2rem;
-    margin-bottom: 1rem;
   }
 
   .program-nav-blended {
     width: 100%;
-    margin: 0 auto 1rem;
     display: flex;
     overflow-x: auto;
     border-radius: $border-radius-sm;
@@ -425,26 +428,24 @@
   }
 
   .program-card {
+    color: $white;
     width: 100%;
-    background: $gray-700;
     max-width: 480px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
+    gap: 1rem;
+    align-items: flex-start;
     border-radius: $border-radius-md;
     overflow: hidden;
-    padding-bottom: 1rem;
 
     .card-row-top {
-      padding: 1rem;
       display: flex;
       width: 100%;
       justify-content: space-between;
       align-items: start;
       min-height: 200px;
-      margin-bottom: 1rem;
+      padding: 2rem 1rem;
 
       background-size: cover;
       background-position: center;
@@ -455,147 +456,48 @@
         font-weight: $fw-header;
         font-size: 8rem;
         line-height: 0.8;
-        color: $white;
-      }
-
-      .badge-secondary {
-        background-color: $gray-800;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        color: $white;
-      }
-    }
-
-    .program-outcome {
-      padding: $card-padding;
-      width: 100%;
-      margin-bottom: 0.5rem;
-
-      p {
-        font-size: 1.3rem;
-        line-height: 1.1;
-        font-weight: 600;
-        color: $white;
-      }
-    }
-
-    .program-description {
-      padding: $card-padding;
-      width: 100%;
-
-      p {
-        font-size: 1rem;
-        line-height: 1.3;
-        font-weight: 300;
-        color: $gray-100;
       }
     }
 
     .program-list {
-      padding: $card-padding;
-      width: 100%;
-
-      h4 {
-        margin-bottom: 0.5rem;
-        color: $white;
-        font-weight: 600;
-        font-size: 1.1rem;
-      }
-
       .badge-list {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
-
-        li.badge-secondary {
-          background-color: $gray-800;
-          padding: 0.35rem 0.75rem;
-          border-radius: 20px;
-          font-size: 0.65rem;
-          font-weight: 500;
-          color: $white;
-        }
       }
     }
   }
 
-  .btn-row {
-    padding: 1rem;
-    width: 100%;
+  .swiper-wrapper-fixed {
     max-width: 480px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+  }
 
-    .btn-icon-primary {
-      background-color: $accent;
-      border: none;
-      padding: 1rem;
-      border-radius: 99px;
-      color: $white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+  .program-swiper {
+    height: 100%;
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+    .swiper-slide {
       display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &:hover,
-      &:focus {
-        background-color: $accent-light;
-      }
-
-      svg {
-        stroke-width: 1.5;
-      }
+      height: auto;
     }
   }
 
-  /* Responsive tweaks */
-  @media (max-width: 480px) {
-    .program-card {
-      .card-row-top {
-        h3 {
-          font-size: 6rem;
-        }
-      }
-    }
-    .program-nav-blended .nav-tab {
-      font-size: 0.6rem; /* Adjust font size for very small screens */
-      padding: 0.6rem 0.5rem;
-    }
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: $accent;
+    height: 16px;
+    border-radius: 8px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $accent;
   }
 }
 
 /* Responsive */
 @media (min-width: 768px) {
-  .program-card {
-    flex-direction: row;
-    align-items: stretch;
-
-    .card-img {
-      width: 50%;
-      height: auto;
-    }
-
-    .card-body {
-      width: 50%;
-      padding: 2rem;
-      justify-content: center;
-
-      h4 {
-        font-size: 1rem;
-      }
-
-      .card-title h3 {
-        font-size: 2.5rem;
-      }
-    }
-  }
 }
 
 /*BRIDGE*/

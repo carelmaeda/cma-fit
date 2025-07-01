@@ -566,11 +566,16 @@ h2 {
 }
 
 /* PROGRAM */
+.program-swiper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
 .program-section {
   background: #1d1d1d;
   justify-content: center;
   padding: 2rem 1rem;
-  /* Responsive tweaks */
 }
 .program-section h2 {
   color: #ffffff;
@@ -578,11 +583,9 @@ h2 {
   font-family: "Teko", sans-serif;
   font-weight: 700;
   font-size: 2rem;
-  margin-bottom: 1rem;
 }
 .program-section .program-nav-blended {
   width: 100%;
-  margin: 0 auto 1rem;
   display: flex;
   overflow-x: auto;
   border-radius: 0.5rem;
@@ -647,26 +650,24 @@ h2 {
   z-index: -1;
 }
 .program-section .program-card {
+  color: #ffffff;
   width: 100%;
-  background: #383838;
   max-width: 480px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
+  gap: 1rem;
+  align-items: flex-start;
   border-radius: 1rem;
   overflow: hidden;
-  padding-bottom: 1rem;
 }
 .program-section .program-card .card-row-top {
-  padding: 1rem;
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: start;
   min-height: 200px;
-  margin-bottom: 1rem;
+  padding: 2rem 1rem;
   background-size: cover;
   background-position: center;
   border-radius: 1rem 1rem 0 0;
@@ -676,121 +677,37 @@ h2 {
   font-weight: 700;
   font-size: 8rem;
   line-height: 0.8;
-  color: #ffffff;
-}
-.program-section .program-card .card-row-top .badge-secondary {
-  background-color: #282828;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  color: #ffffff;
-}
-.program-section .program-card .program-outcome {
-  padding: 0 1rem;
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-.program-section .program-card .program-outcome p {
-  font-size: 1.3rem;
-  line-height: 1.1;
-  font-weight: 600;
-  color: #ffffff;
-}
-.program-section .program-card .program-description {
-  padding: 0 1rem;
-  width: 100%;
-}
-.program-section .program-card .program-description p {
-  font-size: 1rem;
-  line-height: 1.3;
-  font-weight: 300;
-  color: #e8e8e8;
-}
-.program-section .program-card .program-list {
-  padding: 0 1rem;
-  width: 100%;
-}
-.program-section .program-card .program-list h4 {
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.1rem;
 }
 .program-section .program-card .program-list .badge-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.program-section .program-card .program-list .badge-list li.badge-secondary {
-  background-color: #282828;
-  padding: 0.35rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.65rem;
-  font-weight: 500;
-  color: #ffffff;
-}
-.program-section .btn-row {
-  padding: 1rem;
-  width: 100%;
+.program-section .swiper-wrapper-fixed {
   max-width: 480px;
   margin: 0 auto;
+}
+.program-section .program-swiper {
+  height: 100%;
+}
+.program-section .program-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.program-section .program-swiper .swiper-slide {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  height: auto;
 }
-.program-section .btn-row .btn-icon-primary {
-  background-color: #39ff14;
-  border: none;
-  padding: 1rem;
-  border-radius: 99px;
-  color: #ffffff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.program-section .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #39ff14;
+  height: 16px;
+  border-radius: 8px;
 }
-.program-section .btn-row .btn-icon-primary:hover, .program-section .btn-row .btn-icon-primary:focus {
-  background-color: #66ff66;
-}
-.program-section .btn-row .btn-icon-primary svg {
-  stroke-width: 1.5;
-}
-@media (max-width: 480px) {
-  .program-section .program-card .card-row-top h3 {
-    font-size: 6rem;
-  }
-  .program-section .program-nav-blended .nav-tab {
-    font-size: 0.6rem; /* Adjust font size for very small screens */
-    padding: 0.6rem 0.5rem;
-  }
+.program-section .swiper-button-next,
+.program-section .swiper-button-prev {
+  color: #39ff14;
 }
 
 /* Responsive */
-@media (min-width: 768px) {
-  .program-card {
-    flex-direction: row;
-    align-items: stretch;
-  }
-  .program-card .card-img {
-    width: 50%;
-    height: auto;
-  }
-  .program-card .card-body {
-    width: 50%;
-    padding: 2rem;
-    justify-content: center;
-  }
-  .program-card .card-body h4 {
-    font-size: 1rem;
-  }
-  .program-card .card-body .card-title h3 {
-    font-size: 2.5rem;
-  }
-}
 /*BRIDGE*/
 .bridge-section {
   padding: 3rem 1rem;
