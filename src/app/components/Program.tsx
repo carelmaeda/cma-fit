@@ -1,6 +1,5 @@
 ﻿'use client';
 
-import React, { useState } from 'react';
 import { Clock } from 'lucide-react';
 
 // Import Swiper React components
