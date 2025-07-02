@@ -4,7 +4,7 @@
 import React from 'react';
 
 
-const Bridge: React.FC = () => {
+export default function Bridge () {
   return (
     <section className="bridge-section">
         <h2>this is a section to with a long text to convince you to book a call with me.</h2>
@@ -13,4 +13,3 @@ const Bridge: React.FC = () => {
   );
 };
 
-export default Bridge;

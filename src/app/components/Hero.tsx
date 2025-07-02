@@ -9,11 +9,10 @@ import { MotionVertical } from '../utils/Motions';
 import Navbar from './Partials/Navbar';
 import { Instagram } from "lucide-react";
 
-const Hero: React.FC = () => {
+export default function Hero () {
   return (
     <section className="hero">
             <Navbar />
-
       <div className="hero-header">
       <div className="hero-title">
         <MotionVertical>
@@ -74,5 +73,3 @@ const Hero: React.FC = () => {
     </section>
   );
 };
-
-export default Hero;

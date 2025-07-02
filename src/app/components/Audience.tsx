@@ -4,7 +4,7 @@ import { Quote } from 'lucide-react';
 import React from 'react';
 
 
-const Audience: React.FC = () => {
+export default function Audience () {
   return (
     <section className="audience-section">
         <div className='quote1'><Quote /></div>
@@ -14,4 +14,3 @@ const Audience: React.FC = () => {
   );
 };
 
-export default Audience;

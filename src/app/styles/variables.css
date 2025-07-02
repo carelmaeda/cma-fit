@@ -126,6 +126,10 @@ h2 {
 }
 
 /*ASSETS*/
+.d-none {
+  display: none !important;
+}
+
 /*BAKCGROUND*/
 .overlay-dark {
   position: relative;

@@ -4,11 +4,10 @@ import React from 'react';
 import Image from 'next/image';
 import { testimonials } from '../data/testimonials';
 
-const Testimonials: React.FC = () => {
+export default function Testimonials() {
   return (
     <section className="testimonial-section">
       <h2>Our Community</h2>
-
       <div className="testimonial-marquee">
         <div className="testimonial-track">
           {[...Array(3)].map((_, loopIndex) => (
@@ -42,4 +41,3 @@ const Testimonials: React.FC = () => {
   );
 };
 
-export default Testimonials;

@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import Image from 'next/image';
 
-const About: React.FC = () => {
+export default function About () {
   return (
     <section className="about-section">
         <h2>About Me</h2>
@@ -24,4 +24,3 @@ const About: React.FC = () => {
   );
 };
 
-export default About;

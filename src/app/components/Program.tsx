@@ -72,10 +72,10 @@ const programData: ProgramPhase[] = [
   },
 ];
 
-const Program: React.FC = () => {
+export default function Program () {
   return (
     <section className="program-section">
-      <h2>Program Breakdown</h2>
+      <h2>Here&rsquo;s How It Works</h2>
 
       <div className="swiper-wrapper-fixed">
         <Swiper
@@ -139,4 +139,3 @@ const Program: React.FC = () => {
   );
 };
 
-export default Program;

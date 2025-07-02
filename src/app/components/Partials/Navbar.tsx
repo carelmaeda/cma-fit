@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MoveRight, Instagram } from 'lucide-react';
 
-const Navbar: React.FC = () => {
+export default function Navbar () {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -50,4 +50,3 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;

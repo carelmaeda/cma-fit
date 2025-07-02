@@ -24,7 +24,7 @@ const faqs = [
   },
 ];
 
-const FAQ: React.FC = () => {
+export default function FAQ () {
   return (
     <section className="faq-section">
       <h2>Frequently Asked Questions</h2>
@@ -45,4 +45,3 @@ const FAQ: React.FC = () => {
   );
 };
 
-export default FAQ;

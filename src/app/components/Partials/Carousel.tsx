@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Carousel: React.FC = () => {
+export default function Carousel {
   const words = ["Bodybuilding", "Coaching", "Community", "Personal Trainer", "Fitness Plan", "Workout Routine", "Nutrition", "Life Changing"];
   
   return (
@@ -24,4 +24,3 @@ const Carousel: React.FC = () => {
   );
 };
 
-export default Carousel;
