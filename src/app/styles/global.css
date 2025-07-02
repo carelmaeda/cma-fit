@@ -127,6 +127,10 @@ h2 {
 }
 
 /*ASSETS*/
+.d-none {
+  display: none !important;
+}
+
 /*BAKCGROUND*/
 .overlay-dark {
   position: relative;
@@ -683,19 +687,9 @@ h2 {
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.program-section .swiper-wrapper-fixed {
+.program-section .swiper-wrapper {
   max-width: 480px;
   margin: 0 auto;
-}
-.program-section .program-swiper {
-  height: 100%;
-}
-.program-section .program-swiper .swiper-wrapper {
-  align-items: stretch;
-}
-.program-section .program-swiper .swiper-slide {
-  display: flex;
-  height: auto;
 }
 .program-section .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: #39ff14;

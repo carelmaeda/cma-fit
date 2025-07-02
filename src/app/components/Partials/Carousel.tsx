@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Carousel {
+export default function Carousel() {
   const words = ["Bodybuilding", "Coaching", "Community", "Personal Trainer", "Fitness Plan", "Workout Routine", "Nutrition", "Life Changing"];
   
   return (

@@ -468,20 +468,9 @@
     }
   }
 
-  .swiper-wrapper-fixed {
+  .swiper-wrapper {
     max-width: 480px;
     margin: 0 auto;
-  }
-
-  .program-swiper {
-    height: 100%;
-    .swiper-wrapper {
-      align-items: stretch;
-    }
-    .swiper-slide {
-      display: flex;
-      height: auto;
-    }
   }
 
   .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
