@@ -81,44 +81,74 @@ select {
     scroll-behavior: auto !important;
   }
 }
-/*---------------------------------------------------------------*/
+/*-----------------------------START HERE--------------------------------------------------------------*/
 body {
   font-family: "Roboto", sans-serif;
-  background: #ffffff;
 }
 
 /*TYPOGRAPHY*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
-  line-height: 1.2;
-}
-
+/* TYPOGRAPHY */
 h1,
 h2,
 h3 {
+  text-transform: uppercase;
   font-family: "Teko", sans-serif;
   font-weight: 700;
-}
-
-h3,
-h4 {
-  font-weight: 500;
-}
-
-h4,
-p,
-small {
-  font-family: "Roboto", sans-serif;
   line-height: 1.2;
 }
 
-h2 {
+h4,
+h5,
+h6 {
+  letter-spacing: 0.05rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+p,
+small {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+h1 {
   font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+a {
+  color: #ffffff;
 }
 
 .font-header {
@@ -128,6 +158,11 @@ h2 {
 /*ASSETS*/
 .d-none {
   display: none !important;
+}
+
+/* SECTIONS */
+.section {
+  padding: 1rem;
 }
 
 /*BAKCGROUND*/
@@ -147,20 +182,38 @@ h2 {
 
 /* Base Button */
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 400px;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1;
   padding: 1rem 2rem;
   border-radius: 99px;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1;
+}
+.btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.btn-lg {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+  height: auto;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  height: auto;
 }
 
 .btn-primary {
@@ -178,7 +231,7 @@ h2 {
   border: #1d1d1d;
 }
 .btn-secondary:hover {
-  background-color: #1d1d1d;
+  background-color: #101010;
 }
 
 .btn-outline {
@@ -191,16 +244,33 @@ h2 {
   color: #ffffff;
 }
 
+.btn-link {
+  background: transparent;
+  color: #39ff14;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  text-transform: none;
+  text-align: left;
+  width: auto;
+  border: none;
+}
+.btn-link:hover {
+  color: #22ee00;
+  text-decoration: underline;
+}
+
 .btn-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
   padding: 1rem;
-  border-radius: 99px;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  font-size: 1.25rem;
   transition: background-color 0.3s ease;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
 }
 
 .btn-icon-primary {
@@ -216,7 +286,7 @@ h2 {
   color: #ffffff;
 }
 .btn-icon-secondary:hover {
-  background-color: #1d1d1d;
+  background-color: #101010;
 }
 
 .btn-icon-outline {

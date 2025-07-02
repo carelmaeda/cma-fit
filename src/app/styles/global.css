@@ -82,44 +82,74 @@ select {
     scroll-behavior: auto !important;
   }
 }
-/*---------------------------------------------------------------*/
+/*-----------------------------START HERE--------------------------------------------------------------*/
 body {
   font-family: "Roboto", sans-serif;
-  background: #ffffff;
 }
 
 /*TYPOGRAPHY*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
-  line-height: 1.2;
-}
-
+/* TYPOGRAPHY */
 h1,
 h2,
 h3 {
+  text-transform: uppercase;
   font-family: "Teko", sans-serif;
   font-weight: 700;
-}
-
-h3,
-h4 {
-  font-weight: 500;
-}
-
-h4,
-p,
-small {
-  font-family: "Roboto", sans-serif;
   line-height: 1.2;
 }
 
-h2 {
+h4,
+h5,
+h6 {
+  letter-spacing: 0.05rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+p,
+small {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+h1 {
   font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+a {
+  color: #ffffff;
 }
 
 .font-header {
@@ -129,6 +159,11 @@ h2 {
 /*ASSETS*/
 .d-none {
   display: none !important;
+}
+
+/* SECTIONS */
+.section {
+  padding: 1rem;
 }
 
 /*BAKCGROUND*/
@@ -148,20 +183,38 @@ h2 {
 
 /* Base Button */
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 400px;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1;
   padding: 1rem 2rem;
   border-radius: 99px;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1;
+}
+.btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.btn-lg {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+  height: auto;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  height: auto;
 }
 
 .btn-primary {
@@ -179,7 +232,7 @@ h2 {
   border: #1d1d1d;
 }
 .btn-secondary:hover {
-  background-color: #1d1d1d;
+  background-color: #101010;
 }
 
 .btn-outline {
@@ -192,16 +245,33 @@ h2 {
   color: #ffffff;
 }
 
+.btn-link {
+  background: transparent;
+  color: #39ff14;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  text-transform: none;
+  text-align: left;
+  width: auto;
+  border: none;
+}
+.btn-link:hover {
+  color: #22ee00;
+  text-decoration: underline;
+}
+
 .btn-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
   padding: 1rem;
-  border-radius: 99px;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  font-size: 1.25rem;
   transition: background-color 0.3s ease;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
 }
 
 .btn-icon-primary {
@@ -217,7 +287,7 @@ h2 {
   color: #ffffff;
 }
 .btn-icon-secondary:hover {
-  background-color: #1d1d1d;
+  background-color: #101010;
 }
 
 .btn-icon-outline {
@@ -412,9 +482,6 @@ h2 {
   justify-content: space-between;
   padding: 1rem;
 }
-.hero .avatar-btns a {
-  color: #ffffff;
-}
 .hero .avatar-btns .social {
   display: flex;
   flex-direction: column;
@@ -422,7 +489,6 @@ h2 {
 }
 .hero video {
   position: absolute;
-  filter: contrast(120%);
   top: 0;
   left: 0;
   width: 100%;
@@ -436,6 +502,7 @@ h2 {
   top: 0;
   left: 0;
   width: 100%;
+  filter: contrast(120%);
   height: 100%;
   background: rgba(44, 44, 44, 0.5);
   z-index: -1;
@@ -548,10 +615,6 @@ h2 {
   gap: 0.5rem;
   color: #1d1d1d;
 }
-.about-section h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
 .about-section .about-card {
   display: flex;
   gap: 1rem;
@@ -570,88 +633,11 @@ h2 {
 }
 
 /* PROGRAM */
-.program-swiper {
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
 .program-section {
   background: #1d1d1d;
+  color: #ffffff;
   justify-content: center;
   padding: 2rem 1rem;
-}
-.program-section h2 {
-  color: #ffffff;
-  text-align: center;
-  font-family: "Teko", sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-}
-.program-section .program-nav-blended {
-  width: 100%;
-  display: flex;
-  overflow-x: auto;
-  border-radius: 0.5rem;
-  background: #282828;
-  padding: 0.25rem; /* Little padding around the tabs */
-  /* Hide scrollbar on mobile */
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.program-section .program-nav-blended::-webkit-scrollbar {
-  display: none;
-}
-.program-section .program-nav-blended .nav-tab {
-  flex: 1 0 auto; /* Allow tabs to grow/shrink but not completely collapse */
-  padding: 0.5rem 0.75rem;
-  text-align: center;
-  font-size: 0.75rem;
-  color: #ffffff;
-  position: relative; /* For the progress fill pseudo-element */
-  cursor: pointer;
-  transition: color 0.3s ease; /* Only color transition on tab itself */
-  text-transform: uppercase;
-  border-radius: 0.5rem; /* Slightly smaller than container for visual space */
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  white-space: nowrap; /* Prevent text wrapping */
-  z-index: 1; /* Ensure text is above the progress fill */
-  overflow: hidden; /* Hide overflow of the progress fill */
-}
-.program-section .program-nav-blended .nav-tab::before {
-  /* This will be the actual progress fill */
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: #39ff14;
-  border-radius: inherit; /* Inherit border radius from parent */
-  z-index: -1; /* Place behind the text */
-  width: 0; /* Initial state, will be animated by React */
-  transition: width 0.4s ease; /* For initial animation */
-}
-.program-section .program-nav-blended .nav-tab.completed {
-  /* When a tab is completed, its background is fully filled */
-  color: #1d1d1d;
-}
-.program-section .program-nav-blended .nav-tab.completed::before {
-  width: 100%;
-}
-.program-section .program-nav-blended .nav-tab.active {
-  color: #1d1d1d;
-  font-weight: 700; /* Make active tab slightly bolder */
-}
-.program-section .program-nav-blended .nav-tab.active .nav-tab-progress-fill {
-  /* The motion.span inside the active tab */
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: linear-gradient(90deg, #39ff14, #22ee00);
-  z-index: -1;
 }
 .program-section .program-card {
   color: #ffffff;
@@ -677,8 +663,6 @@ h2 {
   border-radius: 1rem 1rem 0 0;
 }
 .program-section .program-card .card-row-top h3 {
-  font-family: "Teko", sans-serif;
-  font-weight: 700;
   font-size: 8rem;
   line-height: 0.8;
 }
@@ -687,18 +671,31 @@ h2 {
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.program-section .swiper-wrapper {
+.program-section .swiper {
   max-width: 480px;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
-.program-section .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: #39ff14;
-  height: 16px;
-  border-radius: 8px;
+.program-section .swiper-pagination-progressbar {
+  height: 16px !important;
+  border-radius: 8px 8px 0 0 !important;
+  overflow: hidden;
+}
+.program-section .swiper-pagination-progressbar-fill {
+  background: linear-gradient(90deg, #39ff14, #ffdd57 40%, #ff6a3d 70%, #ff1744 100%) !important;
 }
 .program-section .swiper-button-next,
 .program-section .swiper-button-prev {
   color: #39ff14;
+}
+.program-section .swiper-button-prev,
+.program-section .swiper-button-next {
+  width: 0;
+}
+.program-section .swiper-button-prev:after,
+.program-section .swiper-button-next:after {
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 /* Responsive */

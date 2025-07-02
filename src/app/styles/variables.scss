@@ -147,46 +147,77 @@ select {
   }
 }
 
-/*---------------------------------------------------------------*/
+/*-----------------------------START HERE--------------------------------------------------------------*/
 
 body {
   font-family: $font-body;
-  background: $white;
 }
 
 /*TYPOGRAPHY*/
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
-  line-height: 1.2;
-}
+/* TYPOGRAPHY */
 
 h1,
 h2,
 h3 {
+  text-transform: uppercase;
   font-family: $font-header;
   font-weight: 700;
-}
-
-h3,
-h4 {
-  font-weight: 500;
-}
-
-h4,
-p,
-small {
-  font-family: $font-body;
   line-height: 1.2;
 }
 
-h2 {
+h4,
+h5,
+h6 {
+  letter-spacing: 0.05rem;
+  font-family: $font-body;
+  font-weight: 400;
+  line-height: 1;
+}
+
+p,
+small {
+  font-family: $font-body;
+  font-weight: 400;
+  line-height: 1;
+}
+
+h1 {
   font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+a {
+  color: $white;
 }
 
 .font-header {
@@ -197,6 +228,12 @@ h2 {
 
 .d-none {
   display: none !important;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 1rem;
 }
 
 /*BAKCGROUND*/
@@ -219,20 +256,43 @@ h2 {
 
 // Base Button
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 400px;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1;
   padding: 1rem 2rem;
   border-radius: 99px;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   border: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  line-height: 1;
+
+  &:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+// Large Button
+.btn-lg {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+  height: auto;
+}
+
+// Small Button
+.btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  height: auto;
 }
 
 // Primary Button
@@ -253,7 +313,7 @@ h2 {
   border: $black;
 
   &:hover {
-    background-color: $black;
+    background-color: darken($black, 5%);
   }
 }
 
@@ -269,20 +329,39 @@ h2 {
   }
 }
 
-// Icon Button Base
+// Link Button
+.btn-link {
+  background: transparent;
+  color: $accent;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  text-transform: none;
+  text-align: left;
+  width: auto;
+  border: none;
+
+  &:hover {
+    color: $accent-dark;
+    text-decoration: underline;
+  }
+}
+
+// Icon Button (circle or pill style)
 .btn-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
   padding: 1rem;
-  border-radius: 99px;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  font-size: 1.25rem;
   transition: background-color 0.3s ease;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
 }
 
-// Icon Button Primary
+// Icon Primary
 .btn-icon-primary {
   background-color: $accent;
   color: $black;
@@ -292,17 +371,17 @@ h2 {
   }
 }
 
-// Icon Button Secondary
+// Icon Secondary
 .btn-icon-secondary {
   background-color: $black;
   color: $white;
 
   &:hover {
-    background-color: $black;
+    background-color: darken($black, 5%);
   }
 }
 
-// Icon Button Outline
+// Icon Outline
 .btn-icon-outline {
   background: transparent;
   color: $accent;

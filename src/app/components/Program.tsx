@@ -1,6 +1,8 @@
 ﻿'use client';
 
 import { Clock } from 'lucide-react';
+import React, { useState } from 'react';
+
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -73,11 +75,23 @@ const programData: ProgramPhase[] = [
 ];
 
 export default function Program () {
-  return (
-    <section className="program-section">
-      <h2>Here&rsquo;s How It Works</h2>
 
-      <div className="swiper-wrapper-fixed">
+  const [openStates, setOpenStates] = useState<boolean[]>(
+    Array(programData.length).fill(false)
+  );
+
+  const toggleDropdown = (index: number) => {
+    setOpenStates((prev) => {
+      const newStates = [...prev];
+      newStates[index] = !newStates[index];
+      return newStates;
+    });
+  };
+
+
+  return (
+    <section className="section program-section">
+      <h2>Here&rsquo;s How It Works</h2>
         <Swiper
           pagination={{
             type: 'progressbar',
@@ -109,32 +123,37 @@ export default function Program () {
                   <p>{phase.description}</p>
                 </div>
 
-                <div className="program-list">
-                  <h4>Goals</h4>
-                  <ul className="badge-list">
-                    {phase.goals.map((goal, i) => (
-                      <li key={i} className="badge badge-secondary">
-                        {goal}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <button className='btn btn-link' onClick={() => toggleDropdown(index)}>
+                    {openStates[index] ? 'Read Less' : 'Read More'}
+                </button>
 
-                <div className="program-list">
-                  <h4>Key Focus</h4>
-                  <ul className="badge-list">
-                    {phase.focus.map((item, i) => (
-                      <li key={i} className="badge badge-secondary">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <div className={`program-dropdown ${openStates[index] ? '' : 'd-none'}`}>
+                  <div className="program-list">
+                    <h4>Goals</h4>
+                    <ul className="badge-list">
+                      {phase.goals.map((goal, i) => (
+                        <li key={i} className="badge badge-secondary">
+                          {goal}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="program-list">
+                    <h4>Key Focus</h4>
+                    <ul className="badge-list">
+                      {phase.focus.map((item, i) => (
+                        <li key={i} className="badge badge-secondary">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
     </section>
   );
 };
