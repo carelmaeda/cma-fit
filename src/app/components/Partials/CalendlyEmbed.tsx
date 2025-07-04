@@ -21,9 +21,9 @@ export default function CalendlyEmbed() {
 
       <div
         className="calendly-inline-widget"
-        data-url="https://calendly.com/carelmaeda/30min?name=Carel&email=carelmaeda@gmail.com"
+        data-url="https://calendly.com/justin_lyons3/30min"
         style={{ minWidth: '320px', height: '900px' }}
-        aria-label="Schedule a meeting through Calendly"
+        aria-label="Schedule a meeting with me through Calendly"
       ></div>
     </section>
   );
