@@ -94,7 +94,7 @@ export default function Testimonials() {
                       </p>
                       {needsExpand && (
                         <button
-                          className="expand-btn"
+                          className="btn btn-link"
                           onClick={() => toggleExpand(testimonialKey)}
                           aria-label={isExpanded ? 'Show less' : 'Show more'}
                         >
