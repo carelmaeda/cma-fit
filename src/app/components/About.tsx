@@ -27,7 +27,7 @@ export default function About() {
 
           <div className="about-text">
             <h2>About Me</h2>
-            <p className="intro-text">
+            <p>
               I'm a personal trainer and online fitness coach with over a decade of hands-on experience in athletics, performance training, and injury prevention. My journey started on the football field, where I played for 12 years and earned a scholarship to compete at the collegiate level.
             </p>
             {isExpanded && (

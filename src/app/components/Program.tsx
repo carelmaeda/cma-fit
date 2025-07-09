@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import { Clock } from 'lucide-react';
+import { Clock, Plus, Minus } from 'lucide-react';
 import React, { useState } from 'react';
 
 
@@ -35,8 +35,8 @@ const programData: ProgramPhase[] = [
     duration: '4 Weeks',
     description:
       'Build a solid foundation through proper form, better mobility, and basic strength and cardio development.',
-    goals: ['Build consistency', 'Improve mobility', 'Learn proper form'],
-    focus: ['Fundamental movements', 'Core activation', 'Technique'],
+    goals: ['Build consistency', 'Improve mobility', 'Learn proper form', 'Increase body awareness'],
+    focus: ['Fundamental movements', 'Core activation', 'Technique', 'Mind-muscle connection'],
     outcomes: 'Solid base and confidence in key movements.',
   },
   {
@@ -46,8 +46,8 @@ const programData: ProgramPhase[] = [
     duration: '4 Weeks',
     description:
       'Time to challenge your body with increased intensity. You’ll introduce more advanced movements and weight training.',
-    goals: ['Increase stamina', 'Enhance strength', 'Adapt to routine'],
-    focus: ['Progressive overload', 'Volume training', 'Body awareness'],
+    goals: ['Increase stamina', 'Enhance strength', 'Adapt to routine', 'Improve muscular endurance'],
+    focus: ['Progressive overload', 'Volume training', 'Body awareness', 'Compound lifts'],
     outcomes: 'Visible improvements in endurance and strength.',
   },
   {
@@ -57,8 +57,8 @@ const programData: ProgramPhase[] = [
     duration: '4 Weeks',
     description:
       'Push past limits with demanding workouts, refining technique, and aiming for specific performance goals.',
-    goals: ['Break plateaus', 'Elevate performance', 'Boost metabolism'],
-    focus: ['Intensity training', 'Interval work', 'Power output'],
+    goals: ['Break plateaus', 'Elevate performance', 'Boost metabolism', 'Improve anaerobic capacity'],
+    focus: ['Intensity training', 'Interval work', 'Power output', 'Advanced techniques'],
     outcomes: 'Major breakthroughs in performance and resilience.',
   },
   {
@@ -68,8 +68,8 @@ const programData: ProgramPhase[] = [
     duration: 'Ongoing',
     description:
       'Fine-tune your training to reach peak physical condition, focusing on precision, intensity, and sustainability.',
-    goals: ['Maximize output', 'Sharpen physique', 'Achieve peak form'],
-    focus: ['High-intensity', 'Sport-specific drills', 'Recovery management'],
+    goals: ['Maximize output', 'Sharpen physique', 'Achieve peak form', 'Maintain high performance'],
+    focus: ['High-intensity', 'Sport-specific drills', 'Recovery management', 'Periodization'],
     outcomes: 'Achieve your personal best.',
   },
 ];
@@ -90,7 +90,7 @@ export default function Program () {
 
 
   return (
-    <section className="section program-section">
+    <section className="program-section">
       <h2>Here&rsquo;s How It Works</h2>
         <Swiper
           pagination={{
@@ -112,25 +112,23 @@ export default function Program () {
                     <Clock size={16} /> {phase.duration}
                   </span>
                 </div>
+
+                <div className='program-content'>
                 <div className="program-title">
                   <h3>{phase.title}</h3>
                 </div>
-                <div className="program-outcome">
-                  <p>{phase.outcomes}</p>
-                </div>
-
+                  <h4>{phase.outcomes}</h4>
                 <div className="program-description">
                   <p>{phase.description}</p>
                 </div>
-
-                <button className='btn btn-link' onClick={() => toggleDropdown(index)}>
-                    {openStates[index] ? 'Read Less' : 'Read More'}
+                <button onClick={() => toggleDropdown(index)}>
+                    {openStates[index] ? <Minus size={32} /> : <Plus size={32} />}
                 </button>
 
                 <div className={`program-dropdown ${openStates[index] ? '' : 'd-none'}`}>
                   <div className="program-list">
                     <h4>Goals</h4>
-                    <ul className="badge-list">
+                    <ul className="specialties">
                       {phase.goals.map((goal, i) => (
                         <li key={i} className="badge badge-secondary">
                           {goal}
@@ -141,7 +139,7 @@ export default function Program () {
 
                   <div className="program-list">
                     <h4>Key Focus</h4>
-                    <ul className="badge-list">
+                    <ul className="specialties">
                       {phase.focus.map((item, i) => (
                         <li key={i} className="badge badge-secondary">
                           {item}
@@ -150,6 +148,9 @@ export default function Program () {
                     </ul>
                   </div>
                 </div>
+
+                </div>
+
               </div>
             </SwiperSlide>
           ))}
