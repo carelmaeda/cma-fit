@@ -24,10 +24,8 @@ export default function Hero () {
         </MotionVertical>
       </div>
 
-    
-
         <div className="hero-btns">
-          <a href="#the program" className="btn-icon btn-icon-outline"><MoveDown /></a>
+          {/* <a href="#the program" className="btn-icon btn-icon-outline"><MoveDown size={64}/></a> */}
           <a href="#contact" className="btn btn-primary">Book a call with me</a>
         </div>
       </div>

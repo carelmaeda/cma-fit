@@ -4,7 +4,7 @@ import Testimonials from "./components/Testimonials";
 import About from "./components/About";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Partials/Footer";
-import CalendlyEmbed from "./components/Partials/CalendlyEmbed";
+import CalendlyEmbed from "./components/CalendlyEmbed";
 import Bridge from "./components/Bridge";
 import Audience from "./components/Audience";
 
