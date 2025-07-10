@@ -107,7 +107,7 @@ export default function Program () {
                   className="card-row-top"
                   style={{ backgroundImage: `url(${phase.image})` }}
                 >
-                  <h3>{phase.step}</h3>
+                  <h2>{phase.step}</h2>
                   <span className="badge badge-secondary">
                     <Clock size={16} /> {phase.duration}
                   </span>
@@ -121,32 +121,37 @@ export default function Program () {
                 <div className="program-description">
                   <p>{phase.description}</p>
                 </div>
-                <button onClick={() => toggleDropdown(index)}>
-                    {openStates[index] ? <Minus size={32} /> : <Plus size={32} />}
-                </button>
 
-                <div className={`program-dropdown ${openStates[index] ? '' : 'd-none'}`}>
-                  <div className="program-list">
-                    <h4>Goals</h4>
-                    <ul className="specialties">
-                      {phase.goals.map((goal, i) => (
-                        <li key={i} className="badge badge-secondary">
-                          {goal}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="program-accordion">
+                    <details>
+                      <summary>
+                        <h5>Goals</h5>
+                        <span className="faq-toggle-icon">+</span>
+                      </summary>
+                        <ul className="specialties">
+                          {phase.goals.map((goal, i) => (
+                            <li key={i} className="badge badge-secondary">
+                              {goal}
+                            </li>
+                          ))}
+                        </ul>
+                    </details>
 
-                  <div className="program-list">
-                    <h4>Key Focus</h4>
-                    <ul className="specialties">
-                      {phase.focus.map((item, i) => (
-                        <li key={i} className="badge badge-secondary">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                      <details>
+                        <summary>
+                          <h5>Key Focus</h5>
+                          <span className="faq-toggle-icon">+</span>
+                        </summary>
+                        <div className="faq-answer">
+                          <ul className="specialties">
+                            {phase.focus.map((item, i) => (
+                              <li key={i} className="badge badge-secondary">
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </details>
                 </div>
 
                 </div>

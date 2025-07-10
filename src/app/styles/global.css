@@ -164,6 +164,10 @@ a {
   font-family: "Teko", sans-serif;
 }
 
+.text-highlight {
+  color: #39ff14;
+}
+
 /*ASSETS*/
 .d-none {
   display: none !important;
@@ -605,10 +609,10 @@ a {
   padding: 2rem 3rem 3rem 3rem;
   display: grid;
   justify-content: center;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
   gap: 0.5rem;
-}
-.audience-section span {
-  color: #39ff14;
 }
 .audience-section svg {
   color: #505050;
@@ -689,6 +693,14 @@ a {
   align-items: flex-start;
   overflow: hidden;
 }
+.program-section .program-card h2 {
+  font-size: 8rem;
+  line-height: 0.8;
+}
+.program-section .program-card h3 {
+  font-size: 3rem;
+  line-height: 0.8;
+}
 .program-section .program-card .card-row-top {
   display: flex;
   width: 100%;
@@ -699,17 +711,13 @@ a {
   background-size: cover;
   background-position: center;
 }
-.program-section .program-card .card-row-top h3 {
-  font-size: 8rem;
-  line-height: 0.8;
-}
 .program-section .program-card .program-content {
   display: grid;
   gap: 1rem;
   padding: 0 0 1rem 0;
 }
 .program-section .program-card .program-description {
-  padding: 1rem;
+  padding: 0 1rem;
 }
 .program-section .program-card .program-dropdown {
   background: #282828;
@@ -717,10 +725,38 @@ a {
   display: grid;
   gap: 1rem;
 }
-.program-section .program-card button {
-  text-align: center;
-  color: #39ff14;
+.program-section .program-card .program-accordion {
+  width: 100%;
+  max-width: 600px;
   margin: auto;
+  color: #66ff66;
+}
+.program-section .program-card .program-accordion details {
+  border-bottom: solid 1px #ffffff;
+}
+.program-section .program-card .program-accordion details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+.program-section .program-card .program-accordion details summary::-webkit-details-marker {
+  display: none;
+}
+.program-section .program-card .program-accordion details summary .faq-toggle-icon {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  transition: transform 0.3s;
+}
+.program-section .program-card .program-accordion details[open] summary .faq-toggle-icon {
+  transform: rotate(45deg);
+}
+.program-section .program-card .program-accordion details[open] ul {
+  margin-top: 0.5rem;
+  padding: 0 1rem 1rem 1rem;
 }
 .program-section .swiper {
   max-width: 480px;
@@ -736,7 +772,7 @@ a {
 }
 .program-section .swiper-button-next,
 .program-section .swiper-button-prev {
-  color: #39ff14;
+  color: #707070;
 }
 .program-section .swiper-button-prev,
 .program-section .swiper-button-next {
@@ -751,7 +787,7 @@ a {
 /* Responsive */
 /*BRIDGE*/
 .bridge-section {
-  padding: 3rem 1rem;
+  padding: 3rem;
   display: grid;
   gap: 2rem;
   justify-items: center;
@@ -760,6 +796,9 @@ a {
 }
 .bridge-section h2 {
   line-height: 0.9;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 /* TESTIMONIALS */
@@ -768,7 +807,7 @@ a {
   gap: 1rem;
   background: #383838;
   color: #ffffff;
-  padding: 2rem 0;
+  padding: 4rem 0;
   text-align: center;
 }
 .testimonial-section .testimonial-marquee {

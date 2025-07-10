@@ -7,9 +7,9 @@ import React from 'react';
 export default function Audience () {
   return (
     <section className="audience-section">
-        <div className='quote1'><Quote /></div>
-        <h3>This program is for anyone ready to take control of their fitness. <br/>I offer <span>tailored fitness classes</span> to suit every need, from total beginners to returning athletes.</h3>
-        <div className='quote2'><Quote /></div>
+        <div className="quote1"><Quote /></div>
+        <h3>I plan every <span className='text-highlight'>tailored fitness class</span> just for you. So, if you&apos;re a total beginner or an athlete getting back at it, it&apos;ll fit your journey perfectly.</h3>
+        <div className="quote2"><Quote /></div>
     </section>
   );
 };
