@@ -136,7 +136,6 @@ export default function Program () {
                           ))}
                         </ul>
                     </details>
-
                       <details>
                         <summary>
                           <h5>Key Focus</h5>
