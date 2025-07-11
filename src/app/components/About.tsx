@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { CirclePlus, CircleMinus } from "lucide-react";
 
 export default function About() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -30,6 +31,7 @@ export default function About() {
             <p>
               I'm a personal trainer and online fitness coach with over a decade of hands-on experience in athletics, performance training, and injury prevention. My journey started on the football field, where I played for 12 years and earned a scholarship to compete at the collegiate level.
             </p>
+
             {isExpanded && (
               <div className="expanded-content">
                 <p>
@@ -43,12 +45,9 @@ export default function About() {
                 </p>
               </div>
             )}
-            
-            <button 
-              className="btn btn-link"
-              onClick={toggleExpanded}
-            >
-              {isExpanded ? 'Less' : 'More'}
+            <button className="btn-toggle" onClick={toggleExpanded}>
+              {isExpanded ? <CircleMinus size={16} /> : <CirclePlus size={16} />}{" "}
+              Show {isExpanded ? "Less" : "More"}
             </button>
           </div>
 
@@ -68,16 +67,14 @@ export default function About() {
             </div>
           </div>       
           <div className="specialties">
-              <span className="badge badge-secondary">Performance Training</span>
-              <span className="badge badge-secondary">Athletic Coaching</span>
-              <span className="badge badge-secondary">Injury Prevention</span>
-              <span className="badge badge-secondary">Strength & Conditioning</span>
-              <span className="badge badge-secondary">Endurance Training</span>
-              <span className="badge badge-secondary">Rehabilitation</span>
+              <span>+ Performance Training</span>
+              <span>+ Athletic Coaching</span>
+              <span>+ Injury Prevention</span>
+              <span>+ Strength & Conditioning</span>
+              <span>+ Endurance Training</span>
+              <span>+ Rehabilitation</span>
             </div>
           </div>
-
-
     </section>
   );
 };

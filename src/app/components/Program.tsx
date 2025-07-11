@@ -1,20 +1,19 @@
 ﻿'use client';
 
-import { Clock, Plus, Minus } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import React, { useState } from 'react';
 
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Pagination } from 'swiper/modules';
+
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-
-// import required modules
-import { Pagination, Navigation } from 'swiper/modules';
 
 interface ProgramPhase {
   step: string;
@@ -70,7 +69,7 @@ const programData: ProgramPhase[] = [
       'Fine-tune your training to reach peak physical condition, focusing on precision, intensity, and sustainability.',
     goals: ['Maximize output', 'Sharpen physique', 'Achieve peak form', 'Maintain high performance'],
     focus: ['High-intensity', 'Sport-specific drills', 'Recovery management', 'Periodization'],
-    outcomes: 'Achieve your personal best.',
+    outcomes: 'Achieve and maintain your personal best.',
   },
 ];
 
@@ -91,75 +90,94 @@ export default function Program () {
 
   return (
     <section className="program-section">
-      <h2>Here&rsquo;s How It Works</h2>
-        <Swiper
-          pagination={{
-            type: 'progressbar',
-          }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {programData.map((phase, index) => (
-            <SwiperSlide key={index}>
-              <div className="program-card">
-                <div
-                  className="card-row-top"
-                  style={{ backgroundImage: `url(${phase.image})` }}
-                >
-                  <h2>{phase.step}</h2>
-                  <span className="badge badge-secondary">
-                    <Clock size={16} /> {phase.duration}
-                  </span>
-                </div>
+    <h2>Here&rsquo;s How It Works</h2>
+    <Swiper
+      slidesPerView={1.3}
+      spaceBetween={20}
+      freeMode={true}
+      modules={[FreeMode]}
+      className="mySwiper"
+      breakpoints={{
+        320: {
+          slidesPerView: 1.1,
+          spaceBetween: 16,
+        },
+        640: {
+          slidesPerView: 1.3,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 1.5,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 2.2,
+          spaceBetween: 24,
+        },
+        1280: {
+          slidesPerView: 2.5,
+          spaceBetween: 32,
+        },
+      }}
+    >
+      {programData.map((phase, index) => (
+        <SwiperSlide key={index}>
+          <div className="program-card">
+            <div
+              className="card-row-top"
+              style={{ backgroundImage: `url(${phase.image})` }}
+            >
+              <h2>{phase.step}</h2>
+              <span className="badge badge-tertiary">
+                <Clock size={16} /> {phase.duration}
+              </span>
+            </div>
 
-                <div className='program-content'>
-                <div className="program-title">
-                  <h3>{phase.title}</h3>
-                </div>
-                  <h4>{phase.outcomes}</h4>
-                <div className="program-description">
-                  <p>{phase.description}</p>
-                </div>
-
-                <div className="program-accordion">
-                    <details>
-                      <summary>
-                        <h5>Goals</h5>
-                        <span className="faq-toggle-icon">+</span>
-                      </summary>
-                        <ul className="specialties">
-                          {phase.goals.map((goal, i) => (
-                            <li key={i} className="badge badge-secondary">
-                              {goal}
-                            </li>
-                          ))}
-                        </ul>
-                    </details>
-                      <details>
-                        <summary>
-                          <h5>Key Focus</h5>
-                          <span className="faq-toggle-icon">+</span>
-                        </summary>
-                        <div className="faq-answer">
-                          <ul className="specialties">
-                            {phase.focus.map((item, i) => (
-                              <li key={i} className="badge badge-secondary">
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </details>
-                </div>
-
-                </div>
-
+            <div className="program-content">
+              <div className="program-title">
+                <h3>{phase.title}</h3>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-    </section>
+              <h4>{phase.outcomes}</h4>
+              <div className="program-description">
+                <p>{phase.description}</p>
+              </div>
+
+              <div className="program-accordion">
+                <details>
+                  <summary>
+                    <h5>Goals</h5>
+                    <span className="faq-toggle-icon">+</span>
+                  </summary>
+                  <ul className="specialties">
+                    {phase.goals.map((goal, i) => (
+                      <li key={i} className="badge badge-secondary">
+                        {goal}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+                <details>
+                  <summary>
+                    <h5>Key Focus</h5>
+                    <span className="faq-toggle-icon">+</span>
+                  </summary>
+                  <div className="faq-answer">
+                    <ul className="specialties">
+                      {phase.focus.map((item, i) => (
+                        <li key={i} className="badge badge-secondary">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </section>
   );
 };
 

@@ -344,7 +344,7 @@ a {
 // Link Button
 .btn-link {
   background: transparent;
-  color: $accent;
+  color: $accent-dark;
   padding: 0.5rem 0;
   font-weight: 500;
   text-transform: none;
@@ -358,7 +358,6 @@ a {
   }
 }
 
-// Icon Button (circle or pill style)
 .btn-icon {
   display: inline-flex;
   align-items: center;
@@ -404,6 +403,13 @@ a {
   }
 }
 
+.btn-toggle {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  gap: 0.5rem;
+}
+
 /*BADGE*/
 .badge {
   display: flex;
@@ -431,6 +437,11 @@ a {
 .badge-secondary {
   background-color: $gray-500;
   color: $white;
+}
+
+.badge-tertiary {
+  background-color: $accent;
+  color: $black;
 }
 
 .badge-list {

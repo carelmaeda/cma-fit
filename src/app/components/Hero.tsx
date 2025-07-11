@@ -20,7 +20,7 @@ export default function Hero () {
         </MotionVertical>
         <MotionVertical>
           <h1>Hi! I&apos;m Justin.</h1>
-          <p className="hero-subtext">My simple 3-month program will get you fit, strong, and confident.</p>
+          <p className="hero-subtext">My custom 3-month program will get you fit, strong, and confident.</p>
         </MotionVertical>
       </div>
 
