@@ -1,7 +1,6 @@
 ﻿'use client';
 
 import React from 'react';
-import { MoveDown } from "lucide-react";
 import Carousel from './Partials/Carousel';
 import { testimonials } from '../data/testimonials';
 import Image from 'next/image';
