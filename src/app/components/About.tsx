@@ -29,19 +29,19 @@ export default function About() {
           <div className="about-text">
             <h2>About Me</h2>
             <p>
-              I'm a personal trainer and online fitness coach with over a decade of hands-on experience in athletics, performance training, and injury prevention. My journey started on the football field, where I played for 12 years and earned a scholarship to compete at the collegiate level.
+              I&apos;m a personal trainer and online fitness coach with over a decade of hands-on experience in athletics, performance training, and injury prevention. My journey started on the football field, where I played for 12 years and earned a scholarship to compete at the collegiate level.
             </p>
 
             {isExpanded && (
               <div className="expanded-content">
                 <p>
-                  During that time, I had the opportunity to intern under elite strength and conditioning coaches, shaping the foundation of my approach to training. I've coached professional athletes through combine prep, guided youth athletes toward earning scholarships, and helped countless clients reach their next level—whether it's stepping onto the field, hitting a personal best, or simply moving pain-free.
+                  During that time, I had the opportunity to intern under elite strength and conditioning coaches, shaping the foundation of my approach to training. I&apos;ve coached professional athletes through combine prep, guided youth athletes toward earning scholarships, and helped countless clients reach their next level—whether it&apos;s stepping onto the field, hitting a personal best, or simply moving pain-free.
                 </p>
                 <p>
                   After herniating three discs in my lower back, I dove deep into rehabilitation and injury prevention. That experience redefined my philosophy around training—now, I focus not just on performance, but longevity, function, and resilience.
                 </p>
                 <p>
-                  Outside the gym, I've spent the past eight years working as an international model between Toronto and New York, while also pushing my limits through half marathons, full marathons, ultramarathon-distance trail races, and HYROX competitions. I bring a unique blend of strength, endurance, and aesthetics to every client I coach—whether you're an athlete, weekend warrior, or just getting started.
+                  Outside the gym, Ive spent the past eight years working as an international model between Toronto and New York, while also pushing my limits through half marathons, full marathons, ultramarathon-distance trail races, and HYROX competitions. I bring a unique blend of strength, endurance, and aesthetics to every client I coach—whether you&apos;re an athlete, weekend warrior, or just getting started.
                 </p>
               </div>
             )}
