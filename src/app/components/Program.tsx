@@ -6,12 +6,11 @@ import React, { useState } from 'react';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination } from 'swiper/modules';
+import { FreeMode } from 'swiper/modules';
 
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 
@@ -74,19 +73,6 @@ const programData: ProgramPhase[] = [
 ];
 
 export default function Program () {
-
-  const [openStates, setOpenStates] = useState<boolean[]>(
-    Array(programData.length).fill(false)
-  );
-
-  const toggleDropdown = (index: number) => {
-    setOpenStates((prev) => {
-      const newStates = [...prev];
-      newStates[index] = !newStates[index];
-      return newStates;
-    });
-  };
-
 
   return (
     <section className="program-section">
