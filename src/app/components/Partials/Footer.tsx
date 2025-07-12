@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <Link href="/" className="logo">         
             <Image src="/images/jl-logo-white.png" alt="Justin Lyons Logo" width={746} height={100} />
           </Link>
-            <p>My simple 3-month program will get you fit, strong, and confident.</p>
+            <p>My simple 3-month program will get you fit and confident.</p>
           </div>
 
           <div className="footer-links">
