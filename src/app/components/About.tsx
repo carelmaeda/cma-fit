@@ -13,15 +13,12 @@ export default function About() {
 
   return (
     <section className="about-section">
-
-          <div className="profile-image">
             <Image
               src="/images/justin/jl-img8.webp"
               alt="Justin Lyons Profile Pic"
               width={400}
               height={400}
             />
-          </div>
 
         
         <div className="about-content">

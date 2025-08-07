@@ -1,23 +1,37 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { MoveRight, Instagram } from 'lucide-react';
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { MoveRight, Instagram } from "lucide-react";
 
-export default function Navbar () {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const navLinks = ['The Program', 'Community', 'About', 'FAQ'];
+  const navLinks = ["The Program", "Community", "About", "FAQ"];
 
   return (
     <nav className="navbar">
       <Link href="/" className="logo">
-        <Image src="/images/jl-logo-white.png" alt="Justin Lyons Logo" width={746} height={100} />
+        <Image
+          src="/images/jl-logo-white.png"
+          alt="Justin Lyons Logo"
+          width={746}
+          height={100}
+        />
       </Link>
-
-      <button
+      <a
+        href="https://www.instagram.com/the.lyonsking"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        className="social"
+      >
+        <Instagram size={32} />
+        <small>@the.lyonsking</small>
+      </a>
+      {/* <button
         className={`menu-toggle ${menuOpen ? 'open' : ''}`}
         onClick={toggleMenu}
         aria-label="Toggle navigation"
@@ -45,8 +59,7 @@ export default function Navbar () {
             <Instagram size={28} />
           </a>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   );
-};
-
+}

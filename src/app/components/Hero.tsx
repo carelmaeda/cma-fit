@@ -1,63 +1,49 @@
-﻿'use client';
+﻿"use client";
 
-import React from 'react';
-import Carousel from './Partials/Carousel';
-import { testimonials } from '../data/testimonials';
-import Image from 'next/image';
-import { MotionVertical } from '../utils/Motions';
-import Navbar from './Partials/Navbar';
+import React from "react";
+import Carousel from "./Partials/Carousel";
+import { testimonials } from "../data/testimonials";
+import Image from "next/image";
+import { MotionVertical } from "../utils/Motions";
+import Navbar from "./Partials/Navbar";
 import { Instagram } from "lucide-react";
 
-export default function Hero () {
+export default function Hero() {
   return (
     <div className="hero">
-            <Navbar />
-      <div className="hero-header">
+      <Navbar />
       <div className="hero-title">
-        <MotionVertical>
-          <small>3 Month&apos;s body transformation</small>
-        </MotionVertical>
-        <MotionVertical>
-          <h1>Hi! I&apos;m Justin.</h1>
-          <p className="hero-subtext">My personalized fitness plan will get you fit, strong, and confident.</p>
-        </MotionVertical>
+        <h1>Hi! I&apos;m Justin.</h1>
+        <p>
+          My personalized fitness plan will get you fit, strong, and confident.
+        </p>
       </div>
 
-        <div className="hero-btns">
-          {/* <a href="#the program" className="btn-icon btn-icon-outline"><MoveDown size={64}/></a> */}
-          <a href="#contact" className="btn btn-primary">Book a call with me</a>
+      <div className="hero-cta">
+        <div className="avatar-stack">
+          {testimonials.slice(0, 3).map((testimonial, index) => (
+            <a
+              href="#community"
+              key={index}
+              className={"avatar-wrapper index-${index}"}
+            >
+              <Image
+                src={testimonial.image}
+                alt={testimonial.name}
+                width={60}
+                height={60}
+              />
+            </a>
+          ))}
+          <div className="avatar-plus">+</div>
         </div>
+        <a href="#contact" className="btn btn-primary">
+          Book a call with me
+        </a>
       </div>
-
-      
-    <div className="avatar-btns">
-              <div className="avatar">
-            <div className="avatar-stack">
-                {testimonials.slice(0, 5).map((testimonial, index) => (
-                  <a
-                    href="#community"
-                    key={index}
-                    className={"avatar-wrapper index-${index}"}
-                  >
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      width={40}
-                      height={40}
-                      className="avatar-img"
-                    />
-                  </a>
-                ))}
-              </div>
-              <small>Join the crew!</small>
-          </div>
-          <div className="social">
-              <a href="https://www.instagram.com/the.lyonsking" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={32} /></a>
-              <small>@the.lyonsking</small>
-          </div>
-
-    </div>
-
+      <small className="d-none">
+        Join the Crew! Only 5 Spots Left This Month
+      </small>
 
       <Carousel />
 
@@ -69,4 +55,4 @@ export default function Hero () {
       <div className="hero-overlay"></div>
     </div>
   );
-};
+}

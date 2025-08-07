@@ -7,8 +7,14 @@ export const testimonials = [
     },
     {
       name: "Carel",
-      image: "/images/testimonials/carel.jpg",
-      quote: "This program completely changed my life. I feel stronger, healthier, and more confident than ever before!",
+      image: "/images/testimonials/carel.webp",
+      quote: "Working with Justin has been a game changer for me. I used to struggle staying consistent, but his approach makes everythin doable and even something I look forward to. I feel stronger, more confident, and way more comfortable in the gym thanks to his guidance.",
+      location: "King West",
+    },
+        {
+      name: "Ana",
+      image: "/images/testimonials/ana.webp",
+      quote: "Training with Justin has changed how I feel about fitness. He makes working out approachable and even fun. He knows how to challenge me without making it overwhelming, and I always leave our sessions feeling stronger and more capable. He’s supportive, down-to-earth, and just really good at what he does.",
       location: "Trinity Bellwoods",
     },
     {
