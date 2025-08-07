@@ -549,13 +549,6 @@ svg {
   }
 }
 
-//Responsiveness Desktop
-@media (min-width: 768px) {
-  .testimonial-quote {
-    font-size: 0.9rem;
-  }
-}
-
 /* FAQ */
 
 .faq-section {
@@ -622,6 +615,12 @@ svg {
 }
 
 /*CALENDLY*/
+
+.calendly-section {
+  background: $white;
+  color: $black;
+  padding-inline: 0;
+}
 
 /*FOOTER*/
 

@@ -878,11 +878,6 @@ svg {
      object-fit: contain;
 }
 
-@media (min-width: 768px) {
-  .testimonial-quote {
-    font-size: 0.9rem;
-  }
-}
 /* FAQ */
 .faq-section {
   background: #383838;
@@ -937,6 +932,12 @@ svg {
 }
 
 /*CALENDLY*/
+.calendly-section {
+  background: #ffffff;
+  color: #1d1d1d;
+  padding-inline: 0;
+}
+
 /*FOOTER*/
 footer {
   display: flex;
