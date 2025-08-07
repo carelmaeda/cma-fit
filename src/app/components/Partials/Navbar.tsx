@@ -1,15 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MoveRight, Instagram } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-
-  const navLinks = ["The Program", "Community", "About", "FAQ"];
 
   return (
     <nav className="navbar">

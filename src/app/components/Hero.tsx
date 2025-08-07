@@ -4,9 +4,7 @@ import React from "react";
 import Carousel from "./Partials/Carousel";
 import { testimonials } from "../data/testimonials";
 import Image from "next/image";
-import { MotionVertical } from "../utils/Motions";
 import Navbar from "./Partials/Navbar";
-import { Instagram } from "lucide-react";
 
 export default function Hero() {
   return (
