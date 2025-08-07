@@ -10,7 +10,7 @@ import { Instagram } from "lucide-react";
 
 export default function Hero () {
   return (
-    <section className="hero">
+    <div className="hero">
             <Navbar />
       <div className="hero-header">
       <div className="hero-title">
@@ -67,6 +67,6 @@ export default function Hero () {
       </video>
 
       <div className="hero-overlay"></div>
-    </section>
+    </div>
   );
 };

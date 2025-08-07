@@ -13,12 +13,12 @@ $gray-700: #383838;
 $gray-800: #282828;
 $gray-900: #181818;
 
-// Accent Colors - Neon Green
-$accent-lightest: #eaffea; // A very light, almost white, neon green
-$accent-light: #66ff66; // A lighter neon green
-$accent: #39ff14; // The main neon green
-$accent-dark: #22ee00; // A darker neon green
-$accent-contrast: #0c4d00; // A very dark green for contrast
+// Accent Colors - Volt Green
+$accent-lightest: #f8ffe6; // Very light volt green tint
+$accent-light: #e6ff99; // Lighter volt green
+$accent: #ceff00; // Main volt green (your brand color)
+$accent-dark: #b8e600; // Darker volt green
+$accent-contrast: #2d3300; // Very dark green for high contrast text
 
 $overlay-dark: rgba(44, 44, 44, 0.5);
 $overlay-gradient: linear-gradient(
@@ -150,7 +150,9 @@ select {
 /*-----------------------------START HERE--------------------------------------------------------------*/
 
 body {
+  background: $black;
   font-family: $font-body;
+  color: $white;
 }
 
 /*TYPOGRAPHY*/
@@ -455,8 +457,19 @@ a {
 .logo {
   object-fit: contain;
   img {
-    max-width: 150px;
+    max-width: 100px;
     width: 100%;
     height: 100%;
   }
+}
+
+/*Section*/
+
+section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  margin: auto;
+  padding: 2rem 3rem 3rem 3rem;
 }

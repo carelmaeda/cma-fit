@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer-section">
+    <footer>
           <div className="footer-brand">
           <Link href="/" className="logo">         
             <Image src="/images/jl-logo-white.png" alt="Justin Lyons Logo" width={746} height={100} />
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
             </div>
 
         <div className="footer-bottom">
-          <small>© {new Date().getFullYear()} Justin Lyons. All rights reserved.</small>
+          <small>© 2025 Justin Lyons. All rights reserved.</small>
         </div>
     </footer>
   );
