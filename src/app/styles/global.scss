@@ -147,8 +147,6 @@
   .avatar-stack {
     display: flex;
     align-items: center;
-    width: fit-content;
-    flex: auto;
 
     a {
       &:not(:first-child) {
@@ -156,6 +154,7 @@
       }
       img {
         height: 55px;
+        width: 55px;
         object-fit: cover;
         border-radius: $border-radius-full;
       }
@@ -366,7 +365,7 @@ svg {
       display: flex;
       width: 100%;
       justify-content: space-between;
-      align-items: start;
+      align-items: flex-start;
       min-height: 200px;
       padding: 2rem 1rem;
       background-size: cover;
