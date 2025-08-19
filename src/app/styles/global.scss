@@ -282,9 +282,9 @@ svg {
 /* About section */
 
 .about-section {
+  padding: 1rem;
   background: $gray-100;
   color: $black;
-  padding-inline: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -331,93 +331,39 @@ svg {
   }
 }
 
-.specialties {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.25rem;
-  justify-items: start;
-}
-
 /* PROGRAM */
 
 .program-section {
   padding: 2rem 0;
+
   .program-slide {
     display: grid;
     gap: 1rem;
-    padding: 1rem;
+    padding: 2rem;
 
     justify-content: space-between;
     overflow: hidden;
 
     text-align: justify;
-    text-justify: inter-word; /* improves spacing in some browsers */
+    text-justify: inter-word;
     hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     overflow-wrap: break-word;
+
+    background: $gray-700;
+    border-radius: $border-radius-md;
 
     .program-title {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
     }
-    h2 {
-      font-size: 8rem;
-      line-height: 0.8;
 
-      @media (max-width: 768px) {
-        font-size: 6rem;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 4rem;
-      }
-    }
-    .program-dropdown {
-      background: $gray-800;
-      padding: 1rem;
+    .specialties {
       display: grid;
-      gap: 1rem;
-    }
-
-    .program-accordion {
-      width: 100%;
-      max-width: 600px;
-      margin: auto;
-      color: $accent;
-
-      details {
-        border-bottom: solid 1px $white;
-        summary {
-          cursor: pointer;
-          list-style: none;
-          padding: 0.5rem 1rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          transition: background 0.3s;
-          &::-webkit-details-marker {
-            display: none;
-          }
-          .faq-toggle-icon {
-            font-size: 1.5rem;
-            margin-left: 1rem;
-            transition: transform 0.3s;
-          }
-        }
-
-        &[open] {
-          summary .faq-toggle-icon {
-            transform: rotate(45deg); // transforms "+" to "×"
-          }
-
-          ul {
-            margin-top: 0.5rem;
-            padding: 0 1rem 1rem 1rem;
-          }
-        }
-      }
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
     }
   }
 }
@@ -430,7 +376,7 @@ svg {
 
 .testimonial-section {
   color: $white;
-  padding: 3rem 0 3rem 1rem;
+  padding: 3rem 0;
 
   .testimonial-slide {
     background: $gray-800;

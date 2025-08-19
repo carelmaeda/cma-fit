@@ -22,22 +22,17 @@ interface ProgramPhase {
 
 const programData: ProgramPhase[] = [
   {
-    title: "1 - Foundation",
+    title: "Foundation",
     image: "/images/justin/jl-img7.webp",
     duration: "4 Weeks",
     description:
-      "We will build a solid foundation through proper form, better mobility, and basic strength and cardio development.",
-    goals: ["Consistency", "Mobility", "Proper Form", "Bbody Awareness"],
-    focus: [
-      "Fundamental movements",
-      "Core activation",
-      "Technique",
-      "Mind-muscle connection",
-    ],
-    outcomes: "Solid base and confidence in key movements.",
+      "We will build a solid foundation through proper form, better mobility, basic strength and cardio development.",
+    goals: ["Consistency", "Mobility", "Proper Form", "Body Awareness"],
+    focus: ["Foundations", "Core activation", "Technique", "Muscle Focus"],
+    outcomes: "Build a solid base and confidence in key movements.",
   },
   {
-    title: "2 - Adaptation",
+    title: "Adaptation",
     image: "/images/justin/jl-img12.webp",
     duration: "4 Weeks",
     description:
@@ -52,27 +47,27 @@ const programData: ProgramPhase[] = [
     outcomes: "Start seeing visible improvements in endurance and strength.",
   },
   {
-    title: "3 - Break Through",
+    title: "Break Through",
     image: "/images/justin/jl-img3.webp",
     duration: "4 Weeks",
     description:
       "Push past limits with demanding workouts, refining technique, and aiming for specific performance goals.",
     goals: [
       "Break plateaus",
-      "Elevate performance",
+      "Boost Strength",
       "Boost metabolism",
-      "Improve anaerobic capacity",
+      "Anaerobic capacity",
     ],
     focus: [
       "Intensity training",
       "Interval work",
       "Power output",
-      "Advanced techniques",
+      "Advanced Drills",
     ],
     outcomes: "Major breakthroughs in performance and resilience.",
   },
   {
-    title: "4 - Peak",
+    title: "Peak",
     image: "/images/justin/jl-img5.webp",
     duration: "Ongoing",
     description:
@@ -81,7 +76,7 @@ const programData: ProgramPhase[] = [
       "Maximize output",
       "Sharpen physique",
       "Achieve peak form",
-      "Maintain high performance",
+      "Endurance",
     ],
     focus: [
       "High-intensity",
@@ -98,7 +93,7 @@ export default function Program() {
     <section className="program-section">
       <h2>The Game Plan</h2>
       <Swiper
-        slidesPerView={1.2}
+        slidesPerView={1.1}
         spaceBetween={16}
         freeMode={true}
         modules={[FreeMode]}
