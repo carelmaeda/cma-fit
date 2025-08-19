@@ -18,25 +18,24 @@ export default function Hero() {
       </div>
 
       <div className="hero-cta">
-        <div className="avatar-stack">
-          {testimonials.slice(0, 3).map((testimonial, index) => (
-            <a
-              href="#community"
-              key={index}
-              className={"avatar-wrapper index-${index}"}
-            >
-              <Image
-                src={testimonial.image}
-                alt={testimonial.name}
-                width={55}
-                height={55}
-              />
-            </a>
-          ))}
-          <div className="avatar-plus">+</div>
-        </div>
         <a href="#contact" className="btn btn-primary">
           Book a call with me
+        </a>
+        <a href="#community" className="btn btn-link">
+          <div className="avatar-stack">
+            {testimonials.slice(0, 3).map((testimonial, index) => (
+              <div key={index} className={"avatar-wrapper index-${index}"}>
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  width={50}
+                  height={50}
+                />
+              </div>
+            ))}
+            <div className="avatar-plus">+</div>
+          </div>
+          Join the community!
         </a>
       </div>
       <small className="d-none">

@@ -45,8 +45,8 @@ $border-radius-sm: 0.5rem;
 $border-radius-full: 99px;
 
 //Borders
-$border-white: solid 0.2em $white;
-$border-accent: solid 0.2em $accent;
+$border-white: solid 0.1em $white;
+$border-accent: solid 0.1em $accent;
 
 //Buttons
 $btn-padding: 0.6rem 1.2rem;
@@ -344,7 +344,7 @@ a {
 // Link Button
 .btn-link {
   background: transparent;
-  color: $accent-dark;
+  color: $white;
   padding: 0.5rem 0;
   font-weight: 500;
   text-transform: none;
