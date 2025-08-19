@@ -11,7 +11,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 interface ProgramPhase {
-  step: string;
   title: string;
   image: string;
   duration: string;
@@ -23,18 +22,12 @@ interface ProgramPhase {
 
 const programData: ProgramPhase[] = [
   {
-    step: "1",
-    title: "Foundation",
+    title: "1 - Foundation",
     image: "/images/justin/jl-img7.webp",
     duration: "4 Weeks",
     description:
-      "Build a solid foundation through proper form, better mobility, and basic strength and cardio development.",
-    goals: [
-      "Build consistency",
-      "Improve mobility",
-      "Learn proper form",
-      "Increase body awareness",
-    ],
+      "We will build a solid foundation through proper form, better mobility, and basic strength and cardio development.",
+    goals: ["Consistency", "Mobility", "Proper Form", "Bbody Awareness"],
     focus: [
       "Fundamental movements",
       "Core activation",
@@ -44,29 +37,22 @@ const programData: ProgramPhase[] = [
     outcomes: "Solid base and confidence in key movements.",
   },
   {
-    step: "2",
-    title: "Adaptation",
+    title: "2 - Adaptation",
     image: "/images/justin/jl-img12.webp",
     duration: "4 Weeks",
     description:
       "Time to challenge your body with increased intensity. You’ll introduce more advanced movements and weight training.",
-    goals: [
-      "Increase stamina",
-      "Enhance strength",
-      "Adapt to routine",
-      "Improve muscular endurance",
-    ],
+    goals: ["Stamina", "Strength", "Routine", "Endurance"],
     focus: [
-      "Progressive overload",
+      "Progression",
       "Volume training",
       "Body awareness",
       "Compound lifts",
     ],
-    outcomes: "Visible improvements in endurance and strength.",
+    outcomes: "Start seeing visible improvements in endurance and strength.",
   },
   {
-    step: "3",
-    title: "Break Through",
+    title: "3 - Break Through",
     image: "/images/justin/jl-img3.webp",
     duration: "4 Weeks",
     description:
@@ -86,8 +72,7 @@ const programData: ProgramPhase[] = [
     outcomes: "Major breakthroughs in performance and resilience.",
   },
   {
-    step: "4",
-    title: "Peak",
+    title: "4 - Peak",
     image: "/images/justin/jl-img5.webp",
     duration: "Ongoing",
     description:
@@ -113,87 +98,45 @@ export default function Program() {
     <section className="program-section">
       <h2>The Game Plan</h2>
       <Swiper
-        slidesPerView={1.3}
-        spaceBetween={20}
+        slidesPerView={1.2}
+        spaceBetween={16}
         freeMode={true}
         modules={[FreeMode]}
-        className="mySwiper"
-        breakpoints={{
-          320: {
-            slidesPerView: 1.1,
-            spaceBetween: 16,
-          },
-          640: {
-            slidesPerView: 1.3,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 1.5,
-            spaceBetween: 24,
-          },
-          1024: {
-            slidesPerView: 2.2,
-            spaceBetween: 24,
-          },
-          1280: {
-            slidesPerView: 2.5,
-            spaceBetween: 32,
-          },
-        }}
+        className="swiper"
       >
         {programData.map((phase, index) => (
-          <SwiperSlide key={index}>
-            <div className="program-card">
-              <div
-                className="card-row-top"
-                style={{ backgroundImage: `url(${phase.image})` }}
-              >
-                <h2>{phase.step}</h2>
-                <span className="badge badge-tertiary">
-                  <Clock size={16} /> {phase.duration}
-                </span>
-              </div>
+          <SwiperSlide key={index} className="program-slide">
+            <div className="program-title">
+              <h3>{phase.title}</h3>
+              <span className="badge">
+                <Clock size={16} /> {phase.duration}
+              </span>
+            </div>
 
-              <div className="program-content">
-                <div className="program-title">
-                  <h3>{phase.title}</h3>
-                </div>
-                <h4>{phase.outcomes}</h4>
-                <div className="program-description">
-                  <p>{phase.description}</p>
-                </div>
+            <h4>{phase.outcomes}</h4>
 
-                <div className="program-accordion">
-                  <details>
-                    <summary>
-                      <h5>Goals</h5>
-                      <span className="faq-toggle-icon">+</span>
-                    </summary>
-                    <ul className="specialties">
-                      {phase.goals.map((goal, i) => (
-                        <li key={i} className="badge badge-secondary">
-                          {goal}
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                  <details>
-                    <summary>
-                      <h5>Key Focus</h5>
-                      <span className="faq-toggle-icon">+</span>
-                    </summary>
-                    <div className="faq-answer">
-                      <ul className="specialties">
-                        {phase.focus.map((item, i) => (
-                          <li key={i} className="badge badge-secondary">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </details>
-                </div>
-              </div>
+            <p>{phase.description}</p>
+
+            <div>
+              <h5>Goals</h5>
+              <ul className="specialties">
+                {phase.goals.map((goal, i) => (
+                  <li key={i} className="badge badge-secondary">
+                    {goal}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h5>Key Focus</h5>
+              <ul className="specialties">
+                {phase.focus.map((item, i) => (
+                  <li key={i} className="badge badge-secondary">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </SwiperSlide>
         ))}

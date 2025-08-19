@@ -34,7 +34,7 @@ export default function About() {
   return (
     <section className="about-section">
       <Swiper
-        slidesPerView={3}
+        slidesPerView={3.3}
         spaceBetween={8}
         freeMode={true}
         modules={[FreeMode]}
@@ -118,7 +118,7 @@ export default function About() {
             <small>Post Workout High-Fives</small>
           </div>
         </div>
-        <div className="specialties">
+        <div className="specialties d-none">
           <span>+ Performance Training</span>
           <span>+ Athletic Coaching</span>
           <span>+ Injury Prevention</span>
