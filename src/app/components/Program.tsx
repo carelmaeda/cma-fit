@@ -98,6 +98,16 @@ export default function Program() {
         freeMode={true}
         modules={[FreeMode]}
         className="swiper"
+        breakpoints={{
+          768: {
+            slidesPerView: 2.5,
+            spaceBetween: 16,
+          },
+          1024: {
+            slidesPerView: 2.5,
+            spaceBetween: 16,
+          },
+        }}
       >
         {programData.map((phase, index) => (
           <SwiperSlide key={index} className="program-slide">

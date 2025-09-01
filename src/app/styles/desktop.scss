@@ -1,0 +1,278 @@
+@use "./variables" as *;
+
+/* DESKTOP STYLES - MIN-WIDTH: 768px */
+
+// Desktop hero enhancements
+@media (min-width: 768px) {
+  .hero {
+    min-height: 100vh;
+
+    .hero-title,
+    .hero-cta {
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .hero-title {
+      max-width: 1140px;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      
+      h1 {
+        font-size: clamp(4rem, 8vw, 8rem);
+        line-height: 0.85;
+        letter-spacing: -3px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      p {
+        font-size: clamp(1.125rem, 2vw, 1.5rem);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+
+    .hero-cta {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1140px;
+      margin-bottom: 2rem;
+      
+      .btn {
+        max-width: 280px;
+      }
+      
+      .avatar-stack {
+        margin-right: 0;
+        
+        div img {
+          height: 40px;
+          width: 40px;
+        }
+        
+        .avatar-plus {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+// Desktop about section enhancements
+@media (min-width: 768px) {
+  .about-section {
+    padding: 4rem 2rem;
+
+    h2 {
+      max-width: 1140px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    .about-content {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+
+      img {
+        max-width: 400px;
+        margin: 0 auto 2rem;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .about-text {
+        max-width: 800px;
+        margin: 0 auto;
+        
+        p {
+          font-size: 1.125rem;
+          line-height: 1.6;
+          text-align: center;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    .stats-grid {
+      max-width: 1140px;
+      margin: 4rem auto 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      padding: 2rem 0;
+      
+      .stat-item {
+        text-align: center;
+        
+        .stat-number {
+          font-size: 3.5rem;
+          margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+          font-size: 1rem;
+          color: $gray-600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}
+
+// Desktop program section enhancements
+@media (min-width: 768px) {
+  .program-section {
+    padding: 4rem 2rem;
+
+    h2 {
+      max-width: 1140px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    .swiper {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .program-slide {
+      padding: 2.5rem;
+      gap: 1.5rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: auto;
+
+      .program-title {
+        margin-bottom: 1rem;
+        
+        h3 {
+          font-size: 2rem;
+          line-height: 1.2;
+        }
+        
+        .badge {
+          font-size: 0.75rem;
+          padding: 0.75rem 1rem;
+        }
+      }
+
+      p {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        text-align: left;
+        flex-grow: 1;
+      }
+
+      .specialties {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        margin-top: auto;
+        
+        .badge {
+          padding: 0.75rem 1rem;
+          font-size: 0.75rem;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+// Desktop footer enhancements
+@media (min-width: 768px) {
+  footer {
+    padding: 4rem 2rem 2rem;
+
+    .footer-content {
+      max-width: 1140px;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .footer-brand {
+      gap: 1.5rem;
+
+      .logo img {
+        height: 48px;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 400px;
+      }
+    }
+
+    .footer-links {
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+
+      ul {
+        gap: 0.75rem;
+
+        li a {
+          font-size: 1rem;
+          
+          &:hover {
+            transform: translateX(4px);
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+
+    .footer-social {
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .social-links {
+        gap: 1.5rem;
+
+        a {
+          svg {
+            width: 28px;
+            height: 28px;
+          }
+
+          &:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      small {
+        font-size: 1rem;
+      }
+    }
+  }
+}
