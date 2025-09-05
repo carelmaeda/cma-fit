@@ -4,7 +4,7 @@ import { Clock } from "lucide-react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -95,17 +95,13 @@ export default function Program() {
       <Swiper
         slidesPerView={1.1}
         spaceBetween={16}
-        freeMode={true}
-        modules={[FreeMode]}
-        className="swiper"
+        navigation={true}
+        modules={[Navigation]}
+        className="swiper container"
         breakpoints={{
           768: {
             slidesPerView: 2.5,
-            spaceBetween: 16,
-          },
-          1024: {
-            slidesPerView: 2.5,
-            spaceBetween: 16,
+            spaceBetween: 32,
           },
         }}
       >

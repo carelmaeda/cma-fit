@@ -43,22 +43,24 @@ const features = [
 export default function Features() {
   return (
     <section className="features-section">
-      <h2>Complete 1-on-1 Coaching Experience</h2>
-      <ul>
-        {features.map((feature) => (
-          <li key={feature.id}>
-            <p>
-              <Image
-                src={feature.icon}
-                alt={feature.alt}
-                width={48}
-                height={48}
-              />
-              {feature.title}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <div className="container">
+        <h2>Complete 1-on-1 Coaching Experience</h2>
+        <ul>
+          {features.map((feature) => (
+            <li key={feature.id}>
+              <p>
+                <Image
+                  src={feature.icon}
+                  alt={feature.alt}
+                  width={48}
+                  height={48}
+                />
+                {feature.title}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

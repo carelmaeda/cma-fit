@@ -28,8 +28,8 @@ export default function Hero() {
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-                  width={50}
-                  height={50}
+                  width={100}
+                  height={100}
                 />
               </div>
             ))}
